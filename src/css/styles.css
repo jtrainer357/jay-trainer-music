@@ -1,3 +1,12 @@
+@font-face {
+  font-family: 'Jeff Dungan';
+  src: url('/assets/fonts/JeffDungan.woff2') format('woff2'),
+       url('/assets/fonts/JeffDungan.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
   :root {
     /* ═══ CORE PALETTE ═══ */
     --white: #ffffff;
@@ -5,15 +14,15 @@
     --parchment: #ede5d5;
     --warm-tan: #c9aa80;
     --coffee: #8b5e3c;
-    --coffee-dark: #5c3d20;
-    --bark: #3d2b1a;
+    --coffee-dark: #444444;
+    --bark: #2b2b2b;
     --moss: #4a5e3a;
     --muted-red: #7a3d35;
     --steel-blue: #5171A5;
     --slate-blue: #7C98B3;
     --navy: #364B6D;
     --midnight: #07090E;
-    --ink: #2a1f14;
+    --ink: #1f1f1f;
     --fog: #d8d0c5;
     --light-fog: #eee8dc;
 
@@ -55,7 +64,7 @@
     --surface-player: var(--midnight-a92);
 
     /* ═══ SEMANTIC — TEXT ═══ */
-    --text-body: #33302e;
+    --text-body: #2d2d2d;
     --text-heading: var(--bark);
     --text-secondary: var(--coffee-dark);
     --text-muted: var(--coffee);
@@ -69,7 +78,7 @@
     /* ═══ TYPOGRAPHY ═══ */
     --font-body: 'Inter', 'Helvetica Neue', Arial, sans-serif;
     --font-heading: 'Playfair Display', serif;
-    --font-accent: 'Caveat', cursive;
+    --font-accent: 'Jeff Dungan', cursive;
 
     /* ═══ RADII ═══ */
     --radius-xs: 2px;
@@ -258,7 +267,7 @@
 
   .hero-eyebrow {
     font-family: var(--font-accent);
-    font-size: 1.2rem;
+    font-size: 1.65rem;
     color: var(--warm-tan);
     letter-spacing: 0.05em;
     margin-bottom: 0.8rem;
@@ -284,7 +293,7 @@
 
   .hero-sub {
     font-family: var(--font-accent);
-    font-size: 1.6rem;
+    font-size: 1.95rem;
     color: var(--fog);
     line-height: 1.6;
     max-width: 540px;
@@ -356,7 +365,7 @@
 
   .section-label {
     font-family: var(--font-accent);
-    font-size: 1.1rem;
+    font-size: 1.45rem;
     color: var(--coffee);
     letter-spacing: 0.05em;
     margin-bottom: 0.5rem;
@@ -457,7 +466,7 @@
 
   .card-type {
     font-family: var(--font-accent);
-    font-size: 0.85rem;
+    font-size: 1.05rem;
     color: var(--coffee);
     letter-spacing: 0.05em;
     margin-bottom: 0.3rem;
@@ -584,7 +593,7 @@
     min-width: 1.6em;
     color: var(--warm-tan);
     font-family: var(--font-accent);
-    font-size: 0.85rem;
+    font-size: 1.05rem;
     flex-shrink: 0;
   }
 
@@ -595,7 +604,7 @@
 
   .card-tracklist li span:last-child {
     font-family: var(--font-accent);
-    font-size: 0.8rem;
+    font-size: 1rem;
     color: var(--coffee);
     opacity: 0.7;
     flex-shrink: 0;
@@ -654,7 +663,7 @@
 
   .featured-tag {
     font-family: var(--font-accent);
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--warm-tan);
     margin-bottom: 1rem;
   }
@@ -728,7 +737,7 @@
     min-width: 1.8em;
     color: var(--warm-tan);
     font-family: var(--font-accent);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     flex-shrink: 0;
   }
 
@@ -739,7 +748,7 @@
 
   .featured-tracklist li span:last-child {
     font-family: var(--font-accent);
-    font-size: 0.85rem;
+    font-size: 1.05rem;
     color: var(--warm-tan);
     opacity: 0.6;
     flex-shrink: 0;
@@ -903,7 +912,7 @@
 
   .merch-price {
     font-family: var(--font-accent);
-    font-size: 1.1rem;
+    font-size: 1.4rem;
     color: var(--coffee);
     margin-bottom: 0.9rem;
   }
@@ -962,7 +971,7 @@
 
   .blog-date {
     font-family: var(--font-accent);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: var(--coffee);
     margin-bottom: 0.4rem;
   }
@@ -1042,7 +1051,7 @@
 
   .listen-banner-text p {
     font-family: var(--font-accent);
-    font-size: 1.3rem;
+    font-size: 1.55rem;
     color: var(--text-on-dark-bright);
     line-height: 1.6;
     max-width: 440px;
@@ -1102,7 +1111,7 @@
 
   .footer-tagline {
     font-family: var(--font-accent);
-    font-size: 1rem;
+    font-size: 1.2rem;
     color: var(--warm-tan);
     margin-bottom: 1rem;
   }
@@ -1183,7 +1192,7 @@
 
   .footer-motif {
     font-family: var(--font-accent);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: var(--warm-tan);
     opacity: 0.5;
   }
@@ -1311,7 +1320,7 @@
 
   .post-subtitle {
     font-family: var(--font-accent);
-    font-size: 1.2rem;
+    font-size: 1.45rem;
     color: var(--coffee);
     line-height: 1.5;
     margin-bottom: 1rem;
@@ -1479,7 +1488,7 @@
 
   .timeline-year {
     font-family: var(--font-accent);
-    font-size: 1.3rem;
+    font-size: 1.55rem;
     color: var(--warm-tan);
     min-width: 60px;
     flex-shrink: 0;
@@ -1519,7 +1528,7 @@
 
   .influence-label {
     font-family: var(--font-accent);
-    font-size: 0.9rem;
+    font-size: 1.1rem;
     color: var(--warm-tan);
     margin-bottom: 0.3rem;
   }
@@ -1628,7 +1637,7 @@
 
   .newsletter-status {
     margin-top: 0.8rem;
-    font-size: 0.8rem;
+    font-size: 1rem;
     font-family: var(--font-accent);
   }
 
@@ -1805,7 +1814,7 @@
 
   .error-page h2 {
     font-family: var(--font-accent);
-    font-size: 1.6rem;
+    font-size: 1.95rem;
     color: var(--coffee);
     margin-bottom: 1.5rem;
     font-weight: 400;
