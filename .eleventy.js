@@ -46,6 +46,11 @@ module.exports = function (eleventyConfig) {
     return (arr || []).filter((item) => item.slug !== slug);
   });
 
+  // Current year filter
+  eleventyConfig.addFilter("currentYear", () => {
+    return new Date().getFullYear();
+  });
+
   return {
     dir: {
       input: "src",

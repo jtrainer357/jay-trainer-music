@@ -1233,8 +1233,60 @@
     .listen-banner { padding: 3rem 1.5rem; margin: 0 1.5rem; }
   }
 
+  /* ─── HAMBURGER TOGGLE ─── */
+  .nav-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    z-index: 110;
+  }
+
+  .nav-toggle-bar {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--cream);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+  }
+
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(2) {
+    opacity: 0;
+  }
+  .nav-toggle[aria-expanded="true"] .nav-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
   @media (max-width: 600px) {
-    .nav-links { display: none; }
+    .nav-toggle { display: flex; }
+
+    .nav-links {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: var(--bark);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      z-index: 105;
+      padding: 2rem;
+    }
+
+    .nav-links.open { display: flex; }
+
+    .nav-links a {
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+    }
+
     .merch-grid { grid-template-columns: 1fr; }
     .music-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
   }
