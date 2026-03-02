@@ -3,7 +3,7 @@
 > **Last updated:** 2026-03-02 @ 12:15 EST
 > **Updated by:** Claude (session 2 — font exploration, color fixes, icon updates)
 > **Git branch:** `main`
-> **Latest commit:** (pending — font, color, and icon changes staged)
+> **Latest commit:** `18ea8e6` — "Add Jeff Dungan accent font, neutralize text colors, fix social icons" (2026-03-02)
 
 ---
 
@@ -348,6 +348,7 @@ jay-trainer-music/
 
 | Commit | Date | Message |
 |---|---|---|
+| `18ea8e6` | 2026-03-02 12:15 EST | Add Jeff Dungan accent font, neutralize text colors, fix social icons |
 | `93af3ed` | 2026-03-02 00:20 EST | Rebuild as Eleventy site with token-based design system, SEO, and new pages |
 | `8e0159c` | 2026-03-01 19:46 EST | Initial commit: Jay Trainer music website |
 
