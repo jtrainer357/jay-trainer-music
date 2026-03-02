@@ -69,6 +69,7 @@
 
 {% include "partials/nav.njk" %}
 
+<div class="page-stain" aria-hidden="true"></div>
 <main id="main-content">
 {% block content %}
 {{ content | safe }}
@@ -82,6 +83,9 @@
   </div>
 </section>
 
+<div class="footer-crease" aria-hidden="true">
+  <img src="/assets/images/paper-crease.png" alt="">
+</div>
 {% include "partials/footer.njk" %}
 {% include "partials/player.njk" %}
 {% include "partials/cart-drawer.njk" %}

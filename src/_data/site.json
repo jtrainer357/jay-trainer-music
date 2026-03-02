@@ -16,14 +16,20 @@
     "instagram": "https://www.instagram.com/jaytrainerband/",
     "twitter": "https://twitter.com/jaytrainerband",
     "facebook": "https://www.facebook.com/jaytrainerband",
-    "spotify": "",
-    "appleMusic": ""
+    "spotify": "https://open.spotify.com/artist/3hCWS43UmCRvCJ3kuhxvJX",
+    "appleMusic": "https://music.apple.com/us/artist/jay-trainer/203270197",
+    "amazonMusic": "https://www.amazon.com/Jay-Trainer/e/B001LH2L44",
+    "soundcloud": "https://soundcloud.com/jay-trainer-band"
   },
   "sameAs": [
     "https://jaytrainer.bandcamp.com",
     "https://www.youtube.com/c/JayTrainerBand",
     "https://www.instagram.com/jaytrainerband/",
     "https://twitter.com/jaytrainerband",
-    "https://www.facebook.com/jaytrainerband"
+    "https://www.facebook.com/jaytrainerband",
+    "https://open.spotify.com/artist/3hCWS43UmCRvCJ3kuhxvJX",
+    "https://music.apple.com/us/artist/jay-trainer/203270197",
+    "https://www.amazon.com/Jay-Trainer/e/B001LH2L44",
+    "https://soundcloud.com/jay-trainer-band"
   ]
 }
