@@ -1,0 +1,204 @@
+{# ─── BREADCRUMB (all pages) ─── #}
+{% if page.url != "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "{{ title }}",
+      "item": "{{ site.url }}{{ page.url }}"
+    }
+  ]
+}
+</script>
+{% endif %}
+
+{# ─── HOMEPAGE: WebSite + MusicGroup ─── #}
+{% if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "description": "{{ site.description }}",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site.url }}/music/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicGroup",
+  "name": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "description": "{{ site.description }}",
+  "genre": ["Folk", "Acoustic Rock", "Americana", "Singer-Songwriter"],
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "{{ site.location }}",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{ site.geo.latitude }},
+      "longitude": {{ site.geo.longitude }}
+    }
+  },
+  "image": "{{ site.url }}{{ site.image }}",
+  "sameAs": {{ site.sameAs | dump | safe }}
+}
+</script>
+{% endif %}
+
+{# ─── ABOUT PAGE: Person + FAQPage ─── #}
+{% if page.url == "/about/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author }}",
+  "url": "{{ site.url }}",
+  "description": "Singer-songwriter from Pittsburgh, Pennsylvania, crafting folk, acoustic rock, and Americana music rooted in storytelling and deep-seated instinct.",
+  "jobTitle": "Singer-Songwriter",
+  "knowsAbout": ["Folk Music", "Acoustic Rock", "Songwriting", "Music Production"],
+  "birthPlace": {
+    "@type": "Place",
+    "name": "{{ site.location }}"
+  },
+  "homeLocation": {
+    "@type": "Place",
+    "name": "{{ site.location }}",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{ site.geo.latitude }},
+      "longitude": {{ site.geo.longitude }}
+    }
+  },
+  "image": "{{ site.url }}/assets/images/about.jpg",
+  "sameAs": {{ site.sameAs | dump | safe }}
+}
+</script>
+{% if faq %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for item in faq %}
+    {
+      "@type": "Question",
+      "name": "{{ item.q }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ item.a }}"
+      }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+{% endif %}
+
+{# ─── BLOG POSTS: BlogPosting ─── #}
+{% if tags and "blog" in tags %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ title }}",
+  "description": "{{ description or excerpt or '' }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "datePublished": "{{ date | isoDate }}",
+  {% if modified %}"dateModified": "{{ modified | isoDate }}",{% endif %}
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ site.title }}",
+    "url": "{{ site.url }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ site.url }}{{ site.image }}"
+    }
+  }{% if image %},
+  "image": "{{ image }}"{% endif %}
+}
+</script>
+{% endif %}
+
+{# ─── ALBUM PAGES: MusicAlbum ─── #}
+{% if tags and "music" in tags %}
+{% set release = releases | findBySlug(slug) %}
+{% if release %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicAlbum",
+  "name": "{{ release.title }}",
+  "description": "{{ release.description }}",
+  "url": "{{ site.url }}{{ page.url }}",
+  "albumReleaseType": "{% if release.type == 'single' %}SingleRelease{% else %}AlbumRelease{% endif %}",
+  "datePublished": "{{ release.year }}",
+  "image": "{{ release.coverArt }}",
+  "byArtist": {
+    "@type": "MusicGroup",
+    "name": "{{ site.title }}",
+    "sameAs": {{ site.sameAs | dump | safe }}
+  },
+  "numTracks": {{ release.tracks | length }},
+  "track": [
+    {% for track in release.tracks %}
+    {
+      "@type": "MusicRecording",
+      "name": "{{ track.title }}",
+      "duration": "{{ track.duration }}",
+      "position": {{ loop.index }}
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+{% endif %}
+{% endif %}
+
+{# ─── LABEL PAGE: Organization ─── #}
+{% if page.url == "/label/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Briar Patch Records",
+  "url": "{{ site.url }}/label/",
+  "description": "Independent record label founded by Jay Trainer in Pittsburgh, Pennsylvania. Home to folk, acoustic rock, and Americana releases rooted in storytelling and instinct.",
+  "founder": {
+    "@type": "Person",
+    "name": "{{ site.author }}"
+  },
+  "location": {
+    "@type": "Place",
+    "name": "{{ site.location }}",
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{ site.geo.latitude }},
+      "longitude": {{ site.geo.longitude }}
+    }
+  },
+  "sameAs": {{ site.sameAs | dump | safe }}
+}
+</script>
+{% endif %}

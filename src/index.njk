@@ -1,0 +1,113 @@
+---
+layout: layouts/base.njk
+title: Jay Trainer — Music
+description: "Jay Trainer is a singer-songwriter from Pittsburgh, Pennsylvania. Explore folk, acoustic rock, and Americana music — eight releases spanning nearly two decades of storytelling and instinct."
+---
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">{{ site.location }}</p>
+    <h1 class="hero-title">Jay<br><em>Trainer</em></h1>
+    <p class="hero-sub">Songs born from deep-seated instinct. Stories forged in quiet rooms, beside fires, beneath old trees. Music that calls out and feels essential.</p>
+    <div class="hero-cta">
+      <a href="/music/" class="btn-primary">Hear the Music</a>
+      <a href="/about/" class="btn-outline">Learn More</a>
+    </div>
+  </div>
+</section>
+
+<!-- LISTEN / MUSIC -->
+<section id="listen">
+  <div class="section-label">Discography</div>
+  <h2 class="section-title">The <em>Music</em></h2>
+  <div class="divider"></div>
+
+  {# Featured Release #}
+  {% set featured = releases | findBySlug("a-whisper-of-ruin-deluxe") %}
+  {% if featured %}
+  <div class="featured-release reveal">
+    <div class="featured-image-wrap">
+      <a href="/music/{{ featured.slug }}/">
+        <img src="{{ featured.coverArt }}" alt="{{ featured.title }}" loading="lazy">
+      </a>
+    </div>
+    <div class="featured-content">
+      <div class="featured-tag">Latest Album — {{ featured.year }}</div>
+      <h3 class="featured-title">A Whisper Of <em>Ruin</em><br>— Deluxe Edition</h3>
+      <p class="featured-desc">{{ featured.description }}</p>
+      <div class="featured-tracklist">
+        <ol>
+          {% for track in featured.tracks %}
+          <li><span>{{ track.title }}</span><span>{{ track.duration }}</span></li>
+          {% endfor %}
+        </ol>
+      </div>
+      <div class="featured-btns">
+        <a href="/music/{{ featured.slug }}/" class="btn-primary">Stream & Download</a>
+        <a href="/merch/" class="btn-outline">Get Physical</a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- MUSIC GRID -->
+  <div class="music-grid">
+    {% for r in releases %}
+      {% if not r.featured %}
+        {% include "partials/music-card.njk" %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+
+{% include "partials/streaming-banner.njk" %}
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-grid">
+    <div class="about-images">
+      <img src="/assets/images/about.jpg" alt="Jay recording" class="about-img-main">
+      <img src="/assets/images/jay-recording.jpg" alt="Guitar close-up" class="about-img-secondary">
+    </div>
+    <div class="about-text">
+      <div class="section-label">The story</div>
+      <h2 class="section-title">About <em>Jay</em></h2>
+      <div class="divider"></div>
+      <p>For as long as I can remember I've been familiar with this deep-seated instinct within me. It told me the path my life would progress in and that regardless of where it takes me, I was obligated to this precondition.</p>
+      <div class="about-quote">
+        "Perhaps you've had a similar experience — something that called out to you profoundly and felt essential to your existence."
+      </div>
+      <p>Out of Pittsburgh, Pennsylvania, Jay Trainer has spent years quietly building a body of work rooted in storytelling, acoustic honesty, and the kind of songs that feel like they've always existed — waiting to be discovered in the fog.</p>
+      <p>From intimate recordings by firelight to wider studio sessions, each record is a chapter. The music doesn't chase trends. It grows like old trees — slowly, with deep roots, shaped by weather and time.</p>
+      <a href="/about/" class="btn-primary btn-mt-sm">Read More</a>
+    </div>
+  </div>
+</section>
+
+<!-- MERCH -->
+<section id="merch">
+  <div class="section-label">Shop</div>
+  <h2 class="section-title">Merch & <em>Physical</em></h2>
+  <div class="divider"></div>
+  <p class="merch-intro">Take something home. Posters, apparel, and the full digital discography — all available through Bandcamp. Physical music for a world that moves too fast.</p>
+  <div class="merch-grid">
+    {% for item in merch %}
+      {% include "partials/merch-card.njk" %}
+    {% endfor %}
+  </div>
+</section>
+
+<!-- BLOG / JOURNAL -->
+<section id="blog">
+  <div class="section-label">Words</div>
+  <h2 class="section-title">The <em>Journal</em></h2>
+  <div class="divider"></div>
+  <div class="blog-grid">
+    {% for blogPost in collections.blog | reverse | limit(3) %}
+      {% include "partials/blog-card.njk" %}
+    {% endfor %}
+  </div>
+</section>

@@ -1,0 +1,28 @@
+{# Expects `r` as the release variable from the loop context #}
+<div class="music-card reveal">
+  <a href="/music/{{ r.slug }}/">
+    <img src="{{ r.coverArt }}" alt="{{ r.title }}" class="card-cover" loading="lazy">
+  </a>
+  <div class="card-type">{{ r.type | capitalize }} — {{ r.year }}</div>
+  <a href="/music/{{ r.slug }}/" class="card-title-link">
+    <div class="card-title">{{ r.shortTitle }}</div>
+  </a>
+  <div class="card-sub">
+    {% if r.subtitle %}{{ r.subtitle }} &middot; {% endif %}
+    {% if r.type == "single" %}{{ r.tracks[0].duration }}{% else %}{{ r.tracks.length }} tracks{% endif %}
+  </div>
+  {% if r.type == "album" and r.tracks.length > 1 %}
+  <button class="card-tracklist-toggle" aria-expanded="false">Tracklist</button>
+  <div class="card-tracklist">
+    <ol>
+      {% for track in r.tracks %}
+      <li><span>{{ track.title }}</span><span>{{ track.duration }}</span></li>
+      {% endfor %}
+    </ol>
+  </div>
+  {% endif %}
+  <div class="card-actions">
+    <a href="/music/{{ r.slug }}/" class="card-btn card-btn-listen">Listen</a>
+    <a href="{{ r.bandcampUrl }}" target="_blank" class="card-btn card-btn-dl">{{ r.price }}</a>
+  </div>
+</div>

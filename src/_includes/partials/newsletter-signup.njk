@@ -1,0 +1,15 @@
+<!-- NEWSLETTER SIGNUP -->
+<div class="newsletter-block">
+  <div class="newsletter-inner">
+    <h3 class="newsletter-heading">Sign Up for the <em>Newsletter</em></h3>
+    <p class="newsletter-text">New songs, journal entries, and the occasional postcard from the road — delivered to your inbox. No noise, just music.</p>
+    <form class="newsletter-form" id="newsletterForm" data-action="/api/newsletter-subscribe">
+      <div class="newsletter-fields">
+        <input type="text" name="firstName" placeholder="First name" class="newsletter-input" required>
+        <input type="email" name="email" placeholder="Email address" class="newsletter-input" required>
+        <button type="submit" class="newsletter-btn btn-primary">Subscribe</button>
+      </div>
+      <div class="newsletter-status" id="newsletterStatus"></div>
+    </form>
+  </div>
+</div>

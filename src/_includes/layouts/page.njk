@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+---
+{% if heroImage %}
+<section class="page-hero">
+  <img src="{{ heroImage }}" alt="" class="page-hero-bg" loading="eager">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    {% if heroLabel %}<div class="section-label">{{ heroLabel }}</div>{% endif %}
+    <h1 class="hero-title">{{ heroTitle or title }}</h1>
+    {% if heroSub %}<p class="hero-sub">{{ heroSub }}</p>{% endif %}
+  </div>
+</section>
+{% endif %}
+
+<div class="page-content">
+  {{ content | safe }}
+</div>

@@ -1,0 +1,23 @@
+{# Expects `item` as the merch variable from the loop context #}
+<div class="merch-item reveal">
+  <div class="merch-img-wrap">
+    <img src="{{ item.image }}" alt="{{ item.name }}" class="merch-img" loading="lazy">
+  </div>
+  <div class="merch-info">
+    <div class="merch-name">{{ item.name }}</div>
+    <div class="merch-detail">{{ item.detail }}</div>
+    <div class="merch-price">{{ item.price }}</div>
+    <div class="merch-actions">
+      <a href="{{ item.bandcampUrl }}" target="_blank" class="merch-btn">Shop Now</a>
+      {% if item.stripePrice %}
+      <button class="merch-btn merch-cart-btn add-to-cart-btn"
+              data-name="{{ item.name }}"
+              data-price="{{ item.stripePrice }}"
+              data-image="{{ item.image }}"
+              data-type="merch">
+        Add to Cart
+      </button>
+      {% endif %}
+    </div>
+  </div>
+</div>

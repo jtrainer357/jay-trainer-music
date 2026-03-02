@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+title: Merch & Physical
+description: "Shop Jay Trainer merch — posters, apparel, and physical music. Take something home from the world of folk and acoustic storytelling."
+permalink: /merch/
+---
+
+<div class="listing-header">
+  <div class="section-label">Shop</div>
+  <h1 class="section-title">Merch & <em>Physical</em></h1>
+  <div class="divider"></div>
+  <p class="merch-intro">Take something home. Posters, apparel, and the full digital discography — all available through Bandcamp. Physical music for a world that moves too fast.</p>
+</div>
+
+<div class="listing-content">
+  <div class="merch-grid">
+    {% for item in merch %}
+      {% include "partials/merch-card.njk" %}
+    {% endfor %}
+  </div>
+</div>

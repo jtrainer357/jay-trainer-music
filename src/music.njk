@@ -1,0 +1,54 @@
+---
+layout: layouts/base.njk
+title: Music
+description: "Stream and download Jay Trainer's complete discography — eight releases of folk, acoustic rock, and Americana from Pittsburgh, Pennsylvania. From The Waking Hours to A Whisper of Ruin."
+permalink: /music/
+---
+
+<div class="listing-header">
+  <div class="section-label">Discography</div>
+  <h1 class="section-title">The <em>Music</em></h1>
+  <div class="divider"></div>
+  <p class="listing-intro">
+    Eight releases spanning nearly two decades — from the earliest live recordings to the expanded deluxe edition. Every record is a chapter. Start anywhere.
+  </p>
+</div>
+
+<div class="listing-content">
+  {# Featured Release #}
+  {% set featured = releases | findBySlug("a-whisper-of-ruin-deluxe") %}
+  {% if featured %}
+  <div class="featured-release reveal">
+    <div class="featured-image-wrap">
+      <a href="/music/{{ featured.slug }}/">
+        <img src="{{ featured.coverArt }}" alt="{{ featured.title }}" loading="lazy">
+      </a>
+    </div>
+    <div class="featured-content">
+      <div class="featured-tag">Latest Album — {{ featured.year }}</div>
+      <h3 class="featured-title">A Whisper Of <em>Ruin</em><br>— Deluxe Edition</h3>
+      <p class="featured-desc">{{ featured.description }}</p>
+      <div class="featured-tracklist">
+        <ol>
+          {% for track in featured.tracks %}
+          <li><span>{{ track.title }}</span><span>{{ track.duration }}</span></li>
+          {% endfor %}
+        </ol>
+      </div>
+      <div class="featured-btns">
+        <a href="/music/{{ featured.slug }}/" class="btn-primary">Stream & Download</a>
+      </div>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="music-grid">
+    {% for r in releases %}
+      {% if not r.featured %}
+        {% include "partials/music-card.njk" %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+{% include "partials/streaming-banner.njk" %}

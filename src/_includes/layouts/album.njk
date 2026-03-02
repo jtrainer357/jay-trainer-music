@@ -1,0 +1,83 @@
+---
+layout: layouts/base.njk
+---
+{%- set release = releases | findBySlug(slug) -%}
+
+<section class="album-hero">
+  <div class="album-hero-cover">
+    <img src="{{ release.coverArt }}" alt="{{ release.title }}" loading="lazy">
+  </div>
+  <div class="album-hero-info">
+    <div class="section-label">{{ release.type | capitalize }} — {{ release.year }}</div>
+    <h1 class="section-title">{{ release.title }}</h1>
+    <div class="divider"></div>
+    <p class="album-description">{{ release.description }}</p>
+
+    {% if release.tracks.length > 1 %}
+    <div class="album-tracklist">
+      <ol>
+        {% for track in release.tracks %}
+        <li>
+          <button class="album-track-btn" data-release="{{ release.slug }}" data-index="{{ loop.index0 }}" aria-label="Play {{ track.title }}">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          </button>
+          <span class="track-name">{{ track.title }}</span>
+          <span class="track-duration">{{ track.duration }}</span>
+        </li>
+        {% endfor %}
+      </ol>
+    </div>
+    {% else %}
+    <div class="album-single-play">
+      <button class="btn-primary album-play-btn" data-release="{{ release.slug }}" data-index="0">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+        Play Track
+      </button>
+    </div>
+    {% endif %}
+
+    <div class="album-actions">
+      <a href="{{ release.bandcampUrl }}" target="_blank" class="btn-primary">Stream & Download</a>
+      {% if release.stripePrice %}
+      <button class="btn-outline add-to-cart-btn"
+              data-name="{{ release.title }}"
+              data-price="{{ release.stripePrice }}"
+              data-image="{{ release.coverArt }}"
+              data-type="music">
+        Add to Cart — {{ release.price }}
+      </button>
+      {% endif %}
+    </div>
+
+    {% if release.credits %}
+    <div class="album-credits">
+      <p>{{ release.credits }}</p>
+    </div>
+    {% endif %}
+  </div>
+</section>
+
+{% if content | trim %}
+<section class="album-notes">
+  <div class="album-notes-inner">
+    {{ content | safe }}
+  </div>
+</section>
+{% endif %}
+
+<!-- Release data for player JS -->
+<script type="application/json" id="releaseData">
+{{ release | dump | safe }}
+</script>
+
+<!-- More Music -->
+<section class="more-music">
+  <div class="section-label">More from Jay</div>
+  <h2 class="section-title">More <em>Music</em></h2>
+  <div class="divider"></div>
+  <div class="music-grid">
+    {% for r in releases | exclude(slug) | limit(4) %}
+      {% include "partials/music-card.njk" %}
+    {% endfor %}
+  </div>
+</section>

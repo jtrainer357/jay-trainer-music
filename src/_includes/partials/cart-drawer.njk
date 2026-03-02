@@ -1,0 +1,22 @@
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-header">
+    <h3 class="cart-drawer-title">Your Cart</h3>
+    <button class="cart-drawer-close" id="cartDrawerClose" aria-label="Close cart">&times;</button>
+  </div>
+  <div class="cart-drawer-items" id="cartDrawerItems">
+    <!-- Cart items rendered by JS -->
+  </div>
+  <div class="cart-drawer-empty" id="cartDrawerEmpty">
+    <p>Your cart is empty.</p>
+    <a href="/music/" class="btn-outline-dark">Browse Music</a>
+  </div>
+  <div class="cart-drawer-footer" id="cartDrawerFooter">
+    <div class="cart-drawer-total">
+      <span>Total</span>
+      <span id="cartDrawerTotal">$0.00</span>
+    </div>
+    <button class="btn-primary cart-checkout-btn" id="cartCheckoutBtn">Checkout</button>
+  </div>
+</div>

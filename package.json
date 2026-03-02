@@ -1,0 +1,12 @@
+{
+  "name": "jay-trainer-music",
+  "version": "1.0.0",
+  "description": "Jay Trainer — Music from Pittsburgh, Pennsylvania",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  }
+}

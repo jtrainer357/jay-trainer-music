@@ -1,0 +1,51 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>{{ site.url }}/</loc>
+    <priority>1.0</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>{{ site.url }}/music/</loc>
+    <priority>0.9</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>{{ site.url }}/about/</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>{{ site.url }}/blog/</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+  <url>
+    <loc>{{ site.url }}/merch/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>{{ site.url }}/label/</loc>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  {%- for release in releases %}
+  <url>
+    <loc>{{ site.url }}/music/{{ release.slug }}/</loc>
+    <priority>0.8</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  {%- endfor %}
+  {%- for post in collections.blog %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    <priority>0.6</priority>
+    <changefreq>yearly</changefreq>
+  </url>
+  {%- endfor %}
+</urlset>

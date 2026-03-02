@@ -1,0 +1,29 @@
+{
+  "title": "Jay Trainer",
+  "tagline": "Music from Pittsburgh, Pennsylvania",
+  "description": "Jay Trainer is a singer-songwriter from Pittsburgh, Pennsylvania, crafting folk, acoustic rock, and Americana music rooted in storytelling, place, and deep-seated instinct. Explore eight releases spanning nearly two decades, from The Waking Hours to A Whisper of Ruin — Deluxe Edition.",
+  "url": "https://jaytrainer.com",
+  "author": "Jay Trainer",
+  "location": "Pittsburgh, Pennsylvania",
+  "image": "/assets/images/hero-bg.jpg",
+  "geo": {
+    "latitude": 40.4406,
+    "longitude": -79.9959
+  },
+  "social": {
+    "bandcamp": "https://jaytrainer.bandcamp.com",
+    "youtube": "https://www.youtube.com/c/JayTrainerBand",
+    "instagram": "https://www.instagram.com/jaytrainerband/",
+    "twitter": "https://twitter.com/jaytrainerband",
+    "facebook": "https://www.facebook.com/jaytrainerband",
+    "spotify": "#",
+    "appleMusic": "#"
+  },
+  "sameAs": [
+    "https://jaytrainer.bandcamp.com",
+    "https://www.youtube.com/c/JayTrainerBand",
+    "https://www.instagram.com/jaytrainerband/",
+    "https://twitter.com/jaytrainerband",
+    "https://www.facebook.com/jaytrainerband"
+  ]
+}

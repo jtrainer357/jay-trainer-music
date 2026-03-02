@@ -1,0 +1,7 @@
+[
+  { "label": "Music", "url": "/music/" },
+  { "label": "Merch", "url": "/merch/" },
+  { "label": "About", "url": "/about/" },
+  { "label": "Journal", "url": "/blog/" },
+  { "label": "Briar Patch Records", "url": "/label/" }
+]

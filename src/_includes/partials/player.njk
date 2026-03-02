@@ -1,0 +1,32 @@
+<!-- AUDIO PLAYER -->
+<div class="audio-player" id="audioPlayer">
+  <div class="player-info">
+    <span class="player-track" id="playerTrack">Select a track to play</span>
+    <span class="player-artist">Jay Trainer</span>
+  </div>
+  <div class="player-controls">
+    <button class="player-btn" id="prevBtn" aria-label="Previous track">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 6h2v12H6zm3.5 6l8.5 6V6z"/></svg>
+    </button>
+    <button class="player-play" id="playBtn" aria-label="Play">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="play-icon"><polygon points="5,3 19,12 5,21"/></svg>
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="pause-icon"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+    </button>
+    <button class="player-btn" id="nextBtn" aria-label="Next track">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+    </button>
+  </div>
+  <div class="player-progress-wrap">
+    <span class="player-time player-current-time" id="currentTime">0:00</span>
+    <div class="player-progress" id="progressBar">
+      <div class="player-progress-fill" id="progressFill"></div>
+    </div>
+    <span class="player-time player-total-time" id="totalTime">0:00</span>
+  </div>
+  <div class="player-volume-wrap">
+    <button class="player-btn player-volume-btn" id="volumeBtn" aria-label="Mute">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/></svg>
+    </button>
+    <input type="range" id="volumeSlider" class="player-volume" min="0" max="100" value="80" aria-label="Volume">
+  </div>
+</div>

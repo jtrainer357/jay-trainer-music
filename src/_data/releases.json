@@ -1,0 +1,182 @@
+[
+  {
+    "title": "A Whisper Of Ruin — Deluxe Edition",
+    "shortTitle": "A Whisper Of Ruin",
+    "slug": "a-whisper-of-ruin-deluxe",
+    "type": "album",
+    "year": 2019,
+    "featured": true,
+    "coverArt": "https://f4.bcbits.com/img/a2678004455_10.jpg",
+    "bandcampUrl": "https://jaytrainer.bandcamp.com/album/a-whisper-of-ruin-deluxe-edition",
+    "description": "Fifteen tracks shaped by loss, rootedness, and the strange beauty that grows in the cracks. The expanded edition — featuring live cuts, acoustic reworkings, and three new chapters. Recorded by firelight and instinct.",
+    "price": "$7.99",
+    "stripePrice": "",
+    "tracks": [
+      { "title": "The Southern Winds", "duration": "3:28", "audioFile": "" },
+      { "title": "Voodoo Chile (Live)", "duration": "6:14", "audioFile": "" },
+      { "title": "While The World Burns Down", "duration": "4:26", "audioFile": "" },
+      { "title": "Lovely In Black", "duration": "4:43", "audioFile": "" },
+      { "title": "Alibi", "duration": "3:39", "audioFile": "" },
+      { "title": "By Cover Of A Great Lie", "duration": "5:53", "audioFile": "" },
+      { "title": "Wide Open Eyes", "duration": "4:22", "audioFile": "" },
+      { "title": "Blackout Asylum (Part 1)", "duration": "3:52", "audioFile": "" },
+      { "title": "Last December Dance", "duration": "4:10", "audioFile": "" },
+      { "title": "Better To Breathe", "duration": "3:49", "audioFile": "" },
+      { "title": "Everything We Never Said", "duration": "5:05", "audioFile": "" },
+      { "title": "Fractured (Acoustic)", "duration": "2:58", "audioFile": "" },
+      { "title": "Better To Breathe (Acoustic)", "duration": "2:49", "audioFile": "" },
+      { "title": "Of The Sun (Live)", "duration": "5:29", "audioFile": "" },
+      { "title": "Her Mind", "duration": "3:29", "audioFile": "" }
+    ],
+    "credits": "Written, performed, and produced by Jay Trainer. Recorded in Pittsburgh, PA."
+  },
+  {
+    "title": "Lifeline",
+    "shortTitle": "Lifeline",
+    "slug": "lifeline",
+    "type": "single",
+    "year": 2023,
+    "featured": false,
+    "coverArt": "https://f4.bcbits.com/img/a0410840504_10.jpg",
+    "bandcampUrl": "https://jaytrainer.bandcamp.com/track/lifeline",
+    "description": "A stripped-back reimagining of Citizen Cope's meditation on resilience and the long walk home. Recorded live in one take.",
+    "subtitle": "Citizen Cope cover",
+    "price": "$1+",
+    "stripePrice": "",
+    "tracks": [
+      { "title": "Lifeline", "duration": "3:48", "audioFile": "" }
+    ],
+    "credits": "Performed and produced by Jay Trainer."
+  },
+  {
+    "title": "Last Days Of Summer",
+    "shortTitle": "Last Days Of Summer",
+    "slug": "last-days-of-summer",
+    "type": "single",
+    "year": 2023,
+    "featured": false,
+    "coverArt": "https://f4.bcbits.com/img/a3749898734_10.jpg",
+    "bandcampUrl": "https://jaytrainer.bandcamp.com/track/last-days-of-summer",
+    "description": "An anthem for the fading warmth. Written during the last golden weeks of August, performed by the Jay Trainer Band.",
+    "subtitle": "Jay Trainer Band",
+    "price": "Free",
+    "stripePrice": "",
+    "tracks": [
+      { "title": "Last Days Of Summer", "duration": "3:43", "audioFile": "" }
+    ],
+    "credits": "Written by Jay Trainer. Performed by the Jay Trainer Band."
+  },
+  {
+    "title": "The Southern Winds",
+    "shortTitle": "The Southern Winds",
+    "slug": "the-southern-winds",
+    "type": "single",
+    "year": 2023,
+    "featured": false,
+    "coverArt": "https://f4.bcbits.com/img/a2207728085_10.jpg",
+    "bandcampUrl": "https://jaytrainer.bandcamp.com/track/the-southern-winds-east-coast-mix",
+    "description": "The East Coast Mix — a reimagined version of the album opener, built from the ground up with new arrangements and wider horizons.",
+    "subtitle": "East Coast Mix",
+    "price": "$1+",
+    "stripePrice": "",
+    "tracks": [
+      { "title": "The Southern Winds (East Coast Mix)", "duration": "3:30", "audioFile": "" }
+    ],
+    "credits": "Written and produced by Jay Trainer."
+  },
+  {
+    "title": "Blackout Asylum",
+    "shortTitle": "Blackout Asylum",
+    "slug": "blackout-asylum",
+    "type": "album",
+    "year": 2021,
+    "featured": false,
+    "coverArt": "https://f4.bcbits.com/img/a1192705323_10.jpg",
+    "bandcampUrl": "https://jaytrainer.bandcamp.com/album/blackout-asylum-remastered",
+    "description": "Five tracks remastered from the original sessions. Stripped to the bone and rebuilt with new clarity. Songs about clearing out, starting over, and what remains.",
+    "subtitle": "Remastered",
+    "price": "Free",
+    "stripePrice": "",
+    "tracks": [
+      { "title": "The Clearing", "duration": "3:57", "audioFile": "" },
+      { "title": "Born Under A Bad Sign", "duration": "4:59", "audioFile": "" },
+      { "title": "Begun Today", "duration": "5:31", "audioFile": "" },
+      { "title": "Same As A Poor Man", "duration": "4:52", "audioFile": "" },
+      { "title": "Of What Is Soon To Come", "duration": "5:54", "audioFile": "" }
+    ],
+    "credits": "Written and performed by Jay Trainer. Remastered in 2021."
+  },
+  {
+    "title": "Den Of Thieves",
+    "shortTitle": "Den Of Thieves",
+    "slug": "den-of-thieves",
+    "type": "album",
+    "year": 2015,
+    "featured": false,
+    "coverArt": "https://f4.bcbits.com/img/a4111662609_10.jpg",
+    "bandcampUrl": "https://jaytrainer.bandcamp.com/album/den-of-thieves",
+    "description": "Six tracks spanning wide-eyed originals, reworked classics, and a blistering live closer. The sound of a songwriter finding his stride and refusing to stay still.",
+    "price": "$5.99",
+    "stripePrice": "",
+    "tracks": [
+      { "title": "My Wide Open Eyes", "duration": "4:26", "audioFile": "" },
+      { "title": "Run Baby Run", "duration": "5:06", "audioFile": "" },
+      { "title": "Ever More", "duration": "4:42", "audioFile": "" },
+      { "title": "Imagine", "duration": "2:45", "audioFile": "" },
+      { "title": "Better To Breathe (Acoustic)", "duration": "3:41", "audioFile": "" },
+      { "title": "Tiny Chinese (Live)", "duration": "7:22", "audioFile": "" }
+    ],
+    "credits": "Written and performed by Jay Trainer."
+  },
+  {
+    "title": "Of The Sun",
+    "shortTitle": "Of The Sun",
+    "slug": "of-the-sun",
+    "type": "album",
+    "year": 2010,
+    "featured": false,
+    "coverArt": "https://f4.bcbits.com/img/a2614064826_10.jpg",
+    "bandcampUrl": "https://jaytrainer.bandcamp.com/album/of-the-sun",
+    "description": "Ten tracks of folk-rooted songwriting — long, slow-burning pieces that stretch and breathe. Songs about witnessing, about breathing, about the sun that keeps rising whether you're ready or not.",
+    "price": "Free",
+    "stripePrice": "",
+    "tracks": [
+      { "title": "Better To Breathe", "duration": "3:49", "audioFile": "" },
+      { "title": "Witness", "duration": "4:49", "audioFile": "" },
+      { "title": "Ever More", "duration": "3:29", "audioFile": "" },
+      { "title": "Tom Smith Program", "duration": "4:18", "audioFile": "" },
+      { "title": "Of The Sun", "duration": "4:37", "audioFile": "" },
+      { "title": "By Cover of a Great Lie", "duration": "4:15", "audioFile": "" },
+      { "title": "Soulful Rights, Soulful Days", "duration": "6:13", "audioFile": "" },
+      { "title": "It's Not My Cross to Bear", "duration": "7:44", "audioFile": "" },
+      { "title": "Fractured", "duration": "5:07", "audioFile": "" },
+      { "title": "The Evening Wore On", "duration": "6:51", "audioFile": "" }
+    ],
+    "credits": "Written and performed by Jay Trainer."
+  },
+  {
+    "title": "The Waking Hours",
+    "shortTitle": "The Waking Hours",
+    "slug": "the-waking-hours",
+    "type": "album",
+    "year": 2006,
+    "featured": false,
+    "coverArt": "https://f4.bcbits.com/img/a4283944023_10.jpg",
+    "bandcampUrl": "https://jaytrainer.bandcamp.com/album/the-waking-hours",
+    "description": "Nine tracks from the earliest sessions — where it all began. Studio recordings beside raw, unpolished live cuts. The sound of a songwriter awake and testing the edges.",
+    "price": "$10.99",
+    "stripePrice": "",
+    "tracks": [
+      { "title": "Maybe Off to Wonder", "duration": "4:12", "audioFile": "" },
+      { "title": "Tiny Chinese", "duration": "5:17", "audioFile": "" },
+      { "title": "Tinseltown", "duration": "4:36", "audioFile": "" },
+      { "title": "In The Waking Hours", "duration": "6:21", "audioFile": "" },
+      { "title": "A Knight, Death and the Devil", "duration": "4:27", "audioFile": "" },
+      { "title": "Fractured (Live)", "duration": "4:47", "audioFile": "" },
+      { "title": "August Brings (Live)", "duration": "5:18", "audioFile": "" },
+      { "title": "Tiny Chinese (Live)", "duration": "7:22", "audioFile": "" },
+      { "title": "Voodoo Child (Live)", "duration": "6:25", "audioFile": "" }
+    ],
+    "credits": "Written and performed by Jay Trainer."
+  }
+]

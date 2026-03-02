@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+title: Journal
+description: "The Journal — writing about songwriting, recording, roots, and the quiet spaces between the noise. Reflections from Jay Trainer in Pittsburgh, Pennsylvania."
+permalink: /blog/
+---
+
+<div class="listing-header">
+  <div class="section-label">Words</div>
+  <h1 class="section-title">The <em>Journal</em></h1>
+  <div class="divider"></div>
+  <p class="listing-intro">
+    Writing about songwriting, recording, roots, and the quiet spaces between the noise. New entries when they come.
+  </p>
+</div>
+
+<div class="listing-content">
+  <div class="blog-grid">
+    {% for blogPost in collections.blog | reverse %}
+      {% include "partials/blog-card.njk" %}
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,49 @@
+---
+layout: layouts/base.njk
+---
+<article class="post">
+  <header class="post-header">
+    {% if featureImage %}
+    <div class="post-feature-image">
+      <img src="{{ featureImage }}" alt="{{ title }}" loading="lazy">
+    </div>
+    {% endif %}
+    <div class="post-header-content">
+      <div class="blog-date">{{ date | readableDate }}</div>
+      <h1 class="post-title">{{ title }}</h1>
+      {% if description %}<p class="post-subtitle">{{ description }}</p>{% endif %}
+      <div class="post-meta">
+        <span class="post-reading-time">{{ content | readingTime }}</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="post-body">
+    {{ content | safe }}
+  </div>
+
+  <footer class="post-footer">
+    <div class="post-author-card">
+      <img src="/assets/images/about.jpg" alt="Jay Trainer" class="post-author-img">
+      <div>
+        <div class="post-author-name">Jay Trainer</div>
+        <p class="post-author-bio">Songwriter from Pittsburgh, Pennsylvania. Writing songs by firelight and instinct.</p>
+      </div>
+    </div>
+  </footer>
+</article>
+
+<!-- More from Journal -->
+<section class="more-posts">
+  <div class="section-label">More from Jay</div>
+  <h2 class="section-title">More from the <em>Journal</em></h2>
+  <div class="divider"></div>
+  <div class="blog-grid">
+    {% for post in collections.blog | reverse %}
+      {% if post.url !== page.url %}
+        {% set blogPost = post %}
+        {% include "partials/blog-card.njk" %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>

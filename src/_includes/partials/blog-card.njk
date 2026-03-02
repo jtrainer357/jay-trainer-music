@@ -1,0 +1,12 @@
+{# Expects `blogPost` as a collection item #}
+<div class="blog-card reveal">
+  {% if blogPost.data.featureImage %}
+  <a href="{{ blogPost.url }}">
+    <img src="{{ blogPost.data.featureImage }}" alt="{{ blogPost.data.title }}" class="blog-card-img" loading="lazy">
+  </a>
+  {% endif %}
+  <div class="blog-date">{{ blogPost.date | readableDate }}</div>
+  <a href="{{ blogPost.url }}" class="blog-headline">{{ blogPost.data.title }}</a>
+  <p class="blog-excerpt">{{ blogPost.data.excerpt }}</p>
+  <a href="{{ blogPost.url }}" class="blog-read-more">Read More</a>
+</div>

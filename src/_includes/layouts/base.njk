@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ pageTitle or title }}{% if title != site.title %} — {{ site.title }}{% endif %}</title>
+
+{%- set metaDesc = description or excerpt or site.description -%}
+<meta name="description" content="{{ metaDesc }}">
+
+<!-- Canonical URL -->
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ pageTitle or title }}">
+<meta property="og:description" content="{{ metaDesc }}">
+{%- if ogImage -%}
+  {%- if ogImage.startsWith('http') -%}
+<meta property="og:image" content="{{ ogImage }}">
+  {%- else -%}
+<meta property="og:image" content="{{ site.url }}{{ ogImage }}">
+  {%- endif -%}
+{%- else -%}
+<meta property="og:image" content="{{ site.url }}{{ site.image }}">
+{%- endif -%}
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:type" content="{% if tags and 'blog' in tags %}article{% else %}website{% endif %}">
+<meta property="og:site_name" content="{{ site.title }}">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ pageTitle or title }}">
+<meta name="twitter:description" content="{{ metaDesc }}">
+{%- if ogImage -%}
+  {%- if ogImage.startsWith('http') -%}
+<meta name="twitter:image" content="{{ ogImage }}">
+  {%- else -%}
+<meta name="twitter:image" content="{{ site.url }}{{ ogImage }}">
+  {%- endif -%}
+{%- else -%}
+<meta name="twitter:image" content="{{ site.url }}{{ site.image }}">
+{%- endif -%}
+
+<!-- Theme & Icons -->
+<meta name="theme-color" content="#3d2b1a">
+<link rel="icon" href="/assets/images/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+
+<!-- RSS Feed -->
+<link rel="alternate" type="application/atom+xml" title="{{ site.title }} Feed" href="{{ site.url }}/feed.xml">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Caveat:wght@400;600&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="stylesheet" href="/css/player.css">
+<link rel="stylesheet" href="/css/cart.css">
+
+<!-- Structured Data -->
+{% include "partials/structured-data.njk" %}
+</head>
+<body>
+
+<a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+{% include "partials/nav.njk" %}
+
+<main id="main-content">
+{% block content %}
+{{ content | safe }}
+{% endblock %}
+</main>
+
+<!-- NEWSLETTER (above footer, every page) -->
+<section class="newsletter-prefooter">
+  <div class="newsletter-prefooter-inner">
+    {% include "partials/newsletter-signup.njk" %}
+  </div>
+</section>
+
+{% include "partials/footer.njk" %}
+{% include "partials/player.njk" %}
+{% include "partials/cart-drawer.njk" %}
+
+<script src="/js/main.js" defer></script>
+<script src="/js/player.js" defer></script>
+<script src="/js/cart.js" defer></script>
+<script src="/js/newsletter.js" defer></script>
+</body>
+</html>

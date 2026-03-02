@@ -11,6 +11,10 @@ Thumbs.db
 # Dependencies
 node_modules/
 
+# Build output
+_site/
+
 # Environment
 .env
 .env.local
+.env.production

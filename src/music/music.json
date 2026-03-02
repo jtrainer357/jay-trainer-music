@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/album.njk",
+  "tags": "music",
+  "permalink": "/music/{{ page.fileSlug }}/"
+}
