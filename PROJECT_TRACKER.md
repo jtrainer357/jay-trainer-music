@@ -3,7 +3,7 @@
 > **Last updated:** 2026-03-02 @ session 5 — audio previews, soft nav, UI overhaul
 > **Updated by:** Claude (session 5)
 > **Git branch:** `main`
-> **Latest commit:** (pending commit — see session 5 log)
+> **Latest commit:** `055b1e1` — "Add audio previews, soft navigation, format selection, and UI overhaul"
 
 ---
 
@@ -355,7 +355,7 @@ jay-trainer-music/
 
 | Commit | Date | Message |
 |---|---|---|
-| (pending) | 2026-03-02 | Audio previews, soft navigation, UI overhaul, format selection |
+| `055b1e1` | 2026-03-02 | Audio previews, soft navigation, UI overhaul, format selection |
 | `df6bbb6` | 2026-03-02 | Add distressed paper textures and real streaming platform links |
 | `802463d` | 2026-03-02 | Add favicons, mobile nav, dynamic footer year, and clean up dead links |
 | `812d9d7` | 2026-03-02 | Update PROJECT_TRACKER.md with latest commit hash and session log |
