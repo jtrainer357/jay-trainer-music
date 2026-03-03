@@ -3,7 +3,7 @@
 > **Last updated:** 2026-03-03 @ session 7 — SEO/AIO/GEO overhaul + 5 new blog posts
 > **Updated by:** Claude (session 7)
 > **Git branch:** `main`
-> **Latest commit:** pending — "SEO/AIO/GEO overhaul: enhanced meta tags, structured data, 5 new blog posts, FAQ expansion"
+> **Latest commit:** `732c5b3` — "SEO/AIO/GEO overhaul, 5 new blog posts, unique blog images, wider content"
 
 ---
 
@@ -47,7 +47,7 @@
 jay-trainer-music/
 ├── .eleventy.js              # Eleventy config (filters, passthrough, dirs)
 ├── .env.example              # Env template (Stripe + ConvertKit keys)
-├── .gitignore                # OS, editor, node_modules, _site, .env
+├── .gitignore                # OS, editor, node_modules, _site, .env, Distressed Assets/, Inspiration Images/
 ├── package.json              # Single devDep: @11ty/eleventy ^2.0.1
 ├── package-lock.json
 ├── netlify.toml              # Netlify deployment config (build, headers, redirects)
@@ -81,7 +81,7 @@ jay-trainer-music/
 │   │       └── structured-data.njk   # JSON-LD schema (all page types)
 │   │
 │   ├── css/
-│   │   ├── styles.css        # Main stylesheet (~1400 lines, token-based)
+│   │   ├── styles.css        # Main stylesheet (~2300 lines, token-based)
 │   │   ├── player.css        # Audio player styles
 │   │   └── cart.css          # Cart drawer styles
 │   │
@@ -92,7 +92,8 @@ jay-trainer-music/
 │   │   ├── cart.js           # localStorage cart + Stripe Checkout + format selection
 │   │   └── newsletter.js     # Newsletter form submission (ConvertKit via Netlify fn)
 │   │
-│   ├── assets/images/        # 14 images (JPG/PNG) — hero, about, blog, releases, merch
+│   ├── assets/images/        # 26 images (JPG/PNG) — hero, about, releases, merch, textures
+│   │   └── blog/             # 8 unique blog feature images (from inspiration folder)
 │   ├── assets/audio/previews/ # 60-second MP3 preview clips for all 48 tracks by release slug
 │   │
 │   ├── blog/                 # Blog posts (Markdown)
@@ -257,7 +258,7 @@ jay-trainer-music/
 - [x] 8 individual album/single detail pages with tracklists
 - [x] About page with bio, timeline, influences grid, FAQ (with Schema.org FAQPage)
 - [x] Merch listing page
-- [x] Blog/Journal listing and 3 blog posts
+- [x] Blog/Journal listing and 8 blog posts (each with unique feature image)
 - [x] Briar Patch Records label page
 - [x] Persistent HTML5 audio player (master playlist, continuous playback, seek, volume, prev/next)
 - [x] PJAX soft navigation — player keeps playing seamlessly across page navigations
@@ -316,8 +317,8 @@ jay-trainer-music/
 | **Instagram** | Social presence | URL configured |
 | **Twitter/X** | Social presence | URL configured |
 | **Facebook** | Social presence | URL configured |
-| **Spotify** | Streaming | Placeholder (#) |
-| **Apple Music** | Streaming | Placeholder (#) |
+| **Spotify** | Streaming | Active — real artist URL |
+| **Apple Music** | Streaming | Active — real artist URL |
 
 ---
 
@@ -362,6 +363,7 @@ jay-trainer-music/
 | `findBySlug` | Finds release object by slug in collection |
 | `limit` | Array slice (first N items) |
 | `exclude` | Filter array by excluding a slug |
+| `currentYear` | Returns current year (for dynamic footer copyright) |
 
 ### Passthrough Copies
 - `src/css` → `/css`
@@ -375,6 +377,8 @@ jay-trainer-music/
 
 | Commit | Date | Message |
 |---|---|---|
+| `732c5b3` | 2026-03-03 | SEO/AIO/GEO overhaul, 5 new blog posts, unique blog images, wider content |
+| `25bc1c9` | 2026-03-03 | Update PROJECT_TRACKER.md for session 6 |
 | `fc11723` | 2026-03-03 | Add netlify.toml, image lazy-loading, and gitignore cleanup |
 | `055b1e1` | 2026-03-02 | Audio previews, soft navigation, UI overhaul, format selection |
 | `df6bbb6` | 2026-03-02 | Add distressed paper textures and real streaming platform links |
@@ -405,12 +409,8 @@ jay-trainer-music/
 
 ## 15. FUTURE OPPORTUNITIES / IDEAS
 
-- Host audio files locally or via a CDN for native playback
 - Configure Stripe products/prices for actual e-commerce
-- Add Netlify deployment config (netlify.toml)
 - Image optimization pipeline (eleventy-img plugin)
-- Add proper favicons (generate from logo/brand)
-- Connect real Spotify/Apple Music artist profiles
 - Add analytics (Plausible or similar privacy-respecting option)
 - Dark mode toggle
 - Contact form / booking inquiry page
@@ -428,7 +428,7 @@ jay-trainer-music/
 | 2026-03-02 | Session 1 | Full project audit. Created PROJECT_TRACKER.md. Set up auto-memory for session persistence. No code changes made. |
 | 2026-03-02 | Session 2 | Font exploration: tested Caveat, Reenie Beanie, Splash, Babylonica, Comforter Brush, Square Peg, Quentin, Fuggles, Rock 3D, Special Elite, Waiting for the Sunrise, Whisper, Grahamo, Gloriousity Two, Herbert Cooper, Jeff Dungan. Settled on **Jeff Dungan** (self-hosted). Neutralized body text colors from brown to dark grey (--bark, --ink, --coffee-dark). Replaced footer social text initials (YT/IG/TW/FB/BC) with proper SVG icons. Fixed Apple Music icon (was GitHub Octocat) and Spotify icon (was solid circle) in streaming banner. Added fonts passthrough to Eleventy config. Created PROJECT_TRACKER.md. |
 | 2026-03-03 | Session 6 | **Deployment & Cleanup**: Created `netlify.toml` (build config, 404 redirect, security headers: X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy, Permissions-Policy; cache rules for CSS/JS/assets/audio). Added `loading="lazy"` to 5 below-fold images across about.njk, index.njk, post.njk. Added `Distressed Assets/` to .gitignore (Affinity design resource packs, not site content). Audited and confirmed: favicons already present (4 files), footer year already dynamic, mobile nav hamburger fully functional, Spotify/Apple Music links already real. Updated PROJECT_TRACKER known issues (resolved 5 items). |
-| 2026-03-03 | Session 7 | **SEO/AIO/GEO Overhaul + 5 New Blog Posts**: Added `w3Date`, `wordCount`, `getPrevNext` filters to .eleventy.js. Added twitterHandle, locale, ogImage dimensions, keywords to site.json. Enhanced base.njk meta tags (author, keywords, og:locale, og:image dimensions, article:published_time, article:tag, twitter:site/creator). Enhanced structured-data.njk: genre+Offer on MusicAlbum, MusicPlaylist on homepage (48 tracks), Product/Offer on merch (3 items), enhanced BlogPosting (wordCount, keywords, image). Added lastmod to all sitemap URLs. Added full content + category tags + icon/logo to RSS feed. Added Disallow rules to robots.txt (cart, 404). Full rewrite of llms.txt (content index, discography table, all page URLs, themes, streaming links). New blog CSS: TL;DR block, keyword tags, Listen CTA, prev/next navigation. Updated blog-card.njk with reading time. Overhauled post.njk: TL;DR, keywords display, Listen CTA, prev/next nav, microdata. Added 5 new FAQ entries to about.njk (10 total). Added description+keywords frontmatter to 3 existing blog posts. Wrote 5 new ~2000-word blog posts: "What Is Americana Music?", "The Gear Behind the Sound", "Five Songs That Changed How I Write", "A Whisper Of Ruin: The Full Story", "Why Every Song I Write Is About Pittsburgh". Build verified: 28 pages, 0 errors. |
+| 2026-03-03 | Session 7 | **SEO/AIO/GEO Overhaul + 5 New Blog Posts + Blog Polish**: Added `w3Date`, `wordCount`, `getPrevNext` filters to .eleventy.js. Added twitterHandle, locale, ogImage dimensions, keywords to site.json. Enhanced base.njk meta tags (author, keywords, og:locale, og:image dimensions, article:published_time, article:tag, twitter:site/creator). Enhanced structured-data.njk: genre+Offer on MusicAlbum, MusicPlaylist on homepage (48 tracks), Product/Offer on merch (3 items), enhanced BlogPosting (wordCount, keywords, image). Added lastmod to all sitemap URLs. Added full content + category tags + icon/logo to RSS feed. Added Disallow rules to robots.txt (cart, 404). Full rewrite of llms.txt (content index, discography table, all page URLs, themes, streaming links). New blog CSS: TL;DR block, keyword tags, Listen CTA, prev/next navigation. Updated blog-card.njk with reading time. Overhauled post.njk: TL;DR, keywords display, Listen CTA, prev/next nav, microdata. Added 5 new FAQ entries to about.njk (10 total). Added description+keywords frontmatter to 3 existing blog posts. Wrote 5 new ~2000-word blog posts: "What Is Americana Music?", "The Gear Behind the Sound", "Five Songs That Changed How I Write", "A Whisper Of Ruin: The Full Story", "Why Every Song I Write Is About Pittsburgh". Fixed post-nav inheriting `position: fixed` from global `nav` selector. Assigned 8 unique feature images from inspiration folder (one per blog post, stored in `src/assets/images/blog/`). Widened blog post content from max-width 860px to 1000px for consistency with other pages. Added `Jay Trainer Site Inspiration Images/` to .gitignore. Build verified: 28 pages, 0 errors. |
 | 2026-03-02 | Session 4-5 | **Audio Preview & Format Selection**: Created `scripts/process-audio.sh` to generate 60-second 128kbps MP3 previews (with 3s fade-out) and 320kbps full MP3s from WAV sources. Processed ALL 48 tracks across all 8 releases. Added `previewFile` field to every track in releases.json. Rewrote player.js with master playlist (all tracks across all releases), continuous playback, click-to-jump. Added format selector toggle (MP3/WAV) on album pages (always visible). Updated cart.js to store/display format and pass metadata to Stripe checkout. Updated .gitignore for Music/ and full audio dirs. **Soft Navigation (PJAX)**: Created `router.js` — intercepts internal link clicks, fetches pages via AJAX, swaps `<main>` content so the audio player never stops during navigation. **UI Overhaul**: Removed all Bandcamp buttons. Removed all button borders/outlines on primary buttons. Created `btn-secondary` (transparent + warm-tan outline, white text). Made Add To Cart always visible (removed stripePrice conditionals). Fixed header consistency on about/label pages (listing-header pattern). Stronger nav blur (40px). Widened album content area (860px). Updated about section image to "Figure in Misty Field". Subtle newsletter background. Various responsive and styling fixes across ~22 files. |
 
 ---
