@@ -1,9 +1,9 @@
 # Jay Trainer Music — Project Tracker
 
-> **Last updated:** 2026-03-02 @ session 5 — audio previews, soft nav, UI overhaul
-> **Updated by:** Claude (session 5)
+> **Last updated:** 2026-03-03 @ session 6 — netlify.toml, lazy-loading, gitignore cleanup
+> **Updated by:** Claude (session 6)
 > **Git branch:** `main`
-> **Latest commit:** `055b1e1` — "Add audio previews, soft navigation, format selection, and UI overhaul"
+> **Latest commit:** `fc11723` — "Add netlify.toml, image lazy-loading, and gitignore cleanup"
 
 ---
 
@@ -50,6 +50,7 @@ jay-trainer-music/
 ├── .gitignore                # OS, editor, node_modules, _site, .env
 ├── package.json              # Single devDep: @11ty/eleventy ^2.0.1
 ├── package-lock.json
+├── netlify.toml              # Netlify deployment config (build, headers, redirects)
 ├── PROJECT_TRACKER.md        # THIS FILE
 │
 ├── src/                      # ── SOURCE (Eleventy input) ──
@@ -277,15 +278,15 @@ jay-trainer-music/
 - [ ] **Full audio files** — `audioFile` fields still empty. Full 320kbps MP3s generated in `src/assets/audio/full/` but not served (for future purchase delivery)
 - [ ] **Stripe price IDs** — All `stripePrice` fields empty in releases.json and merch.json. Cart/checkout non-functional until configured
 - [ ] **Environment variables** — .env not present (only .env.example). Stripe + ConvertKit keys needed
-- [ ] **Favicon** — Referenced in base.njk (`/assets/images/favicon.ico`, `/assets/images/apple-touch-icon.png`) but files not present in `src/assets/images/`
-- [ ] **Spotify/Apple Music links** — Both set to "#" placeholder in site.json
+- [x] **Favicon** — `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, `favicon-32x32.png` all present in `src/assets/images/`
+- [x] **Spotify/Apple Music links** — Real URLs configured in site.json
 - [ ] **Stripe webhook TODOs** — `stripe-webhook.js` has two TODOs: send download links for digital items, create order notification for physical items
-- [ ] **Mobile nav hamburger** — Nav has `.nav-links` but no visible hamburger/toggle button in nav.njk (may be CSS-only or missing)
+- [x] **Mobile nav hamburger** — Fully functional: HTML button in nav.njk, JS toggle in main.js, CSS shows at ≤600px with animated X transform
 - [ ] **Contact form** — No contact page or form exists
 - [ ] **Search** — No search functionality (structured data references search but no actual search page)
 - [ ] **Image optimization** — No image optimization pipeline (no eleventy-img or similar)
 - [ ] **Analytics** — No analytics script included (no Google Analytics, Plausible, etc.)
-- [ ] **Deployment** — No netlify.toml or deployment config present
+- [x] **Deployment** — `netlify.toml` created with build config, 404 redirect, security headers, and cache rules
 - [ ] **Dark mode** — No dark mode support
 
 ---
@@ -355,6 +356,7 @@ jay-trainer-music/
 
 | Commit | Date | Message |
 |---|---|---|
+| `fc11723` | 2026-03-03 | Add netlify.toml, image lazy-loading, and gitignore cleanup |
 | `055b1e1` | 2026-03-02 | Audio previews, soft navigation, UI overhaul, format selection |
 | `df6bbb6` | 2026-03-02 | Add distressed paper textures and real streaming platform links |
 | `802463d` | 2026-03-02 | Add favicons, mobile nav, dynamic footer year, and clean up dead links |
@@ -371,14 +373,14 @@ jay-trainer-music/
 
 1. ~~**No audio hosting**~~ — Fixed: 60-second preview clips for all 8 releases (48 tracks) play in-browser.
 2. **No Stripe configuration** — All stripePrice IDs are empty. E-commerce is non-functional.
-3. **Missing favicons** — `favicon.ico` and `apple-touch-icon.png` referenced in HTML but files don't exist.
-4. **Placeholder streaming links** — Spotify and Apple Music URLs are `#`.
+3. ~~**Missing favicons**~~ — Fixed: `favicon.ico`, `favicon.svg`, `apple-touch-icon.png`, `favicon-32x32.png` all present.
+4. ~~**Placeholder streaming links**~~ — Fixed: Real Spotify and Apple Music URLs configured in site.json.
 5. **Webhook fulfillment incomplete** — Two TODOs in `stripe-webhook.js` for download link delivery and order notifications.
 6. **No image optimization** — Raw JPGs served without responsive sizes, WebP conversion, or lazy-loading optimization beyond native `loading="lazy"`.
-7. **No deployment config** — Missing `netlify.toml` for build settings, redirects, function directory config.
+7. ~~**No deployment config**~~ — Fixed: `netlify.toml` added with build/publish/functions config, 404 redirect, security headers, cache rules.
 8. **No analytics** — No tracking or analytics integration.
 9. ~~**Apple Music SVG** — Fixed: now uses proper Apple Music icon~~
-10. **Footer year hardcoded** — Footer has `{{ 2026 }}` instead of a dynamic year.
+10. ~~**Footer year hardcoded**~~ — Fixed: Uses `currentYear` Eleventy filter.
 
 ---
 
@@ -406,6 +408,7 @@ jay-trainer-music/
 |---|---|---|
 | 2026-03-02 | Session 1 | Full project audit. Created PROJECT_TRACKER.md. Set up auto-memory for session persistence. No code changes made. |
 | 2026-03-02 | Session 2 | Font exploration: tested Caveat, Reenie Beanie, Splash, Babylonica, Comforter Brush, Square Peg, Quentin, Fuggles, Rock 3D, Special Elite, Waiting for the Sunrise, Whisper, Grahamo, Gloriousity Two, Herbert Cooper, Jeff Dungan. Settled on **Jeff Dungan** (self-hosted). Neutralized body text colors from brown to dark grey (--bark, --ink, --coffee-dark). Replaced footer social text initials (YT/IG/TW/FB/BC) with proper SVG icons. Fixed Apple Music icon (was GitHub Octocat) and Spotify icon (was solid circle) in streaming banner. Added fonts passthrough to Eleventy config. Created PROJECT_TRACKER.md. |
+| 2026-03-03 | Session 6 | **Deployment & Cleanup**: Created `netlify.toml` (build config, 404 redirect, security headers: X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy, Permissions-Policy; cache rules for CSS/JS/assets/audio). Added `loading="lazy"` to 5 below-fold images across about.njk, index.njk, post.njk. Added `Distressed Assets/` to .gitignore (Affinity design resource packs, not site content). Audited and confirmed: favicons already present (4 files), footer year already dynamic, mobile nav hamburger fully functional, Spotify/Apple Music links already real. Updated PROJECT_TRACKER known issues (resolved 5 items). |
 | 2026-03-02 | Session 4-5 | **Audio Preview & Format Selection**: Created `scripts/process-audio.sh` to generate 60-second 128kbps MP3 previews (with 3s fade-out) and 320kbps full MP3s from WAV sources. Processed ALL 48 tracks across all 8 releases. Added `previewFile` field to every track in releases.json. Rewrote player.js with master playlist (all tracks across all releases), continuous playback, click-to-jump. Added format selector toggle (MP3/WAV) on album pages (always visible). Updated cart.js to store/display format and pass metadata to Stripe checkout. Updated .gitignore for Music/ and full audio dirs. **Soft Navigation (PJAX)**: Created `router.js` — intercepts internal link clicks, fetches pages via AJAX, swaps `<main>` content so the audio player never stops during navigation. **UI Overhaul**: Removed all Bandcamp buttons. Removed all button borders/outlines on primary buttons. Created `btn-secondary` (transparent + warm-tan outline, white text). Made Add To Cart always visible (removed stripePrice conditionals). Fixed header consistency on about/label pages (listing-header pattern). Stronger nav blur (40px). Widened album content area (860px). Updated about section image to "Figure in Misty Field". Subtle newsletter background. Various responsive and styling fixes across ~22 files. |
 
 ---
