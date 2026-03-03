@@ -88,8 +88,14 @@
 </div>
 {% include "partials/footer.njk" %}
 {% include "partials/player.njk" %}
+
+<!-- All releases data for player -->
+<script type="application/json" id="allReleasesData">
+{{ releases | dump | safe }}
+</script>
 {% include "partials/cart-drawer.njk" %}
 
+<script src="/js/router.js" defer></script>
 <script src="/js/main.js" defer></script>
 <script src="/js/player.js" defer></script>
 <script src="/js/cart.js" defer></script>

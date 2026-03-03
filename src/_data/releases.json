@@ -12,21 +12,21 @@
     "price": "$7.99",
     "stripePrice": "",
     "tracks": [
-      { "title": "The Southern Winds", "duration": "3:28", "audioFile": "" },
-      { "title": "Voodoo Chile (Live)", "duration": "6:14", "audioFile": "" },
-      { "title": "While The World Burns Down", "duration": "4:26", "audioFile": "" },
-      { "title": "Lovely In Black", "duration": "4:43", "audioFile": "" },
-      { "title": "Alibi", "duration": "3:39", "audioFile": "" },
-      { "title": "By Cover Of A Great Lie", "duration": "5:53", "audioFile": "" },
-      { "title": "Wide Open Eyes", "duration": "4:22", "audioFile": "" },
-      { "title": "Blackout Asylum (Part 1)", "duration": "3:52", "audioFile": "" },
-      { "title": "Last December Dance", "duration": "4:10", "audioFile": "" },
-      { "title": "Better To Breathe", "duration": "3:49", "audioFile": "" },
-      { "title": "Everything We Never Said", "duration": "5:05", "audioFile": "" },
-      { "title": "Fractured (Acoustic)", "duration": "2:58", "audioFile": "" },
-      { "title": "Better To Breathe (Acoustic)", "duration": "2:49", "audioFile": "" },
-      { "title": "Of The Sun (Live)", "duration": "5:29", "audioFile": "" },
-      { "title": "Her Mind", "duration": "3:29", "audioFile": "" }
+      { "title": "The Southern Winds", "duration": "3:28", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/01-the-southern-winds.mp3" },
+      { "title": "Voodoo Chile (Live)", "duration": "6:14", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/02-voodoo-chile-live.mp3" },
+      { "title": "While The World Burns Down", "duration": "4:26", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/03-while-the-world-burns-down.mp3" },
+      { "title": "Lovely In Black", "duration": "4:43", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/04-lovely-in-black.mp3" },
+      { "title": "Alibi", "duration": "3:39", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/05-alibi.mp3" },
+      { "title": "By Cover Of A Great Lie", "duration": "5:53", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/06-by-cover-of-a-great-lie.mp3" },
+      { "title": "Wide Open Eyes", "duration": "4:22", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/07-wide-open-eyes.mp3" },
+      { "title": "Blackout Asylum (Part 1)", "duration": "3:52", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/08-blackout-asylum-part-1.mp3" },
+      { "title": "Last December Dance", "duration": "4:10", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/09-last-december-dance.mp3" },
+      { "title": "Better To Breathe", "duration": "3:49", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/10-better-to-breathe.mp3" },
+      { "title": "Everything We Never Said", "duration": "5:05", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/11-everything-we-never-said.mp3" },
+      { "title": "Fractured (Acoustic)", "duration": "2:58", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/12-fractured-acoustic.mp3" },
+      { "title": "Better To Breathe (Acoustic)", "duration": "2:49", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/13-better-to-breathe-acoustic.mp3" },
+      { "title": "Of The Sun (Live)", "duration": "5:29", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/14-of-the-sun-live.mp3" },
+      { "title": "Her Mind", "duration": "3:29", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/15-her-mind.mp3" }
     ],
     "credits": "Written, performed, and produced by Jay Trainer. Recorded in Pittsburgh, PA."
   },
@@ -44,7 +44,7 @@
     "price": "$1+",
     "stripePrice": "",
     "tracks": [
-      { "title": "Lifeline", "duration": "3:48", "audioFile": "" }
+      { "title": "Lifeline", "duration": "3:48", "audioFile": "", "previewFile": "/assets/audio/previews/lifeline/01-lifeline.mp3" }
     ],
     "credits": "Performed and produced by Jay Trainer."
   },
@@ -62,7 +62,7 @@
     "price": "Free",
     "stripePrice": "",
     "tracks": [
-      { "title": "Last Days Of Summer", "duration": "3:43", "audioFile": "" }
+      { "title": "Last Days Of Summer", "duration": "3:43", "audioFile": "", "previewFile": "/assets/audio/previews/last-days-of-summer/01-last-days-of-summer.mp3" }
     ],
     "credits": "Written by Jay Trainer. Performed by the Jay Trainer Band."
   },
@@ -80,7 +80,7 @@
     "price": "$1+",
     "stripePrice": "",
     "tracks": [
-      { "title": "The Southern Winds (East Coast Mix)", "duration": "3:30", "audioFile": "" }
+      { "title": "The Southern Winds (East Coast Mix)", "duration": "3:30", "audioFile": "", "previewFile": "/assets/audio/previews/the-southern-winds/01-the-southern-winds-east-coast-mix.mp3" }
     ],
     "credits": "Written and produced by Jay Trainer."
   },
@@ -98,11 +98,11 @@
     "price": "Free",
     "stripePrice": "",
     "tracks": [
-      { "title": "The Clearing", "duration": "3:57", "audioFile": "" },
-      { "title": "Born Under A Bad Sign", "duration": "4:59", "audioFile": "" },
-      { "title": "Begun Today", "duration": "5:31", "audioFile": "" },
-      { "title": "Same As A Poor Man", "duration": "4:52", "audioFile": "" },
-      { "title": "Of What Is Soon To Come", "duration": "5:54", "audioFile": "" }
+      { "title": "The Clearing", "duration": "3:57", "audioFile": "", "previewFile": "/assets/audio/previews/blackout-asylum/01-the-clearing.mp3" },
+      { "title": "Born Under A Bad Sign", "duration": "4:59", "audioFile": "", "previewFile": "/assets/audio/previews/blackout-asylum/02-born-under-a-bad-sign.mp3" },
+      { "title": "Begun Today", "duration": "5:31", "audioFile": "", "previewFile": "/assets/audio/previews/blackout-asylum/03-begun-today.mp3" },
+      { "title": "Same As A Poor Man", "duration": "4:52", "audioFile": "", "previewFile": "/assets/audio/previews/blackout-asylum/04-same-as-a-poor-man.mp3" },
+      { "title": "Of What Is Soon To Come", "duration": "5:54", "audioFile": "", "previewFile": "/assets/audio/previews/blackout-asylum/05-of-what-is-soon-to-come.mp3" }
     ],
     "credits": "Written and performed by Jay Trainer. Remastered in 2021."
   },
@@ -119,12 +119,12 @@
     "price": "$5.99",
     "stripePrice": "",
     "tracks": [
-      { "title": "My Wide Open Eyes", "duration": "4:26", "audioFile": "" },
-      { "title": "Run Baby Run", "duration": "5:06", "audioFile": "" },
-      { "title": "Ever More", "duration": "4:42", "audioFile": "" },
-      { "title": "Imagine", "duration": "2:45", "audioFile": "" },
-      { "title": "Better To Breathe (Acoustic)", "duration": "3:41", "audioFile": "" },
-      { "title": "Tiny Chinese (Live)", "duration": "7:22", "audioFile": "" }
+      { "title": "My Wide Open Eyes", "duration": "4:26", "audioFile": "", "previewFile": "/assets/audio/previews/den-of-thieves/01-my-wide-open-eyes.mp3" },
+      { "title": "Run Baby Run", "duration": "5:06", "audioFile": "", "previewFile": "/assets/audio/previews/den-of-thieves/02-run-baby-run.mp3" },
+      { "title": "Ever More", "duration": "4:42", "audioFile": "", "previewFile": "/assets/audio/previews/den-of-thieves/03-ever-more.mp3" },
+      { "title": "Imagine", "duration": "2:45", "audioFile": "", "previewFile": "/assets/audio/previews/den-of-thieves/04-imagine.mp3" },
+      { "title": "Better To Breathe (Acoustic)", "duration": "3:41", "audioFile": "", "previewFile": "/assets/audio/previews/den-of-thieves/05-better-to-breathe-acoustic.mp3" },
+      { "title": "Tiny Chinese (Live)", "duration": "7:22", "audioFile": "", "previewFile": "/assets/audio/previews/den-of-thieves/06-tiny-chinese-live.mp3" }
     ],
     "credits": "Written and performed by Jay Trainer."
   },
@@ -141,16 +141,16 @@
     "price": "Free",
     "stripePrice": "",
     "tracks": [
-      { "title": "Better To Breathe", "duration": "3:49", "audioFile": "" },
-      { "title": "Witness", "duration": "4:49", "audioFile": "" },
-      { "title": "Ever More", "duration": "3:29", "audioFile": "" },
-      { "title": "Tom Smith Program", "duration": "4:18", "audioFile": "" },
-      { "title": "Of The Sun", "duration": "4:37", "audioFile": "" },
-      { "title": "By Cover of a Great Lie", "duration": "4:15", "audioFile": "" },
-      { "title": "Soulful Rights, Soulful Days", "duration": "6:13", "audioFile": "" },
-      { "title": "It's Not My Cross to Bear", "duration": "7:44", "audioFile": "" },
-      { "title": "Fractured", "duration": "5:07", "audioFile": "" },
-      { "title": "The Evening Wore On", "duration": "6:51", "audioFile": "" }
+      { "title": "Better To Breathe", "duration": "3:49", "audioFile": "", "previewFile": "/assets/audio/previews/of-the-sun/01-better-to-breathe.mp3" },
+      { "title": "Witness", "duration": "4:49", "audioFile": "", "previewFile": "/assets/audio/previews/of-the-sun/02-witness.mp3" },
+      { "title": "Ever More", "duration": "3:29", "audioFile": "", "previewFile": "/assets/audio/previews/of-the-sun/03-ever-more.mp3" },
+      { "title": "Tom Smith Program", "duration": "4:18", "audioFile": "", "previewFile": "/assets/audio/previews/of-the-sun/04-tom-smith-program.mp3" },
+      { "title": "Of The Sun", "duration": "4:37", "audioFile": "", "previewFile": "/assets/audio/previews/of-the-sun/05-of-the-sun.mp3" },
+      { "title": "By Cover of a Great Lie", "duration": "4:15", "audioFile": "", "previewFile": "/assets/audio/previews/of-the-sun/06-by-cover-of-a-great-lie.mp3" },
+      { "title": "Soulful Rights, Soulful Days", "duration": "6:13", "audioFile": "", "previewFile": "/assets/audio/previews/of-the-sun/07-soulful-rights-soulful-days.mp3" },
+      { "title": "It's Not My Cross to Bear", "duration": "7:44", "audioFile": "", "previewFile": "/assets/audio/previews/of-the-sun/08-its-not-my-cross-to-bear.mp3" },
+      { "title": "Fractured", "duration": "5:07", "audioFile": "", "previewFile": "/assets/audio/previews/of-the-sun/09-fractured.mp3" },
+      { "title": "The Evening Wore On", "duration": "6:51", "audioFile": "", "previewFile": "/assets/audio/previews/of-the-sun/10-the-evening-wore-on.mp3" }
     ],
     "credits": "Written and performed by Jay Trainer."
   },
@@ -167,15 +167,15 @@
     "price": "$10.99",
     "stripePrice": "",
     "tracks": [
-      { "title": "Maybe Off to Wonder", "duration": "4:12", "audioFile": "" },
-      { "title": "Tiny Chinese", "duration": "5:17", "audioFile": "" },
-      { "title": "Tinseltown", "duration": "4:36", "audioFile": "" },
-      { "title": "In The Waking Hours", "duration": "6:21", "audioFile": "" },
-      { "title": "A Knight, Death and the Devil", "duration": "4:27", "audioFile": "" },
-      { "title": "Fractured (Live)", "duration": "4:47", "audioFile": "" },
-      { "title": "August Brings (Live)", "duration": "5:18", "audioFile": "" },
-      { "title": "Tiny Chinese (Live)", "duration": "7:22", "audioFile": "" },
-      { "title": "Voodoo Child (Live)", "duration": "6:25", "audioFile": "" }
+      { "title": "Maybe Off to Wonder", "duration": "4:12", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/01-maybe-off-to-wonder.mp3" },
+      { "title": "Tiny Chinese", "duration": "5:17", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/02-tiny-chinese.mp3" },
+      { "title": "Tinseltown", "duration": "4:36", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/03-tinseltown.mp3" },
+      { "title": "In The Waking Hours", "duration": "6:21", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/04-in-the-waking-hours.mp3" },
+      { "title": "A Knight, Death and the Devil", "duration": "4:27", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/05-a-knight-death-and-the-devil.mp3" },
+      { "title": "Fractured (Live)", "duration": "4:47", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/06-fractured-live.mp3" },
+      { "title": "August Brings (Live)", "duration": "5:18", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/07-august-brings-live.mp3" },
+      { "title": "Tiny Chinese (Live)", "duration": "7:22", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/08-tiny-chinese-live.mp3" },
+      { "title": "Voodoo Child (Live)", "duration": "6:25", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/09-voodoo-child-live.mp3" }
     ],
     "credits": "Written and performed by Jay Trainer."
   }

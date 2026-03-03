@@ -1,6 +1,8 @@
 /**
  * AudioPlayer — persistent HTML5 audio player for Jay Trainer
- * Supports playlists, seek, volume, prev/next, and session persistence.
+ * Builds a master playlist from all releases. Plays 1-minute previews continuously.
+ * Clicking a specific track jumps there, then continues through that album and beyond.
+ * Resets on page navigation.
  */
 (function () {
   const player = document.getElementById('audioPlayer');
@@ -23,10 +25,37 @@
   const playIcon = playBtn.querySelector('.play-icon');
   const pauseIcon = playBtn.querySelector('.pause-icon');
 
-  let playlist = [];
+  let masterPlaylist = [];  // All tracks across all releases
   let currentIndex = 0;
   let isMuted = false;
   let lastVolume = 0.8;
+
+  // Build master playlist from all releases data
+  function buildMasterPlaylist() {
+    const el = document.getElementById('allReleasesData');
+    if (!el) return [];
+    try {
+      const releases = JSON.parse(el.textContent);
+      const tracks = [];
+      releases.forEach(release => {
+        (release.tracks || []).forEach(track => {
+          const playable = track.previewFile || track.audioFile || '';
+          if (!playable) return; // skip tracks with no audio
+          tracks.push({
+            title: track.title,
+            album: release.shortTitle || release.title,
+            audioFile: track.audioFile || '',
+            previewFile: track.previewFile || '',
+            duration: track.duration || '',
+            coverArt: release.coverArt || ''
+          });
+        });
+      });
+      return tracks;
+    } catch (e) {
+      return [];
+    }
+  }
 
   // Helpers
   function formatTime(seconds) {
@@ -42,21 +71,25 @@
     playBtn.setAttribute('aria-label', isPlaying ? 'Pause' : 'Play');
   }
 
+  function getPlayableFile(track) {
+    return track.previewFile || track.audioFile || '';
+  }
+
   function loadTrack(index) {
-    if (!playlist.length) return;
-    currentIndex = Math.max(0, Math.min(index, playlist.length - 1));
-    const track = playlist[currentIndex];
+    if (!masterPlaylist.length) return;
+    currentIndex = Math.max(0, Math.min(index, masterPlaylist.length - 1));
+    const track = masterPlaylist[currentIndex];
+    const playable = getPlayableFile(track);
 
     trackNameEl.textContent = track.title || 'Select a track to play';
 
-    if (track.audioFile) {
-      audio.src = track.audioFile;
+    if (playable) {
+      audio.src = playable;
       audio.load();
       progressFill.style.width = '0%';
       currentTimeEl.textContent = '0:00';
       totalTimeEl.textContent = '0:00';
     } else {
-      // No audio file — show player with track info but don't load audio
       audio.src = '';
       progressFill.style.width = '0%';
       currentTimeEl.textContent = '0:00';
@@ -64,34 +97,52 @@
     }
   }
 
-  // Public API: play a playlist starting at an index
+  // Find a track index in the master playlist by title and album
+  function findTrackIndex(title, albumTitle) {
+    // Try exact match on title + album first
+    let idx = masterPlaylist.findIndex(t => t.title === title && t.album === albumTitle);
+    if (idx !== -1) return idx;
+    // Fall back to title-only match
+    idx = masterPlaylist.findIndex(t => t.title === title);
+    return idx !== -1 ? idx : 0;
+  }
+
+  // Public API: play a specific track from a release
   window.playTrack = function (tracks, index, coverArt) {
-    playlist = tracks.map(t => ({
-      title: t.title,
-      audioFile: t.audioFile || '',
-      duration: t.duration || '',
-      coverArt: t.coverArt || coverArt || '',
-      bandcampUrl: t.bandcampUrl || ''
-    }));
-    currentIndex = index || 0;
+    // Find the clicked track in the master playlist and start from there
+    const clickedTrack = tracks[index];
+    if (!clickedTrack) return;
 
-    loadTrack(currentIndex);
+    // Get the album title from the release data on the page
+    let albumTitle = '';
+    const releaseDataEl = document.getElementById('releaseData');
+    if (releaseDataEl) {
+      try {
+        const release = JSON.parse(releaseDataEl.textContent);
+        albumTitle = release.shortTitle || release.title || '';
+      } catch (e) {}
+    }
 
-    if (playlist[currentIndex].audioFile) {
+    const masterIdx = findTrackIndex(clickedTrack.title, albumTitle);
+    loadTrack(masterIdx);
+
+    const playable = getPlayableFile(masterPlaylist[currentIndex]);
+    if (playable) {
       audio.play().catch(() => {});
-    } else if (playlist[currentIndex].bandcampUrl) {
-      // No local audio — fall back to Bandcamp
-      window.open(playlist[currentIndex].bandcampUrl, '_blank');
     }
   };
 
   // Play / Pause
   playBtn.addEventListener('click', () => {
-    if (!audio.src || !playlist.length) return;
-    if (!playlist[currentIndex].audioFile) {
-      // No audio file — open bandcamp
-      const track = playlist[currentIndex];
-      if (track.bandcampUrl) window.open(track.bandcampUrl, '_blank');
+    if (!masterPlaylist.length) {
+      // Nothing loaded yet — start from the beginning
+      loadTrack(0);
+      audio.play().catch(() => {});
+      return;
+    }
+    if (!audio.src) {
+      loadTrack(currentIndex);
+      audio.play().catch(() => {});
       return;
     }
     if (audio.paused) {
@@ -103,18 +154,24 @@
 
   // Prev / Next
   prevBtn.addEventListener('click', () => {
+    if (!masterPlaylist.length) return;
     if (audio.currentTime > 3) {
       audio.currentTime = 0;
     } else if (currentIndex > 0) {
       loadTrack(currentIndex - 1);
-      if (!audio.paused || playlist[currentIndex].audioFile) audio.play().catch(() => {});
+      audio.play().catch(() => {});
     }
   });
 
   nextBtn.addEventListener('click', () => {
-    if (currentIndex < playlist.length - 1) {
+    if (!masterPlaylist.length) return;
+    if (currentIndex < masterPlaylist.length - 1) {
       loadTrack(currentIndex + 1);
-      if (playlist[currentIndex].audioFile) audio.play().catch(() => {});
+      audio.play().catch(() => {});
+    } else {
+      // Wrap to beginning
+      loadTrack(0);
+      audio.play().catch(() => {});
     }
   });
 
@@ -141,11 +198,15 @@
   audio.addEventListener('play', () => updatePlayIcon(true));
   audio.addEventListener('pause', () => updatePlayIcon(false));
 
+  // When a track ends, auto-advance to the next track
   audio.addEventListener('ended', () => {
     updatePlayIcon(false);
-    if (currentIndex < playlist.length - 1) {
+    if (currentIndex < masterPlaylist.length - 1) {
       loadTrack(currentIndex + 1);
       audio.play().catch(() => {});
+    } else {
+      // Reached the end of the entire catalogue
+      trackNameEl.textContent = 'Select a track to play';
     }
   });
 
@@ -164,48 +225,6 @@
     volumeSlider.value = isMuted ? 0 : lastVolume * 100;
   });
 
-
-  // Session persistence — save state on page unload
-  window.addEventListener('beforeunload', () => {
-    if (!playlist.length) return;
-    const state = {
-      playlist,
-      currentIndex,
-      currentTime: audio.currentTime,
-      volume: audio.volume,
-      wasPlaying: !audio.paused
-    };
-    sessionStorage.setItem('jaytrainer_player', JSON.stringify(state));
-  });
-
-  // Restore state on load
-  (function restoreState() {
-    try {
-      const saved = sessionStorage.getItem('jaytrainer_player');
-      if (!saved) return;
-      const state = JSON.parse(saved);
-      if (!state.playlist || !state.playlist.length) return;
-
-      playlist = state.playlist;
-      currentIndex = state.currentIndex || 0;
-
-      loadTrack(currentIndex);
-
-      audio.volume = state.volume || 0.8;
-      volumeSlider.value = (state.volume || 0.8) * 100;
-
-      if (state.currentTime && playlist[currentIndex].audioFile) {
-        audio.addEventListener('loadedmetadata', function onMeta() {
-          audio.currentTime = state.currentTime;
-          if (state.wasPlaying) audio.play().catch(() => {});
-          audio.removeEventListener('loadedmetadata', onMeta);
-        });
-      }
-    } catch (e) {
-      // Ignore restore errors
-    }
-  })();
-
   // Hook album page play buttons
   document.addEventListener('click', (e) => {
     const trackBtn = e.target.closest('.album-track-btn');
@@ -214,18 +233,21 @@
     if (!btn) return;
 
     e.preventDefault();
-    const releaseSlug = btn.dataset.release;
     const index = parseInt(btn.dataset.index, 10) || 0;
 
-    // Find release data from global releases JSON embedded in page
     const releaseDataEl = document.getElementById('releaseData');
     if (releaseDataEl) {
       try {
         const release = JSON.parse(releaseDataEl.textContent);
         window.playTrack(release.tracks, index, release.coverArt);
-      } catch (err) {
-        // Fallback — open bandcamp
-      }
+      } catch (err) {}
     }
   });
+
+  // Initialize: build the master playlist, load first track paused
+  masterPlaylist = buildMasterPlaylist();
+  if (masterPlaylist.length) {
+    loadTrack(0);
+    updatePlayIcon(false);
+  }
 })();

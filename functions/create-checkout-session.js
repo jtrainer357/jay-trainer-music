@@ -17,6 +17,11 @@ exports.handler = async (event) => {
       quantity: item.quantity || 1,
     }));
 
+    // Build format metadata from items (e.g. "price_abc:wav,price_def:mp3")
+    const formatMeta = items
+      .map((item) => `${item.priceId}:${item.format || "mp3"}`)
+      .join(",");
+
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       line_items: lineItems,
@@ -24,6 +29,7 @@ exports.handler = async (event) => {
       cancel_url: `${process.env.URL || "https://jaytrainer.com"}/music/`,
       metadata: {
         source: "jay-trainer-website",
+        formats: formatMeta,
       },
     });
 

@@ -1,9 +1,9 @@
 # Jay Trainer Music — Project Tracker
 
-> **Last updated:** 2026-03-02 @ 12:15 EST
-> **Updated by:** Claude (session 2 — font exploration, color fixes, icon updates)
+> **Last updated:** 2026-03-02 @ session 5 — audio previews, soft nav, UI overhaul
+> **Updated by:** Claude (session 5)
 > **Git branch:** `main`
-> **Latest commit:** `18ea8e6` — "Add Jeff Dungan accent font, neutralize text colors, fix social icons" (2026-03-02)
+> **Latest commit:** (pending commit — see session 5 log)
 
 ---
 
@@ -31,7 +31,7 @@
 | **Static site generator** | Eleventy (11ty) | ^2.0.1 (devDependency) |
 | **Templating** | Nunjucks (.njk) + Markdown (.md) | htmlTemplateEngine: njk |
 | **Styling** | Vanilla CSS | Token-based custom properties (CSS variables) |
-| **JavaScript** | Vanilla JS (4 files) | No framework, no bundler |
+| **JavaScript** | Vanilla JS (5 files) | No framework, no bundler |
 | **Fonts** | Google Fonts | Inter (300-600), Playfair Display (400-700+italic), Caveat (400,600) |
 | **Payment** | Stripe Checkout | Via Netlify Functions (serverless) |
 | **Newsletter** | ConvertKit | Via Netlify Functions (serverless) |
@@ -85,12 +85,14 @@ jay-trainer-music/
 │   │   └── cart.css          # Cart drawer styles
 │   │
 │   ├── js/
+│   │   ├── router.js         # PJAX soft navigation (keeps player alive across pages)
 │   │   ├── main.js           # Scroll reveal, tracklist toggles, nav scroll
-│   │   ├── player.js         # HTML5 audio player (playlist, seek, volume, session persist)
-│   │   ├── cart.js           # localStorage cart + Stripe Checkout integration
+│   │   ├── player.js         # HTML5 audio player (master playlist, continuous playback)
+│   │   ├── cart.js           # localStorage cart + Stripe Checkout + format selection
 │   │   └── newsletter.js     # Newsletter form submission (ConvertKit via Netlify fn)
 │   │
-│   ├── assets/images/        # 13 images (JPG) — hero, about, blog, releases, merch
+│   ├── assets/images/        # 14 images (JPG/PNG) — hero, about, blog, releases, merch
+│   ├── assets/audio/previews/ # 60-second MP3 preview clips for all 48 tracks by release slug
 │   │
 │   ├── blog/                 # Blog posts (Markdown)
 │   │   ├── blog.json         # Collection config (tags: blog, layout: post)
@@ -175,9 +177,9 @@ jay-trainer-music/
 | 8 | The Waking Hours | `the-waking-hours` | album | 2006 | 9 | $10.99 | no |
 
 **Notes:**
-- All `audioFile` fields are empty strings ("") — no local audio files hosted yet
+- All 48 tracks have `previewFile` fields pointing to 60-second MP3 preview clips in `src/assets/audio/previews/`
+- All `audioFile` fields are empty strings ("") — full tracks not hosted yet
 - All `stripePrice` fields are empty strings — Stripe price IDs not configured yet
-- Player falls back to opening Bandcamp URLs when no audioFile is present
 - Cover art images are hosted on Bandcamp CDN (f4.bcbits.com)
 
 ---
@@ -246,8 +248,9 @@ jay-trainer-music/
 - [x] Merch listing page
 - [x] Blog/Journal listing and 3 blog posts
 - [x] Briar Patch Records label page
-- [x] Persistent HTML5 audio player (playlist, seek, volume, prev/next, session persistence)
-- [x] Shopping cart (localStorage-based, slide-out drawer)
+- [x] Persistent HTML5 audio player (master playlist, continuous playback, seek, volume, prev/next)
+- [x] PJAX soft navigation — player keeps playing seamlessly across page navigations
+- [x] Shopping cart (localStorage-based, slide-out drawer, format selection)
 - [x] Newsletter signup form (ConvertKit integration via serverless function)
 - [x] Stripe Checkout integration (serverless function)
 - [x] Stripe webhook handler (payment event processing)
@@ -267,7 +270,11 @@ jay-trainer-music/
 - [x] Cart success/thank-you page
 
 ### Not Yet Configured / Incomplete
-- [ ] **Audio files** — All `audioFile` fields in releases.json are empty. Player currently opens Bandcamp as fallback
+- [x] **Audio previews** — 60-second preview clips for ALL 8 releases (48 tracks) via `previewFile` field. Player builds a master playlist and plays continuously through entire catalogue.
+- [x] **Format selection** — MP3/WAV toggle on album pages, stored in cart, passed as Stripe checkout metadata.
+- [x] **Soft navigation** — PJAX router intercepts internal links, swaps `<main>` content via fetch, keeping the audio player alive across page navigations.
+- [x] **Button system overhaul** — No Bandcamp links anywhere. Two-tier button system: `btn-primary` (solid, no borders) and `btn-secondary` (transparent with outline). Add To Cart always visible (no stripePrice conditional).
+- [ ] **Full audio files** — `audioFile` fields still empty. Full 320kbps MP3s generated in `src/assets/audio/full/` but not served (for future purchase delivery)
 - [ ] **Stripe price IDs** — All `stripePrice` fields empty in releases.json and merch.json. Cart/checkout non-functional until configured
 - [ ] **Environment variables** — .env not present (only .env.example). Stripe + ConvertKit keys needed
 - [ ] **Favicon** — Referenced in base.njk (`/assets/images/favicon.ico`, `/assets/images/apple-touch-icon.png`) but files not present in `src/assets/images/`
@@ -348,18 +355,21 @@ jay-trainer-music/
 
 | Commit | Date | Message |
 |---|---|---|
-| `18ea8e6` | 2026-03-02 12:15 EST | Add Jeff Dungan accent font, neutralize text colors, fix social icons |
-| `93af3ed` | 2026-03-02 00:20 EST | Rebuild as Eleventy site with token-based design system, SEO, and new pages |
-| `8e0159c` | 2026-03-01 19:46 EST | Initial commit: Jay Trainer music website |
+| (pending) | 2026-03-02 | Audio previews, soft navigation, UI overhaul, format selection |
+| `df6bbb6` | 2026-03-02 | Add distressed paper textures and real streaming platform links |
+| `802463d` | 2026-03-02 | Add favicons, mobile nav, dynamic footer year, and clean up dead links |
+| `812d9d7` | 2026-03-02 | Update PROJECT_TRACKER.md with latest commit hash and session log |
+| `18ea8e6` | 2026-03-02 | Add Jeff Dungan accent font, neutralize text colors, fix social icons |
+| `93af3ed` | 2026-03-02 | Rebuild as Eleventy site with token-based design system, SEO, and new pages |
+| `8e0159c` | 2026-03-01 | Initial commit: Jay Trainer music website |
 
 **Branch:** `main` (only branch)
-**Working tree:** Clean (no uncommitted changes)
 
 ---
 
 ## 14. KNOWN ISSUES & TECHNICAL DEBT
 
-1. **No audio hosting** — All audio files are empty strings. Self-hosted playback is non-functional. Player falls back to Bandcamp external links.
+1. ~~**No audio hosting**~~ — Fixed: 60-second preview clips for all 8 releases (48 tracks) play in-browser.
 2. **No Stripe configuration** — All stripePrice IDs are empty. E-commerce is non-functional.
 3. **Missing favicons** — `favicon.ico` and `apple-touch-icon.png` referenced in HTML but files don't exist.
 4. **Placeholder streaming links** — Spotify and Apple Music URLs are `#`.
@@ -396,6 +406,7 @@ jay-trainer-music/
 |---|---|---|
 | 2026-03-02 | Session 1 | Full project audit. Created PROJECT_TRACKER.md. Set up auto-memory for session persistence. No code changes made. |
 | 2026-03-02 | Session 2 | Font exploration: tested Caveat, Reenie Beanie, Splash, Babylonica, Comforter Brush, Square Peg, Quentin, Fuggles, Rock 3D, Special Elite, Waiting for the Sunrise, Whisper, Grahamo, Gloriousity Two, Herbert Cooper, Jeff Dungan. Settled on **Jeff Dungan** (self-hosted). Neutralized body text colors from brown to dark grey (--bark, --ink, --coffee-dark). Replaced footer social text initials (YT/IG/TW/FB/BC) with proper SVG icons. Fixed Apple Music icon (was GitHub Octocat) and Spotify icon (was solid circle) in streaming banner. Added fonts passthrough to Eleventy config. Created PROJECT_TRACKER.md. |
+| 2026-03-02 | Session 4-5 | **Audio Preview & Format Selection**: Created `scripts/process-audio.sh` to generate 60-second 128kbps MP3 previews (with 3s fade-out) and 320kbps full MP3s from WAV sources. Processed ALL 48 tracks across all 8 releases. Added `previewFile` field to every track in releases.json. Rewrote player.js with master playlist (all tracks across all releases), continuous playback, click-to-jump. Added format selector toggle (MP3/WAV) on album pages (always visible). Updated cart.js to store/display format and pass metadata to Stripe checkout. Updated .gitignore for Music/ and full audio dirs. **Soft Navigation (PJAX)**: Created `router.js` — intercepts internal link clicks, fetches pages via AJAX, swaps `<main>` content so the audio player never stops during navigation. **UI Overhaul**: Removed all Bandcamp buttons. Removed all button borders/outlines on primary buttons. Created `btn-secondary` (transparent + warm-tan outline, white text). Made Add To Cart always visible (removed stripePrice conditionals). Fixed header consistency on about/label pages (listing-header pattern). Stronger nav blur (40px). Widened album content area (860px). Updated about section image to "Figure in Misty Field". Subtle newsletter background. Various responsive and styling fixes across ~22 files. |
 
 ---
 

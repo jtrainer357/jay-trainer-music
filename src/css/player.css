@@ -24,8 +24,8 @@
 .player-info {
   display: flex;
   flex-direction: column;
-  min-width: 120px;
-  max-width: 180px;
+  min-width: 160px;
+  max-width: 300px;
 }
 
 .player-track {
@@ -44,6 +44,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }
+
 
 /* Controls */
 .player-controls {
@@ -278,6 +279,49 @@
   margin-bottom: 2rem;
 }
 
+/* Format selector toggle */
+.format-selector {
+  display: inline-flex;
+  background: var(--parchment);
+  border: none;
+  border-radius: var(--radius-pill);
+  overflow: hidden;
+}
+
+.format-btn {
+  background: none;
+  border: none;
+  padding: 0.45rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: background 0.2s, color 0.2s;
+}
+
+.format-btn.active {
+  background: var(--coffee);
+  color: var(--cream);
+}
+
+.format-btn:not(.active):hover {
+  background: var(--tan-a8);
+  color: var(--text-heading);
+}
+
+/* Cart format badge */
+.cart-item-format {
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-accent);
+  margin-left: 0.3rem;
+  opacity: 0.7;
+}
+
 .album-credits {
   margin-top: 1rem;
   padding-top: 1rem;
@@ -313,8 +357,21 @@
 }
 
 .album-notes-inner {
-  max-width: 680px;
+  max-width: 860px;
   margin: 0 auto;
+}
+
+.album-notes-inner h2 {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 0.8rem;
+  margin-top: 2.5rem;
+}
+
+.album-notes-inner h2:first-child {
+  margin-top: 0;
 }
 
 .album-notes-inner p {
@@ -343,7 +400,7 @@
     gap: 0.6rem;
     border-radius: var(--radius-xl);
   }
-  .player-info { min-width: 80px; max-width: 120px; }
+  .player-info { min-width: 100px; max-width: 200px; }
   .player-volume-wrap { display: none; }
   .more-music { padding: 3rem 1.5rem; margin: 0 1.5rem 1.5rem; }
   .album-notes { padding: 3rem 1.5rem; margin: 1.5rem; }

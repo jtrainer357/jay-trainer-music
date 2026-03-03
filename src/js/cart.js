@@ -25,7 +25,8 @@
     }
 
     add(item) {
-      const existing = this.items.find(i => i.priceId === item.priceId);
+      // Match on priceId + format to allow same album in different formats
+      const existing = this.items.find(i => i.priceId === item.priceId && i.format === item.format);
       if (existing) {
         existing.quantity += 1;
       } else {
@@ -91,22 +92,27 @@
       itemsEl.style.display = 'block';
       footerEl.style.display = 'block';
 
-      itemsEl.innerHTML = this.items.map(item => `
-        <div class="cart-item" data-price-id="${item.priceId}">
+      itemsEl.innerHTML = this.items.map((item, idx) => `
+        <div class="cart-item" data-cart-index="${idx}">
           <img src="${item.image}" alt="${item.name}" class="cart-item-img">
           <div class="cart-item-details">
-            <div class="cart-item-name">${item.name}</div>
+            <div class="cart-item-name">${item.name}${item.format ? ' <span class="cart-item-format">' + item.format.toUpperCase() + '</span>' : ''}</div>
             <div class="cart-item-price">${item.displayPrice}${item.quantity > 1 ? ' x ' + item.quantity : ''}</div>
           </div>
-          <button class="cart-item-remove" data-remove="${item.priceId}" aria-label="Remove">&times;</button>
+          <button class="cart-item-remove" data-remove-index="${idx}" aria-label="Remove">&times;</button>
         </div>
       `).join('');
 
       totalEl.textContent = '$' + this.getTotal().toFixed(2);
 
       // Bind remove buttons
-      itemsEl.querySelectorAll('[data-remove]').forEach(btn => {
-        btn.addEventListener('click', () => this.remove(btn.dataset.remove));
+      itemsEl.querySelectorAll('[data-remove-index]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const idx = parseInt(btn.dataset.removeIndex, 10);
+          this.items.splice(idx, 1);
+          this.save();
+          this.renderDrawer();
+        });
       });
     }
 
@@ -140,7 +146,8 @@
           body: JSON.stringify({
             items: this.items.map(i => ({
               priceId: i.priceId,
-              quantity: i.quantity
+              quantity: i.quantity,
+              format: i.format || 'mp3'
             }))
           })
         });
@@ -159,17 +166,33 @@
     }
 
     bindEvents() {
+      // Format toggle buttons
+      document.addEventListener('click', (e) => {
+        const fmtBtn = e.target.closest('.format-btn');
+        if (!fmtBtn) return;
+        const selector = fmtBtn.closest('.format-selector');
+        if (!selector) return;
+        selector.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+        fmtBtn.classList.add('active');
+      });
+
       // Add to cart buttons
       document.addEventListener('click', (e) => {
         const btn = e.target.closest('.add-to-cart-btn');
         if (!btn) return;
         e.preventDefault();
+        // Read selected format from format toggle (defaults to mp3)
+        const formatSelector = document.getElementById('formatSelector');
+        const activeFormat = formatSelector
+          ? (formatSelector.querySelector('.format-btn.active')?.dataset.format || 'mp3')
+          : 'mp3';
         this.add({
           name: btn.dataset.name,
           priceId: btn.dataset.price,
           displayPrice: btn.textContent.replace('Add to Cart — ', '').trim(),
           image: btn.dataset.image,
-          type: btn.dataset.type
+          type: btn.dataset.type,
+          format: activeFormat
         });
       });
 

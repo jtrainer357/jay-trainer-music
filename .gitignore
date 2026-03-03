@@ -18,3 +18,7 @@ _site/
 .env
 .env.local
 .env.production
+
+# Audio source files and full-quality MP3s (too large for git)
+Music/
+src/assets/audio/full/
