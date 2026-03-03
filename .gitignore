@@ -22,3 +22,6 @@ _site/
 # Audio source files and full-quality MP3s (too large for git)
 Music/
 src/assets/audio/full/
+
+# Design asset packs (not site content)
+Distressed Assets/
