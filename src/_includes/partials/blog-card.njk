@@ -5,8 +5,12 @@
     <img src="{{ blogPost.data.featureImage }}" alt="{{ blogPost.data.title }}" class="blog-card-img" loading="lazy">
   </a>
   {% endif %}
-  <div class="blog-date">{{ blogPost.date | readableDate }}</div>
+  <div class="blog-card-meta">
+    <span class="blog-date">{{ blogPost.date | readableDate }}</span>
+    <span class="separator">&middot;</span>
+    <span>{{ blogPost.templateContent | readingTime }}</span>
+  </div>
   <a href="{{ blogPost.url }}" class="blog-headline">{{ blogPost.data.title }}</a>
-  <p class="blog-excerpt">{{ blogPost.data.excerpt }}</p>
+  <p class="blog-excerpt">{{ blogPost.data.description or blogPost.data.excerpt }}</p>
   <a href="{{ blogPost.url }}" class="blog-read-more">Read More</a>
 </div>

@@ -14,6 +14,8 @@ eleventyExcludeFromCollections: true
   <author>
     <name>{{ site.author }}</name>
   </author>
+  <icon>{{ site.url }}/assets/images/favicon-32x32.png</icon>
+  <logo>{{ site.url }}{{ site.image }}</logo>
   {%- for post in collections.blog | reverse | limit(20) %}
   <entry>
     <title>{{ post.data.title }}</title>
@@ -25,6 +27,10 @@ eleventyExcludeFromCollections: true
       <name>{{ site.author }}</name>
     </author>
     <summary>{{ post.data.description or post.data.excerpt or post.data.title }}</summary>
+    <content type="html"><![CDATA[{{ post.templateContent | safe }}]]></content>
+    {%- if post.data.keywords %}{% for kw in post.data.keywords %}
+    <category term="{{ kw }}"/>
+    {%- endfor %}{% endif %}
   </entry>
   {%- endfor %}
 </feed>

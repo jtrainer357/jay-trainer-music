@@ -1500,7 +1500,7 @@
   }
 
   .post-header-content {
-    max-width: 860px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 3rem 4rem 0;
   }
@@ -1532,7 +1532,7 @@
   }
 
   .post-body {
-    max-width: 860px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 2rem 4rem 3rem;
   }
@@ -1586,7 +1586,7 @@
 
   /* Post footer / author card */
   .post-footer {
-    max-width: 860px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 4rem 3rem;
     background: transparent;
@@ -1623,6 +1623,163 @@
     font-size: 0.82rem;
     color: var(--coffee);
     line-height: 1.5;
+  }
+
+  /* Blog card meta (reading time on cards) */
+  .blog-card-meta {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--coffee);
+    opacity: 0.6;
+    margin-bottom: 0.3rem;
+    display: flex;
+    gap: 0.6rem;
+    align-items: center;
+  }
+
+  .blog-card-meta .separator {
+    opacity: 0.4;
+  }
+
+  /* Post TL;DR block */
+  .post-tldr {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .post-tldr-inner {
+    background: var(--cream);
+    border: 1px solid var(--coffee-a10);
+    border-left: 3px solid var(--coffee);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .post-tldr-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--coffee);
+    font-weight: 600;
+    margin-bottom: 0.4rem;
+  }
+
+  .post-tldr-inner p {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: var(--coffee-dark);
+    margin: 0;
+  }
+
+  /* Post keywords display */
+  .post-keywords {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 4rem 1.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .post-keyword {
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--coffee);
+    background: var(--cream);
+    border: 1px solid var(--coffee-a10);
+    border-radius: var(--radius-full);
+    padding: 0.25rem 0.7rem;
+  }
+
+  /* Post Listen CTA */
+  .post-listen-cta {
+    max-width: 1000px;
+    margin: 0 auto 2rem;
+    padding: 0 4rem;
+  }
+
+  .post-listen-cta-inner {
+    background: var(--bark);
+    color: var(--cream);
+    padding: 1.5rem 2rem;
+    border-radius: var(--radius-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .post-listen-cta-text {
+    font-family: var(--font-heading);
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  .post-listen-cta-text em {
+    font-style: italic;
+    color: var(--warm-tan);
+  }
+
+  .post-listen-cta .btn-secondary {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  /* Post prev/next navigation */
+  .post-nav {
+    position: static;
+    z-index: auto;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: none;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 4rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .post-nav-link {
+    text-decoration: none;
+    padding: 1.2rem 1.5rem;
+    background: var(--cream);
+    border: 1px solid var(--coffee-a10);
+    border-radius: var(--radius-lg);
+    transition: border-color 0.25s;
+  }
+
+  .post-nav-link:hover {
+    border-color: var(--coffee);
+  }
+
+  .post-nav-link--next {
+    text-align: right;
+    grid-column: 2;
+  }
+
+  .post-nav-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--coffee);
+    opacity: 0.7;
+    margin-bottom: 0.3rem;
+  }
+
+  .post-nav-title {
+    font-family: var(--font-heading);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--bark);
+    line-height: 1.3;
   }
 
   .more-posts {
@@ -1908,6 +2065,12 @@
     .post-header-content { padding: 2rem 1.5rem 0; }
     .post-body { padding: 1.5rem 1.5rem 2rem; }
     .post-footer { padding: 0 1.5rem 2rem; }
+    .post-tldr { padding: 0 1.5rem; }
+    .post-keywords { padding: 0 1.5rem 1.5rem; }
+    .post-listen-cta { padding: 0 1.5rem; }
+    .post-listen-cta-inner { padding: 1.2rem 1.5rem; flex-direction: column; text-align: center; }
+    .post-nav { padding: 0 1.5rem 2rem; grid-template-columns: 1fr; }
+    .post-nav-link--next { text-align: left; grid-column: 1; }
     .about-full { padding: 2rem 1.5rem 3rem; }
     .listing-header { padding: 6rem 1.5rem 2rem; margin: 0 1.5rem; }
     .listing-content { padding: 2rem 1.5rem 3rem; }

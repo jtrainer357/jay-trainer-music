@@ -1,26 +1,70 @@
 ---
 layout: layouts/base.njk
 ---
-<article class="post">
+{% set navData = collections.blog | getPrevNext(page) %}
+<article class="post" itemscope itemtype="https://schema.org/BlogPosting">
+  <meta itemprop="author" content="{{ site.author }}">
+  <meta itemprop="datePublished" content="{{ date | isoDate }}">
   <header class="post-header">
     {% if featureImage %}
     <div class="post-feature-image">
-      <img src="{{ featureImage }}" alt="{{ title }}" loading="lazy">
+      <img src="{{ featureImage }}" alt="{{ title }}" loading="lazy" itemprop="image">
     </div>
     {% endif %}
     <div class="post-header-content">
       <div class="blog-date">{{ date | readableDate }}</div>
-      <h1 class="post-title">{{ title }}</h1>
-      {% if description %}<p class="post-subtitle">{{ description }}</p>{% endif %}
+      <h1 class="post-title" itemprop="headline">{{ title }}</h1>
+      {% if description %}<p class="post-subtitle" itemprop="description">{{ description }}</p>{% endif %}
       <div class="post-meta">
         <span class="post-reading-time">{{ content | readingTime }}</span>
       </div>
     </div>
   </header>
 
-  <div class="post-body">
+  {% if tldr %}
+  <div class="post-tldr">
+    <div class="post-tldr-inner">
+      <div class="post-tldr-label">TL;DR</div>
+      <p>{{ tldr }}</p>
+    </div>
+  </div>
+  {% endif %}
+
+  <div class="post-body" itemprop="articleBody">
     {{ content | safe }}
   </div>
+
+  {% if keywords and keywords.length %}
+  <div class="post-keywords">
+    {% for kw in keywords %}
+    <span class="post-keyword">{{ kw }}</span>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="post-listen-cta">
+    <div class="post-listen-cta-inner">
+      <div class="post-listen-cta-text">Hear the music behind the words. Explore <em>the full catalogue</em>.</div>
+      <a href="/music/" class="btn-secondary">Listen Now</a>
+    </div>
+  </div>
+
+  {% if navData.prev or navData.next %}
+  <nav class="post-nav" aria-label="Blog post navigation">
+    {% if navData.prev %}
+    <a href="{{ navData.prev.url }}" class="post-nav-link post-nav-link--prev">
+      <div class="post-nav-label">&larr; Previous</div>
+      <div class="post-nav-title">{{ navData.prev.data.title }}</div>
+    </a>
+    {% endif %}
+    {% if navData.next %}
+    <a href="{{ navData.next.url }}" class="post-nav-link post-nav-link--next">
+      <div class="post-nav-label">Next &rarr;</div>
+      <div class="post-nav-title">{{ navData.next.data.title }}</div>
+    </a>
+    {% endif %}
+  </nav>
+  {% endif %}
 
   <footer class="post-footer">
     <div class="post-author-card">

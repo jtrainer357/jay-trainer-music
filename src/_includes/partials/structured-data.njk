@@ -22,7 +22,7 @@
 </script>
 {% endif %}
 
-{# ─── HOMEPAGE: WebSite + MusicGroup ─── #}
+{# ─── HOMEPAGE: WebSite + MusicGroup + MusicPlaylist ─── #}
 {% if page.url == "/" %}
 <script type="application/ld+json">
 {
@@ -57,6 +57,31 @@
   },
   "image": "{{ site.url }}{{ site.image }}",
   "sameAs": {{ site.sameAs | dump | safe }}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MusicPlaylist",
+  "name": "Jay Trainer — Full Discography",
+  "description": "The complete catalogue of Jay Trainer: eight releases spanning nearly two decades of folk, Americana, and acoustic rock from Pittsburgh, Pennsylvania.",
+  "url": "{{ site.url }}/music/",
+  "numTracks": 48,
+  "track": [
+    {%- set comma = joiner(",") -%}
+    {%- for release in releases -%}{%- for track in release.tracks -%}
+    {{ comma() }}
+    {
+      "@type": "MusicRecording",
+      "name": "{{ track.title }}",
+      "duration": "{{ track.duration }}",
+      "inAlbum": {
+        "@type": "MusicAlbum",
+        "name": "{{ release.title }}"
+      }
+    }
+    {%- endfor -%}{%- endfor -%}
+  ]
 }
 </script>
 {% endif %}
@@ -111,7 +136,7 @@
 {% endif %}
 {% endif %}
 
-{# ─── BLOG POSTS: BlogPosting ─── #}
+{# ─── BLOG POSTS: BlogPosting (enhanced) ─── #}
 {% if tags and "blog" in tags %}
 <script type="application/ld+json">
 {
@@ -135,13 +160,27 @@
       "@type": "ImageObject",
       "url": "{{ site.url }}{{ site.image }}"
     }
-  }{% if image %},
-  "image": "{{ image }}"{% endif %}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  },
+  "wordCount": {{ content | wordCount }},
+  "inLanguage": "en-US"
+  {%- if featureImage %},
+  "image": {
+    "@type": "ImageObject",
+    "url": "{% if featureImage.startsWith('http') %}{{ featureImage }}{% else %}{{ site.url }}{{ featureImage }}{% endif %}"
+  }
+  {%- endif %}
+  {%- if keywords and keywords.length %},
+  "keywords": {{ keywords | dump | safe }}
+  {%- endif %}
 }
 </script>
 {% endif %}
 
-{# ─── ALBUM PAGES: MusicAlbum ─── #}
+{# ─── ALBUM PAGES: MusicAlbum + Offers ─── #}
 {% if tags and "music" in tags %}
 {% set release = releases | findBySlug(slug) %}
 {% if release %}
@@ -155,6 +194,7 @@
   "albumReleaseType": "{% if release.type == 'single' %}SingleRelease{% else %}AlbumRelease{% endif %}",
   "datePublished": "{{ release.year }}",
   "image": "{{ release.coverArt }}",
+  "genre": ["Folk", "Acoustic Rock", "Americana", "Singer-Songwriter"],
   "byArtist": {
     "@type": "MusicGroup",
     "name": "{{ site.title }}",
@@ -171,9 +211,44 @@
     }{% if not loop.last %},{% endif %}
     {% endfor %}
   ]
+  {%- if release.price and release.price != "Free" %},
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ release.price | replace('$', '') | replace('+', '') }}",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "{{ site.url }}{{ page.url }}"
+  }
+  {%- endif %}
 }
 </script>
 {% endif %}
+{% endif %}
+
+{# ─── MERCH PAGE: Product + Offers ─── #}
+{% if page.url == "/merch/" %}
+{% for item in merch %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "{{ item.name }}",
+  "description": "{{ item.detail }}",
+  "image": "{{ item.image }}",
+  "brand": {
+    "@type": "Brand",
+    "name": "{{ site.title }}"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "{{ item.price | replace('$', '') }}",
+    "priceCurrency": "USD",
+    "availability": "https://schema.org/InStock",
+    "url": "{{ site.url }}/merch/"
+  }
+}
+</script>
+{% endfor %}
 {% endif %}
 
 {# ─── LABEL PAGE: Organization ─── #}

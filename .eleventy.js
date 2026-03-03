@@ -16,11 +16,31 @@ module.exports = function (eleventyConfig) {
     return new Date(dateObj).toISOString();
   });
 
+  eleventyConfig.addFilter("w3Date", (dateObj) => {
+    const d = dateObj === "now" || !dateObj ? new Date() : new Date(dateObj);
+    return d.toISOString().split("T")[0];
+  });
+
   // Reading time filter
   eleventyConfig.addFilter("readingTime", (content) => {
     const words = (content || "").split(/\s+/).length;
     const minutes = Math.ceil(words / 230);
     return `${minutes} min read`;
+  });
+
+  // Word count filter
+  eleventyConfig.addFilter("wordCount", (content) => {
+    return (content || "").split(/\s+/).filter(Boolean).length;
+  });
+
+  // Previous/Next post navigation
+  eleventyConfig.addFilter("getPrevNext", (collection, page) => {
+    const sorted = [...collection].sort((a, b) => a.date - b.date);
+    const index = sorted.findIndex((p) => p.url === page.url);
+    return {
+      prev: index > 0 ? sorted[index - 1] : null,
+      next: index < sorted.length - 1 ? sorted[index + 1] : null,
+    };
   });
 
   // Slug filter (for matching data)

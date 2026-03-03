@@ -2,7 +2,9 @@
 title: "Roots — On Place, Memory, and Why Pittsburgh Matters"
 date: 2025-12-05
 excerpt: "Every song I've ever written is somehow about the same thing: where you come from, and what it costs you to leave, and what it means to stay."
-featureImage: "/assets/images/recording.jpg"
+description: "Why Pittsburgh shapes every song — on place, memory, slow growth, and making music in a city that doesn't care if you're an artist."
+featureImage: "/assets/images/blog/bench-in-mist.jpg"
+keywords: ["Pittsburgh music", "place-based songwriting", "Pittsburgh singer-songwriter", "folk music Pittsburgh", "music and place"]
 ---
 
 Every song I've ever written is somehow about the same thing: where you come from, and what it costs you to leave, and what it means to stay.

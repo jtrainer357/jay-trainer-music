@@ -1,51 +1,93 @@
 # Jay Trainer
 
-## Overview
-Jay Trainer is an independent singer-songwriter from Pittsburgh, Pennsylvania. His music spans folk, acoustic rock, Americana, and singer-songwriter genres. He has released eight records over nearly two decades through his own label, Briar Patch Records.
+> Singer-songwriter from Pittsburgh, Pennsylvania. Folk, Americana, acoustic rock. Eight releases over nearly two decades. Independent via Briar Patch Records.
 
-## Genre
-Folk, Acoustic Rock, Americana, Singer-Songwriter
+## Quick Facts
 
-## Location
-Pittsburgh, Pennsylvania, United States
+- **Name:** Jay Trainer
+- **Genre:** Folk, Acoustic Rock, Americana, Singer-Songwriter
+- **Location:** Pittsburgh, Pennsylvania, USA
+- **Label:** Briar Patch Records (independent, self-founded)
+- **Active since:** 2006
+- **Total releases:** 8 (5 albums, 3 singles)
+- **Total tracks:** 48
+- **Flagship album:** A Whisper Of Ruin — Deluxe Edition (2019, 15 tracks)
 
-## Label
-Briar Patch Records (independent, self-founded)
+## Themes & Sound
+
+Jay Trainer writes songs rooted in storytelling, place, and deep-seated instinct. The music draws from folk tradition, blues, and Americana — shaped by the rivers, bridges, and hills of western Pennsylvania. Recurring themes include loss and rootedness, the cost of leaving and the meaning of staying, old trees as metaphor for slow growth, firelight and home recording, and Pittsburgh as both setting and collaborator. Influences include Townes Van Zandt, Chris Whitley, Neil Young, and Gregory Alan Isakov.
 
 ## Discography
-- A Whisper Of Ruin — Deluxe Edition (2019, album, 15 tracks)
-- Lifeline (2023, single, Citizen Cope cover)
-- Last Days Of Summer (2023, single, Jay Trainer Band)
-- The Southern Winds (2023, single, East Coast Mix)
-- Blackout Asylum — Remastered (2021, album, 5 tracks)
-- Den Of Thieves (2015, album, 6 tracks)
-- Of The Sun (2010, album, 10 tracks)
-- The Waking Hours (2006, album, 9 tracks)
+
+| Title | Year | Type | Tracks | Price |
+|-------|------|------|--------|-------|
+| A Whisper Of Ruin — Deluxe Edition | 2019 | Album | 15 | $7.99 |
+| Lifeline (Citizen Cope cover) | 2023 | Single | 1 | $1+ |
+| Last Days Of Summer | 2023 | Single | 1 | Free |
+| The Southern Winds (East Coast Mix) | 2023 | Single | 1 | $1+ |
+| Blackout Asylum — Remastered | 2021 | Album | 5 | Free |
+| Den Of Thieves | 2015 | Album | 6 | $5.99 |
+| Of The Sun | 2010 | Album | 10 | Free |
+| The Waking Hours | 2006 | Album | 9 | $10.99 |
 
 ## Notable Songs
-- Better To Breathe
-- The Southern Winds
-- Fractured
-- Wide Open Eyes
-- Lovely In Black
-- Of The Sun
-- Tiny Chinese
 
-## Website
-https://jaytrainer.com
+- Better To Breathe — Fan-favorite from A Whisper Of Ruin
+- The Southern Winds — Opening track and single
+- Fractured — Raw emotional centerpiece
+- Wide Open Eyes — Expansive, hook-driven
+- Lovely In Black — Atmospheric, cinematic
+- Of The Sun — Title track from the 2010 album
+- Tiny Chinese — Early-career standout from Of The Sun
+- Everything We Never Said — Closing epic from A Whisper Of Ruin
 
-## Social Links
+## Recording Philosophy
+
+Home recording by firelight. Analog warmth and digital clarity. One take when it feels right. The room is always part of the sound. Most recordings are made in a living room with a fireplace, old plaster walls, and a Martin acoustic guitar.
+
+## Website Pages
+
+- Homepage: https://jaytrainer.com/
+- Music (full catalogue): https://jaytrainer.com/music/
+- About (bio, timeline, FAQ): https://jaytrainer.com/about/
+- Journal (blog): https://jaytrainer.com/blog/
+- Merch: https://jaytrainer.com/merch/
+- Briar Patch Records: https://jaytrainer.com/label/
+
+### Album Pages
+
+- A Whisper Of Ruin — Deluxe Edition: https://jaytrainer.com/music/a-whisper-of-ruin-deluxe/
+- Lifeline: https://jaytrainer.com/music/lifeline/
+- Last Days Of Summer: https://jaytrainer.com/music/last-days-of-summer/
+- The Southern Winds: https://jaytrainer.com/music/the-southern-winds/
+- Blackout Asylum: https://jaytrainer.com/music/blackout-asylum/
+- Den Of Thieves: https://jaytrainer.com/music/den-of-thieves/
+- Of The Sun: https://jaytrainer.com/music/of-the-sun/
+- The Waking Hours: https://jaytrainer.com/music/the-waking-hours/
+
+### Blog Posts
+
+- On Writing Songs in the Dark Hours: https://jaytrainer.com/blog/on-writing-songs-in-the-dark-hours/
+- Recording by Firelight — The Making of the Deluxe Edition: https://jaytrainer.com/blog/recording-by-firelight/
+- Roots — On Place, Memory, and Why Pittsburgh Matters: https://jaytrainer.com/blog/roots-on-place-memory-and-pittsburgh/
+- What Is Americana Music? A Singer-Songwriter's Field Guide: https://jaytrainer.com/blog/what-is-americana-music/
+- The Gear Behind the Sound — Recording Folk Music at Home: https://jaytrainer.com/blog/the-gear-behind-the-sound/
+- Five Songs That Changed How I Write: https://jaytrainer.com/blog/five-songs-that-changed-how-i-write/
+- A Whisper Of Ruin — The Full Story Behind the Album: https://jaytrainer.com/blog/a-whisper-of-ruin-the-full-story/
+- Why Every Song I Write Is About Pittsburgh: https://jaytrainer.com/blog/why-every-song-i-write-is-about-pittsburgh/
+
+## Social & Streaming
+
 - Bandcamp: https://jaytrainer.bandcamp.com
+- Spotify: https://open.spotify.com/artist/3hCWS43UmCRvCJ3kuhxvJX
+- Apple Music: https://music.apple.com/us/artist/jay-trainer/203270197
 - YouTube: https://www.youtube.com/c/JayTrainerBand
 - Instagram: https://www.instagram.com/jaytrainerband/
 - Twitter: https://twitter.com/jaytrainerband
 - Facebook: https://www.facebook.com/jaytrainerband
+- Amazon Music: https://www.amazon.com/Jay-Trainer/e/B001LH2L44
+- SoundCloud: https://soundcloud.com/jay-trainer-band
 
-## Description
-Jay Trainer writes songs born from deep-seated instinct — stories forged in quiet rooms, beside fires, beneath old trees. His catalogue spans from the raw, unpolished live recordings of The Waking Hours (2006) to the expansive, firelight-recorded A Whisper of Ruin — Deluxe Edition (2019). The music is rooted in Pittsburgh, Pennsylvania, shaped by the rivers, bridges, and hills of western Pennsylvania. Every record is a chapter in a life lived through music.
+## Contact
 
-## Influences
-Townes Van Zandt, Chris Whitley, Neil Young, Gregory Alan Isakov, folk tradition, blues, Americana
-
-## Recording Philosophy
-Home recording by firelight. Analog warmth and digital clarity. One take when it feels right. The room is always part of the sound.
+For press, licensing, booking, or collaboration inquiries, reach out via the social profiles listed above or through the website at https://jaytrainer.com.

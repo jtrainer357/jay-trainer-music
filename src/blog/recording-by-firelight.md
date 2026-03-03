@@ -2,7 +2,9 @@
 title: "Recording by Firelight: The Making of the Deluxe Edition"
 date: 2026-01-10
 excerpt: "We didn't set out to make an expanded record. It just kept growing. Three more songs, a different season, the same room. Here's what happened."
-featureImage: "/assets/images/blog-writing-process.jpg"
+description: "The story behind A Whisper Of Ruin — Deluxe Edition: how three new songs, live recordings, and a living room with a fireplace turned a finished album into something bigger."
+featureImage: "/assets/images/blog/candle-shadow.jpg"
+keywords: ["A Whisper Of Ruin", "deluxe edition", "home recording", "recording by firelight", "folk album making-of", "acoustic recording"]
 ---
 
 We didn't set out to make an expanded record. It just kept growing. Three more songs, a different season, the same room. Here's what happened.

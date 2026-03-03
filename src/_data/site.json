@@ -6,6 +6,11 @@
   "author": "Jay Trainer",
   "location": "Pittsburgh, Pennsylvania",
   "image": "/assets/images/hero-bg.jpg",
+  "twitterHandle": "@jaytrainerband",
+  "locale": "en_US",
+  "ogImageWidth": 1200,
+  "ogImageHeight": 630,
+  "keywords": ["Jay Trainer", "folk music", "Americana", "singer-songwriter", "Pittsburgh music", "acoustic rock", "indie folk", "Briar Patch Records"],
   "geo": {
     "latitude": 40.4406,
     "longitude": -79.9959

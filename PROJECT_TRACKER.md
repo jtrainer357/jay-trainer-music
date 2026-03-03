@@ -1,9 +1,9 @@
 # Jay Trainer Music — Project Tracker
 
-> **Last updated:** 2026-03-03 @ session 6 — netlify.toml, lazy-loading, gitignore cleanup
-> **Updated by:** Claude (session 6)
+> **Last updated:** 2026-03-03 @ session 7 — SEO/AIO/GEO overhaul + 5 new blog posts
+> **Updated by:** Claude (session 7)
 > **Git branch:** `main`
-> **Latest commit:** `fc11723` — "Add netlify.toml, image lazy-loading, and gitignore cleanup"
+> **Latest commit:** pending — "SEO/AIO/GEO overhaul: enhanced meta tags, structured data, 5 new blog posts, FAQ expansion"
 
 ---
 
@@ -97,7 +97,12 @@ jay-trainer-music/
 │   │
 │   ├── blog/                 # Blog posts (Markdown)
 │   │   ├── blog.json         # Collection config (tags: blog, layout: post)
-│   │   ├── on-writing-songs-in-the-dark-hours.md      (2026-02-15)
+│   │   ├── what-is-americana-music.md                  (2026-03-03) NEW
+│   │   ├── the-gear-behind-the-sound.md                (2026-02-28) NEW
+│   │   ├── five-songs-that-changed-how-i-write.md      (2026-02-20) NEW
+│   │   ├── on-writing-songs-in-the-dark-hours.md       (2026-02-15)
+│   │   ├── a-whisper-of-ruin-the-full-story.md         (2026-02-10) NEW
+│   │   ├── why-every-song-i-write-is-about-pittsburgh.md (2026-01-25) NEW
 │   │   ├── recording-by-firelight.md                   (2026-01-10)
 │   │   └── roots-on-place-memory-and-pittsburgh.md     (2025-12-05)
 │   │
@@ -150,7 +155,7 @@ jay-trainer-music/
 | `/merch/` | `src/merch.njk` | base.njk | Merch shop listing |
 | `/about/` | `src/about.njk` | base.njk | Full bio, timeline, influences, FAQ |
 | `/blog/` | `src/blog.njk` | base.njk | Journal listing |
-| `/blog/[slug]/` | `src/blog/*.md` | post.njk | Individual blog posts (3 total) |
+| `/blog/[slug]/` | `src/blog/*.md` | post.njk | Individual blog posts (8 total) |
 | `/label/` | `src/label.njk` | base.njk | Briar Patch Records label page |
 | `/cart/` | `src/cart.njk` | base.njk | Cart page |
 | `/cart/success/` | `src/cart-success.njk` | base.njk | Checkout success page |
@@ -160,7 +165,7 @@ jay-trainer-music/
 | `/robots.txt` | `src/robots.txt.njk` | — | Robots.txt |
 | `/llms.txt` | `src/llms.txt` | — | LLM-readable summary |
 
-**Total pages generated:** ~20 (8 album + 3 blog + 9 static)
+**Total pages generated:** 28 (8 album + 8 blog + 12 static)
 
 ---
 
@@ -199,7 +204,12 @@ jay-trainer-music/
 
 | Title | Date | Slug |
 |---|---|---|
+| What Is Americana Music? A Singer-Songwriter's Field Guide | 2026-03-03 | `what-is-americana-music` |
+| The Gear Behind the Sound: Recording Folk Music at Home | 2026-02-28 | `the-gear-behind-the-sound` |
+| Five Songs That Changed How I Write | 2026-02-20 | `five-songs-that-changed-how-i-write` |
 | On Writing Songs in the Dark Hours | 2026-02-15 | `on-writing-songs-in-the-dark-hours` |
+| A Whisper Of Ruin: The Full Story Behind the Album | 2026-02-10 | `a-whisper-of-ruin-the-full-story` |
+| Why Every Song I Write Is About Pittsburgh | 2026-01-25 | `why-every-song-i-write-is-about-pittsburgh` |
 | Recording by Firelight: The Making of the Deluxe Edition | 2026-01-10 | `recording-by-firelight` |
 | Roots — On Place, Memory, and Why Pittsburgh Matters | 2025-12-05 | `roots-on-place-memory-and-pittsburgh` |
 
@@ -255,12 +265,14 @@ jay-trainer-music/
 - [x] Newsletter signup form (ConvertKit integration via serverless function)
 - [x] Stripe Checkout integration (serverless function)
 - [x] Stripe webhook handler (payment event processing)
-- [x] SEO: Open Graph, Twitter Cards, canonical URLs
-- [x] Structured data: JSON-LD for WebSite, MusicGroup, Person, FAQPage, BlogPosting, MusicAlbum, Organization, BreadcrumbList
-- [x] Atom/RSS feed
-- [x] XML sitemap
-- [x] robots.txt
-- [x] llms.txt (LLM-readable site info)
+- [x] SEO: Open Graph (with locale, image dimensions), Twitter Cards (with site/creator), article meta tags, author/keywords meta, canonical URLs
+- [x] Structured data: JSON-LD for WebSite, MusicGroup, MusicPlaylist, Person, FAQPage (10 Qs), BlogPosting (enhanced: wordCount, keywords, image), MusicAlbum (genre, Offers), Product/Offer (merch), Organization, BreadcrumbList
+- [x] Atom/RSS feed (with full content, category tags, icon/logo)
+- [x] XML sitemap (with lastmod timestamps)
+- [x] robots.txt (with Disallow for cart, 404)
+- [x] llms.txt (comprehensive: content index, discography table, all page URLs, themes, social links)
+- [x] Blog post layout: TL;DR block, keyword tags, Listen CTA, prev/next navigation, microdata
+- [x] Blog cards: reading time display
 - [x] Custom 404 page
 - [x] Scroll reveal animations (IntersectionObserver)
 - [x] Nav scroll state (adds `.scrolled` class)
@@ -317,15 +329,19 @@ jay-trainer-music/
 | BreadcrumbList | All pages except home | Active |
 | WebSite | Homepage | Active |
 | MusicGroup | Homepage | Active |
+| MusicPlaylist | Homepage (full discography, 48 tracks) | Active |
 | Person | About page | Active |
-| FAQPage | About page (5 FAQs) | Active |
-| BlogPosting | Each blog post | Active |
-| MusicAlbum + MusicRecording | Each album/single page | Active |
+| FAQPage | About page (10 FAQs) | Active |
+| BlogPosting | Each blog post (enhanced: wordCount, keywords, image) | Active |
+| MusicAlbum + MusicRecording | Each album/single page (genre, Offers) | Active |
+| Product + Offer | Merch page (3 items) | Active |
 | Organization | Label page (Briar Patch Records) | Active |
 
 ### Meta Tags
-- Open Graph (title, description, image, url, type, site_name)
-- Twitter Cards (summary_large_image)
+- Open Graph (title, description, image, image:width/height, url, type, site_name, locale)
+- Article tags (article:published_time, article:author, article:tag) on blog posts
+- Twitter Cards (summary_large_image, twitter:site, twitter:creator)
+- Author, keywords meta tags
 - Canonical URLs
 - Theme color
 
@@ -338,7 +354,10 @@ jay-trainer-music/
 |---|---|
 | `readableDate` | Formats date as "Month Year" (e.g., "February 2026") |
 | `isoDate` | Formats date as ISO 8601 string |
+| `w3Date` | Formats date as W3C date (YYYY-MM-DD) for sitemaps |
 | `readingTime` | Estimates reading time (words / 230) |
+| `wordCount` | Counts words in content string |
+| `getPrevNext` | Returns prev/next posts from a collection for navigation |
 | `slug` | Converts string to URL-safe slug |
 | `findBySlug` | Finds release object by slug in collection |
 | `limit` | Array slice (first N items) |
@@ -409,6 +428,7 @@ jay-trainer-music/
 | 2026-03-02 | Session 1 | Full project audit. Created PROJECT_TRACKER.md. Set up auto-memory for session persistence. No code changes made. |
 | 2026-03-02 | Session 2 | Font exploration: tested Caveat, Reenie Beanie, Splash, Babylonica, Comforter Brush, Square Peg, Quentin, Fuggles, Rock 3D, Special Elite, Waiting for the Sunrise, Whisper, Grahamo, Gloriousity Two, Herbert Cooper, Jeff Dungan. Settled on **Jeff Dungan** (self-hosted). Neutralized body text colors from brown to dark grey (--bark, --ink, --coffee-dark). Replaced footer social text initials (YT/IG/TW/FB/BC) with proper SVG icons. Fixed Apple Music icon (was GitHub Octocat) and Spotify icon (was solid circle) in streaming banner. Added fonts passthrough to Eleventy config. Created PROJECT_TRACKER.md. |
 | 2026-03-03 | Session 6 | **Deployment & Cleanup**: Created `netlify.toml` (build config, 404 redirect, security headers: X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy, Permissions-Policy; cache rules for CSS/JS/assets/audio). Added `loading="lazy"` to 5 below-fold images across about.njk, index.njk, post.njk. Added `Distressed Assets/` to .gitignore (Affinity design resource packs, not site content). Audited and confirmed: favicons already present (4 files), footer year already dynamic, mobile nav hamburger fully functional, Spotify/Apple Music links already real. Updated PROJECT_TRACKER known issues (resolved 5 items). |
+| 2026-03-03 | Session 7 | **SEO/AIO/GEO Overhaul + 5 New Blog Posts**: Added `w3Date`, `wordCount`, `getPrevNext` filters to .eleventy.js. Added twitterHandle, locale, ogImage dimensions, keywords to site.json. Enhanced base.njk meta tags (author, keywords, og:locale, og:image dimensions, article:published_time, article:tag, twitter:site/creator). Enhanced structured-data.njk: genre+Offer on MusicAlbum, MusicPlaylist on homepage (48 tracks), Product/Offer on merch (3 items), enhanced BlogPosting (wordCount, keywords, image). Added lastmod to all sitemap URLs. Added full content + category tags + icon/logo to RSS feed. Added Disallow rules to robots.txt (cart, 404). Full rewrite of llms.txt (content index, discography table, all page URLs, themes, streaming links). New blog CSS: TL;DR block, keyword tags, Listen CTA, prev/next navigation. Updated blog-card.njk with reading time. Overhauled post.njk: TL;DR, keywords display, Listen CTA, prev/next nav, microdata. Added 5 new FAQ entries to about.njk (10 total). Added description+keywords frontmatter to 3 existing blog posts. Wrote 5 new ~2000-word blog posts: "What Is Americana Music?", "The Gear Behind the Sound", "Five Songs That Changed How I Write", "A Whisper Of Ruin: The Full Story", "Why Every Song I Write Is About Pittsburgh". Build verified: 28 pages, 0 errors. |
 | 2026-03-02 | Session 4-5 | **Audio Preview & Format Selection**: Created `scripts/process-audio.sh` to generate 60-second 128kbps MP3 previews (with 3s fade-out) and 320kbps full MP3s from WAV sources. Processed ALL 48 tracks across all 8 releases. Added `previewFile` field to every track in releases.json. Rewrote player.js with master playlist (all tracks across all releases), continuous playback, click-to-jump. Added format selector toggle (MP3/WAV) on album pages (always visible). Updated cart.js to store/display format and pass metadata to Stripe checkout. Updated .gitignore for Music/ and full audio dirs. **Soft Navigation (PJAX)**: Created `router.js` — intercepts internal link clicks, fetches pages via AJAX, swaps `<main>` content so the audio player never stops during navigation. **UI Overhaul**: Removed all Bandcamp buttons. Removed all button borders/outlines on primary buttons. Created `btn-secondary` (transparent + warm-tan outline, white text). Made Add To Cart always visible (removed stripePrice conditionals). Fixed header consistency on about/label pages (listing-header pattern). Stronger nav blur (40px). Widened album content area (860px). Updated about section image to "Figure in Misty Field". Subtle newsletter background. Various responsive and styling fixes across ~22 files. |
 
 ---

@@ -2,7 +2,9 @@
 title: "On Writing Songs in the Dark Hours"
 date: 2026-02-15
 excerpt: "There is something about 2am that strips away the performance of creativity and leaves only the thing itself — the compulsion, the phrase, the chord that won't let you sleep."
-featureImage: "/assets/images/blog.jpg"
+description: "A songwriter's reflection on why the best songs come at 2am — on vulnerability, discipline, and trusting what you can't see in the dark."
+featureImage: "/assets/images/blog/night-forest.jpg"
+keywords: ["songwriting process", "writing songs at night", "creative process music", "folk songwriting", "singer-songwriter blog"]
 ---
 
 There is something about 2am that strips away the performance of creativity and leaves only the thing itself — the compulsion, the phrase, the chord that won't let you sleep.
