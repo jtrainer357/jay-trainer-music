@@ -1,6 +1,6 @@
 ---
 title: "The Gear Behind the Sound: Recording Folk Music at Home"
-date: 2026-02-28
+date: 2026-04-18
 excerpt: "You don't need a studio to make something real. You need a room that sounds like home, a guitar that's been with you long enough to know your hands, and the patience to press record when the moment arrives."
 description: "A practical guide to recording folk and Americana music at home — from microphones and acoustic treatment to the philosophy of capturing honest performances in imperfect spaces."
 featureImage: "/assets/images/blog/fireside-recording.jpg"

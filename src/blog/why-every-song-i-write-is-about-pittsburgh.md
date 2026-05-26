@@ -1,9 +1,9 @@
 ---
 title: "Why Every Song I Write Is About Pittsburgh"
-date: 2026-01-25
+date: 2026-02-07
 excerpt: "I didn't choose to write about this city. The city chose to write itself into every song I've ever made — in the fog, the bridges, the rivers, the way the hills hide entire neighborhoods from each other."
 description: "How Pittsburgh shapes every song Jay Trainer writes — on the rivers, the bridges, the hills, and making folk music in a city that rewards patience over ambition."
-featureImage: "/assets/images/blog/foggy-landscape.jpg"
+featureImage: "/assets/images/blog/pittsburgh-bridge-bw.jpg"
 tldr: "Pittsburgh isn't a backdrop for my music — it's a co-writer. The rivers teach you about flow and patience. The bridges teach you about connection. The hills teach you that the best things are hidden and worth finding. Every song I've written is a conversation with this place."
 keywords: ["Pittsburgh music scene", "Pittsburgh singer-songwriter", "Pittsburgh folk music", "music and place", "songwriting and geography", "Pittsburgh arts"]
 ---

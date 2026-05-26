@@ -1,6 +1,6 @@
 ---
 title: "What Is Americana Music? A Singer-Songwriter's Field Guide"
-date: 2026-03-03
+date: 2026-05-20
 excerpt: "Americana isn't a genre so much as a conversation — between folk and blues, country and rock, the old songs and the ones being written right now in living rooms and barns across the country."
 description: "What is Americana music? A working singer-songwriter's answer — tracing the genre from its folk and blues roots through country rock to the living rooms and stages where it lives today."
 featureImage: "/assets/images/blog/americana-guitar.jpg"

@@ -1,7 +1,7 @@
 /**
  * AudioPlayer — persistent HTML5 audio player for Jay Trainer
- * Builds a master playlist from all releases. Plays 1-minute previews continuously.
- * Clicking a specific track jumps there, then continues through that album and beyond.
+ * Builds a shuffled master playlist from all releases. Plays 1-minute previews continuously.
+ * Clicking a specific track jumps there, then continues through the shuffled queue.
  * Resets on page navigation.
  */
 (function () {
@@ -29,6 +29,7 @@
   let currentIndex = 0;
   let isMuted = false;
   let lastVolume = 0.8;
+  const defaultTrackTitle = 'Lifeline';
 
   // Build master playlist from all releases data
   function buildMasterPlaylist() {
@@ -54,6 +55,34 @@
       return tracks;
     } catch (e) {
       return [];
+    }
+  }
+
+  function shufflePlaylist(tracks) {
+    const shuffled = [...tracks];
+    for (let i = shuffled.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    return shuffled;
+  }
+
+  function moveTrackToFront(tracks, title) {
+    const index = tracks.findIndex(track => track.title === title);
+    if (index <= 0) return tracks;
+    const [track] = tracks.splice(index, 1);
+    tracks.unshift(track);
+    return tracks;
+  }
+
+  function reshuffleForNextCycle() {
+    const previousTrack = masterPlaylist[currentIndex];
+    masterPlaylist = shufflePlaylist(masterPlaylist);
+    if (masterPlaylist.length > 1 && masterPlaylist[0].title === previousTrack?.title) {
+      const alternateIndex = masterPlaylist.findIndex(track => track.title !== previousTrack.title);
+      if (alternateIndex > 0) {
+        [masterPlaylist[0], masterPlaylist[alternateIndex]] = [masterPlaylist[alternateIndex], masterPlaylist[0]];
+      }
     }
   }
 
@@ -169,7 +198,7 @@
       loadTrack(currentIndex + 1);
       audio.play().catch(() => {});
     } else {
-      // Wrap to beginning
+      reshuffleForNextCycle();
       loadTrack(0);
       audio.play().catch(() => {});
     }
@@ -205,8 +234,9 @@
       loadTrack(currentIndex + 1);
       audio.play().catch(() => {});
     } else {
-      // Reached the end of the entire catalogue
-      trackNameEl.textContent = 'Select a track to play';
+      reshuffleForNextCycle();
+      loadTrack(0);
+      audio.play().catch(() => {});
     }
   });
 
@@ -245,7 +275,7 @@
   });
 
   // Initialize: build the master playlist, load first track paused
-  masterPlaylist = buildMasterPlaylist();
+  masterPlaylist = moveTrackToFront(shufflePlaylist(buildMasterPlaylist()), defaultTrackTitle);
   if (masterPlaylist.length) {
     loadTrack(0);
     updatePlayIcon(false);

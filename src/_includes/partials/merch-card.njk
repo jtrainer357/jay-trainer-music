@@ -7,13 +7,40 @@
     <div class="merch-name">{{ item.name }}</div>
     <div class="merch-detail">{{ item.detail }}</div>
     <div class="merch-price">{{ item.price }}</div>
+    {% if item.sizes or item.colors %}
+    <div class="merch-options" aria-label="{{ item.name }} options">
+      {% if item.sizes %}
+      <label class="merch-option">
+        <span>Size</span>
+        <select data-option-name="size" aria-label="Select shirt size">
+          <option value="">Select size</option>
+          {% for size in item.sizes %}
+          <option value="{{ size }}">{{ size }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      {% endif %}
+      {% if item.colors %}
+      <label class="merch-option">
+        <span>Color</span>
+        <select data-option-name="color" aria-label="Select shirt color">
+          <option value="">Select color</option>
+          {% for color in item.colors %}
+          <option value="{{ color }}">{{ color }}</option>
+          {% endfor %}
+        </select>
+      </label>
+      {% endif %}
+    </div>
+    {% endif %}
     <div class="merch-actions">
       <button class="merch-btn merch-cart-btn add-to-cart-btn"
               data-name="{{ item.name }}"
               data-price="{{ item.stripePrice }}"
               data-display-price="{{ item.price }}"
               data-image="{{ item.image }}"
-              data-type="{{ item.type }}">
+              data-type="{{ item.type }}"
+              data-slug="{{ item.slug }}">
         Add To Cart — {{ item.price }}
       </button>
     </div>

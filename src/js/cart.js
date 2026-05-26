@@ -29,15 +29,35 @@
       this.updateBadge();
     }
 
+    getOptionsKey(options = {}) {
+      return Object.keys(options)
+        .sort()
+        .map(key => `${key}:${options[key]}`)
+        .join('|');
+    }
+
+    formatOptions(options = {}) {
+      return Object.entries(options)
+        .filter(([, value]) => value)
+        .map(([key, value]) => `${key.charAt(0).toUpperCase()}${key.slice(1)}: ${value}`)
+        .join(' · ');
+    }
+
     add(item) {
-      // Match on priceId + format to allow same album in different formats
-      const existing = this.items.find(i => i.priceId === item.priceId && i.format === item.format);
+      // Match on priceId + format + options to allow separate variants in the cart.
+      const optionKey = this.getOptionsKey(item.options);
+      const existing = this.items.find(i => (
+        i.priceId === item.priceId &&
+        i.format === item.format &&
+        this.getOptionsKey(i.options) === optionKey
+      ));
       if (existing) {
         existing.quantity += 1;
         existing.name = item.name;
         existing.displayPrice = item.displayPrice;
         existing.image = item.image;
         existing.type = item.type;
+        existing.options = item.options;
       } else {
         this.items.push({ ...item, quantity: 1 });
       }
@@ -101,16 +121,20 @@
       itemsEl.style.display = 'block';
       footerEl.style.display = 'block';
 
-      itemsEl.innerHTML = this.items.map((item, idx) => `
+      itemsEl.innerHTML = this.items.map((item, idx) => {
+        const options = this.formatOptions(item.options);
+        return `
         <div class="cart-item" data-cart-index="${idx}">
           <img src="${item.image}" alt="${item.name}" class="cart-item-img">
           <div class="cart-item-details">
             <div class="cart-item-name">${item.name}${item.format ? ' <span class="cart-item-format">' + item.format.toUpperCase() + '</span>' : ''}</div>
+            ${options ? '<div class="cart-item-options">' + options + '</div>' : ''}
             <div class="cart-item-price">${item.displayPrice}${item.quantity > 1 ? ' x ' + item.quantity : ''}</div>
           </div>
           <button class="cart-item-remove" data-remove-index="${idx}" aria-label="Remove">&times;</button>
         </div>
-      `).join('');
+      `;
+      }).join('');
 
       totalEl.textContent = '$' + this.getTotal().toFixed(2);
 
@@ -157,6 +181,7 @@
               priceId: i.priceId,
               quantity: i.quantity,
               format: i.type === 'music' ? (i.format || 'mp3') : undefined,
+              options: i.options || undefined,
               type: i.type,
               name: i.name
             }))
@@ -196,6 +221,18 @@
           alert('This item is not available for checkout yet.');
           return;
         }
+        const merchItem = btn.closest('.merch-item');
+        const optionControls = merchItem ? [...merchItem.querySelectorAll('[data-option-name]')] : [];
+        const options = optionControls.reduce((selected, control) => {
+          selected[control.dataset.optionName] = control.value;
+          return selected;
+        }, {});
+        const missingOptions = optionControls.filter(control => !control.value);
+        if (missingOptions.length) {
+          alert('Please select a shirt size and color before adding this item to your cart.');
+          missingOptions[0].focus();
+          return;
+        }
         // Music purchases use the selected audio format; merch should not inherit an album format label.
         const formatSelector = document.getElementById('formatSelector');
         const activeFormat = formatSelector
@@ -207,7 +244,8 @@
           displayPrice: btn.dataset.displayPrice || btn.textContent.replace('Add To Cart — ', '').trim(),
           image: btn.dataset.image,
           type: btn.dataset.type,
-          format: activeFormat
+          format: activeFormat,
+          options
         });
       });
 

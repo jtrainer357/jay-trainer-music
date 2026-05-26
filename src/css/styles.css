@@ -249,6 +249,7 @@
     --media-stain: url('/assets/images/subtle-stain.png');
     --media-logo: url('/assets/images/jaytrainer-logo-v1.svg');
     --media-hero: url('/assets/images/hero-bg.jpg');
+    --media-hero-filter: url('/assets/images/grunge-hero-overlay.jpg');
     --media-discoloration: url('/assets/images/discoloration.png');
     --media-page-tanning: url('/assets/images/page-tanning.png');
     --media-foxing: url('/assets/images/foxing.png');
@@ -453,6 +454,17 @@
     filter: brightness(0.55) saturate(0.7);
     transform: scale(1.04);
     animation: slowZoom 20s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--media-hero-filter) center / cover no-repeat;
+    mix-blend-mode: soft-light;
+    opacity: 0.52;
+    pointer-events: none;
   }
 
   @keyframes slowZoom {
@@ -463,6 +475,7 @@
   .hero-overlay {
     position: absolute;
     inset: 0;
+    pointer-events: none;
     background: linear-gradient(
       to top,
       var(--ink-a85) 0%,
@@ -1203,6 +1216,38 @@
     font-size: var(--font-size-title-3xl);
     color: var(--coffee);
     margin-bottom: var(--space-button-y);
+  }
+
+  .merch-options {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-lg);
+    margin-bottom: var(--space-2xl);
+  }
+
+  .merch-option {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .merch-option span {
+    font-size: var(--font-size-2xs-plus);
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-button);
+  }
+
+  .merch-option select {
+    width: 100%;
+    min-height: 38px;
+    border: var(--border-muted);
+    border-radius: var(--radius-sm);
+    background: var(--surface-white);
+    color: var(--text-heading);
+    font-family: var(--font-body);
+    font-size: var(--font-size-ui-md);
+    padding: var(--space-sm-plus) var(--space-lg);
   }
 
   .merch-btn {

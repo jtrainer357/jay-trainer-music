@@ -134,6 +134,13 @@
   color: var(--text-muted);
 }
 
+.cart-item-options {
+  font-family: var(--font-body);
+  font-size: var(--font-size-xs-plus);
+  color: var(--text-secondary);
+  margin-top: var(--space-3xs);
+}
+
 .cart-item-remove {
   background: none;
   border: none;

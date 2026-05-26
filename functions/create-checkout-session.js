@@ -53,6 +53,16 @@ exports.handler = async (event) => {
       .map((item) => `${item.priceId}:${item.format || "mp3"}`)
       .join(",");
 
+    const optionMeta = items
+      .filter((item) => item.options && Object.keys(item.options).length)
+      .map((item) => {
+        const options = Object.entries(item.options)
+          .map(([key, value]) => `${key}=${value}`)
+          .join("|");
+        return `${item.name || item.priceId}:${options}:qty=${item.quantity || 1}`;
+      })
+      .join(",");
+
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
       line_items: lineItems,
@@ -61,6 +71,7 @@ exports.handler = async (event) => {
       metadata: {
         source: "jay-trainer-website",
         formats: formatMeta,
+        options: optionMeta,
       },
       ...(hasPhysicalItems
         ? {

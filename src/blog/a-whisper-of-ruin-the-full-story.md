@@ -1,9 +1,9 @@
 ---
 title: "A Whisper Of Ruin: The Full Story Behind the Album"
-date: 2026-02-10
+date: 2026-02-21
 excerpt: "Fifteen tracks. Nearly three years. A living room, a fireplace, and the kind of songs that only come when you stop trying to write them. This is the full story behind A Whisper Of Ruin — Deluxe Edition."
 description: "The complete story behind Jay Trainer's A Whisper Of Ruin — Deluxe Edition: how fifteen tracks were shaped by loss, Pittsburgh, firelight recording, and the decision to expand a finished album into something bigger."
-featureImage: "/assets/images/blog/worn-album-art.jpg"
+featureImage: "https://f4.bcbits.com/img/a2678004455_10.jpg"
 tldr: "A Whisper Of Ruin started as a finished album and became something larger — fifteen tracks spanning studio recordings, live captures from Pittsburgh stages, acoustic reworkings, and three new songs that refused to wait. It was recorded by firelight in a living room, shaped by loss and rootedness, and remains the most complete statement of what this music is about."
 keywords: ["A Whisper Of Ruin", "Jay Trainer album", "folk album story", "deluxe edition", "Pittsburgh folk music", "recording by firelight", "Americana album"]
 ---

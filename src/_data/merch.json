@@ -15,9 +15,11 @@
     "detail": "Grey, Black, or White",
     "price": "$16.99",
     "stripePrice": "price_1TbO6VEOkdyXiRRFLlIK8ABn",
-    "image": "https://f4.bcbits.com/img/a1192705323_10.jpg",
+    "image": "/assets/images/tshirt-blackout-asylum.jpg",
     "bandcampUrl": "https://jaytrainer.bandcamp.com/album/blackout-asylum-remastered",
-    "type": "physical"
+    "type": "physical",
+    "sizes": ["S", "M", "L", "XL", "2XL"],
+    "colors": ["Grey", "Black", "White"]
   },
   {
     "name": "Full Digital Discography",

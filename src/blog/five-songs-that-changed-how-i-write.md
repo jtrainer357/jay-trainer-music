@@ -1,6 +1,6 @@
 ---
 title: "Five Songs That Changed How I Write"
-date: 2026-02-20
+date: 2026-03-28
 excerpt: "Every songwriter has a handful of songs that rewired them — that cracked open something they didn't know was closed. These are mine."
 description: "The five songs that shaped Jay Trainer's songwriting — from Townes Van Zandt and Chris Whitley to Neil Young and Gregory Alan Isakov. A personal essay on influence, craft, and what great songs teach you."
 featureImage: "/assets/images/blog/handwritten-lyrics.jpg"
