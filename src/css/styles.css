@@ -445,25 +445,27 @@
     padding-bottom: calc(var(--space-12xl) + 155px);
   }
 
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    background: var(--media-hero-filter) center / cover no-repeat;
+    mix-blend-mode: soft-light;
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
   .hero-bg {
     position: absolute;
     inset: 0;
+    z-index: 0;
     background-image: var(--media-hero);
     background-size: cover;
     background-position: center;
     filter: brightness(0.55) saturate(0.7);
     transform: scale(1.04);
     animation: slowZoom 20s ease-in-out infinite alternate;
-    pointer-events: none;
-  }
-
-  .hero-bg::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: var(--media-hero-filter) center / cover no-repeat;
-    mix-blend-mode: soft-light;
-    opacity: 0.56;
     pointer-events: none;
   }
 
@@ -475,6 +477,7 @@
   .hero-overlay {
     position: absolute;
     inset: 0;
+    z-index: 1;
     pointer-events: none;
     background: linear-gradient(
       to top,
@@ -493,12 +496,12 @@
     background: var(--media-discoloration) center / contain no-repeat;
     opacity: 0.4;
     pointer-events: none;
-    z-index: 1;
+    z-index: 2;
   }
 
   .hero-content {
     position: relative;
-    z-index: 2;
+    z-index: 3;
     max-width: 680px;
   }
 
