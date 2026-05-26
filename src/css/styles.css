@@ -452,7 +452,7 @@
     z-index: 2;
     background: var(--media-hero-filter) center / cover no-repeat;
     mix-blend-mode: soft-light;
-    opacity: 0.6;
+    opacity: 0.54;
     pointer-events: none;
   }
 
