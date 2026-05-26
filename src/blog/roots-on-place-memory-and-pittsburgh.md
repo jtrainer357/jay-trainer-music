@@ -17,7 +17,9 @@ The rivers, the bridges, the hills that hide entire neighborhoods from each othe
 
 ## Why I Stayed
 
-I could have left. Most people do. They go to New York or LA or anywhere that promises more opportunity, more exposure, more. But I stayed, and I think the music is better for it.
+I did leave. I spent twenty years on the West Coast, long enough to build a life there and long enough to understand what it couldn't give back to me. The songs kept carrying Pittsburgh in them anyway — the fog, the rivers, the hills, the stubbornness of the place.
+
+Years ago I made my way back because Pittsburgh felt less like a destination than a fact about who I am. Not a brand, not a scene, not a strategic move. Home. Bedrock. The place where the songs made the most sense.
 
 There's a freedom in staying where nobody's watching. You don't have to perform the act of being an artist. You can just make the work. In Pittsburgh, nobody cares if you're a songwriter. They care if you're a good neighbor. That keeps you honest.
 
