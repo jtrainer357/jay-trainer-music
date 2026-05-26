@@ -8,7 +8,7 @@
     "featured": true,
     "coverArt": "https://f4.bcbits.com/img/a2678004455_10.jpg",
     "bandcampUrl": "https://jaytrainer.bandcamp.com/album/a-whisper-of-ruin-deluxe-edition",
-    "description": "Fifteen tracks shaped by loss, rootedness, and the strange beauty that grows in the cracks. The expanded edition — featuring live cuts, acoustic reworkings, and three new chapters. Recorded by firelight and instinct.",
+    "description": "Fifteen tracks shaped by loss, rootedness, and the strange beauty that grows in the cracks. Written and recorded in San Francisco, performed by multiple musicians, and expanded with live cuts, acoustic reworkings, and three new chapters.",
     "price": "$7.99",
     "stripePrice": "price_1TbO6SEOkdyXiRRFhVGZEkVw",
     "tracks": [
@@ -28,7 +28,7 @@
       { "title": "Of The Sun (Live)", "duration": "5:29", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/14-of-the-sun-live.mp3" },
       { "title": "Her Mind", "duration": "3:29", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/15-her-mind.mp3" }
     ],
-    "credits": "Written, performed, and produced by Jay Trainer. Recorded in Pittsburgh, PA."
+    "credits": "All music written by Jay Trainer. Recorded in San Francisco, CA, and performed by multiple musicians."
   },
   {
     "title": "Lifeline",
@@ -104,7 +104,7 @@
       { "title": "Same As A Poor Man", "duration": "4:52", "audioFile": "", "previewFile": "/assets/audio/previews/blackout-asylum/04-same-as-a-poor-man.mp3" },
       { "title": "Of What Is Soon To Come", "duration": "5:54", "audioFile": "", "previewFile": "/assets/audio/previews/blackout-asylum/05-of-what-is-soon-to-come.mp3" }
     ],
-    "credits": "Written and performed by Jay Trainer. Remastered in 2021."
+    "credits": "Music written by Jay Trainer. Originally recorded 2018. Remastered in 2021."
   },
   {
     "title": "Den Of Thieves",
@@ -115,7 +115,7 @@
     "featured": false,
     "coverArt": "https://f4.bcbits.com/img/a4111662609_10.jpg",
     "bandcampUrl": "https://jaytrainer.bandcamp.com/album/den-of-thieves",
-    "description": "Six tracks spanning wide-eyed originals, reworked classics, and a blistering live closer. The sound of a songwriter finding his stride and refusing to stay still.",
+    "description": "Six tracks spanning wide-eyed originals, reworked classics, and a blistering live closer. Written and recorded in San Francisco, performed by multiple musicians, and rooted in Jay Trainer's stride-hitting songwriting.",
     "price": "$5.99",
     "stripePrice": "price_1TbO6TEOkdyXiRRFd9tfOf08",
     "tracks": [
@@ -126,7 +126,7 @@
       { "title": "Better To Breathe (Acoustic)", "duration": "3:41", "audioFile": "", "previewFile": "/assets/audio/previews/den-of-thieves/05-better-to-breathe-acoustic.mp3" },
       { "title": "Tiny Chinese (Live)", "duration": "7:22", "audioFile": "", "previewFile": "/assets/audio/previews/den-of-thieves/06-tiny-chinese-live.mp3" }
     ],
-    "credits": "Written and performed by Jay Trainer."
+    "credits": "All music written by Jay Trainer. Recorded in San Francisco, CA, and performed by multiple musicians."
   },
   {
     "title": "Of The Sun",
@@ -137,7 +137,7 @@
     "featured": false,
     "coverArt": "https://f4.bcbits.com/img/a2614064826_10.jpg",
     "bandcampUrl": "https://jaytrainer.bandcamp.com/album/of-the-sun",
-    "description": "Ten tracks of folk-rooted songwriting — long, slow-burning pieces that stretch and breathe. Songs about witnessing, about breathing, about the sun that keeps rising whether you're ready or not.",
+    "description": "Ten tracks of folk-rooted songwriting — long, slow-burning pieces that stretch and breathe. Recorded in San Francisco, with songs about witnessing, breathing, and the sun that keeps rising whether you're ready or not.",
     "price": "Free",
     "stripePrice": "",
     "tracks": [
@@ -152,7 +152,7 @@
       { "title": "Fractured", "duration": "5:07", "audioFile": "", "previewFile": "/assets/audio/previews/of-the-sun/09-fractured.mp3" },
       { "title": "The Evening Wore On", "duration": "6:51", "audioFile": "", "previewFile": "/assets/audio/previews/of-the-sun/10-the-evening-wore-on.mp3" }
     ],
-    "credits": "Written and performed by Jay Trainer."
+    "credits": "Music written by Jay Trainer. Recorded in San Francisco, CA. 2010."
   },
   {
     "title": "The Waking Hours",
@@ -163,7 +163,7 @@
     "featured": false,
     "coverArt": "https://f4.bcbits.com/img/a4283944023_10.jpg",
     "bandcampUrl": "https://jaytrainer.bandcamp.com/album/the-waking-hours",
-    "description": "Nine tracks from the earliest sessions — where it all began. Studio recordings beside raw, unpolished live cuts. The sound of a songwriter awake and testing the edges.",
+    "description": "Nine tracks from the earliest San Francisco sessions — where it all began. Studio recordings beside raw, unpolished live cuts, performed by multiple musicians around songs written by Jay Trainer.",
     "price": "$10.99",
     "stripePrice": "price_1TbO6UEOkdyXiRRFJ6W28sZQ",
     "tracks": [
@@ -177,6 +177,6 @@
       { "title": "Tiny Chinese (Live)", "duration": "7:22", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/08-tiny-chinese-live.mp3" },
       { "title": "Voodoo Child (Live)", "duration": "6:25", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/09-voodoo-child-live.mp3" }
     ],
-    "credits": "Written and performed by Jay Trainer."
+    "credits": "All music written by Jay Trainer. Recorded in San Francisco, CA, and performed by multiple musicians."
   }
 ]

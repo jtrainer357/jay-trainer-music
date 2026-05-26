@@ -116,10 +116,11 @@
 }
 
 .player-time {
-  font-family: var(--font-accent);
-  font-size: var(--font-size-ui-md);
+  font-family: var(--font-body);
+  font-size: var(--font-size-base-sm);
+  font-weight: var(--weight-medium);
   color: var(--text-on-dark);
-  opacity: 0.6;
+  opacity: 0.85;
   white-space: nowrap;
   min-width: 2.5em;
 }
@@ -261,15 +262,19 @@
 
 .track-name {
   flex: 1;
+  font-size: var(--font-size-base-tight);
 }
 
 .track-duration {
-  font-family: var(--font-accent);
-  font-size: var(--font-size-base-sm);
-  color: var(--text-muted);
-  opacity: 0.6;
+  font-family: var(--font-body);
+  font-size: var(--font-size-base-tight);
+  font-weight: var(--weight-medium);
+  color: var(--coffee);
+  opacity: 0.95;
   flex-shrink: 0;
   padding-left: var(--space-2xl);
+  min-width: 3rem;
+  text-align: right;
 }
 
 .album-actions {
@@ -277,6 +282,17 @@
   gap: var(--space-2xl);
   flex-wrap: wrap;
   margin-bottom: var(--space-7xl);
+}
+
+.album-actions .btn-secondary {
+  color: var(--text-heading);
+  border-color: var(--coffee);
+}
+
+.album-actions .btn-secondary:hover {
+  background: var(--text-heading);
+  color: var(--cream);
+  border-color: var(--text-heading);
 }
 
 /* Format selector toggle */

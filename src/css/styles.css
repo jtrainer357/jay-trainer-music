@@ -602,6 +602,17 @@
     transform: translateY(-2px);
   }
 
+  .error-actions .btn-secondary {
+    color: var(--text-heading);
+    border-color: var(--coffee);
+  }
+
+  .error-actions .btn-secondary:hover {
+    background: var(--text-heading);
+    color: var(--cream);
+    border-color: var(--text-heading);
+  }
+
   .btn-outline {
     display: inline-flex;
     align-items: center;
@@ -897,10 +908,11 @@
   }
 
   .card-tracklist li span:last-child {
-    font-family: var(--font-accent);
-    font-size: var(--font-size-base);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base-sm);
+    font-weight: var(--weight-medium);
     color: var(--coffee);
-    opacity: 0.7;
+    opacity: 0.95;
     flex-shrink: 0;
   }
 
@@ -1051,10 +1063,11 @@
   }
 
   .featured-tracklist li span:last-child {
-    font-family: var(--font-accent);
-    font-size: var(--font-size-title-sm);
+    font-family: var(--font-body);
+    font-size: var(--font-size-base-sm);
+    font-weight: var(--weight-medium);
     color: var(--warm-tan);
-    opacity: 0.6;
+    opacity: 0.95;
     flex-shrink: 0;
   }
 

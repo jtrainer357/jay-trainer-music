@@ -11,4 +11,4 @@ Five tracks remastered from the original sessions. Stripped to the bone and rebu
 
 ## Credits
 
-Written and performed by Jay Trainer. Originally recorded 2018. Remastered 2021 in Pittsburgh, PA.
+Music written by Jay Trainer. Originally recorded 2018. Remastered 2021 in Pittsburgh, PA.

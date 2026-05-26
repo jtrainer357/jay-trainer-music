@@ -263,6 +263,17 @@
   justify-content: center;
 }
 
+.success-actions .btn-secondary {
+  color: var(--text-heading);
+  border-color: var(--coffee);
+}
+
+.success-actions .btn-secondary:hover {
+  background: var(--text-heading);
+  color: var(--cream);
+  border-color: var(--text-heading);
+}
+
 .success-text {
   font-kerning: normal;
   letter-spacing: normal;

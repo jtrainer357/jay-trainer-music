@@ -12,7 +12,7 @@ You don't need a studio to make something real. You need a room that sounds like
 
 I've been recording folk music at home for nearly twenty years. Not because I set out to build a home studio — I didn't — but because the songs kept showing up at inconvenient hours and I needed a way to catch them before they disappeared. What started as a cheap microphone and a laptop became a practice, then a philosophy, then the way I've made almost everything in my [catalogue](/music/).
 
-The entire [*A Whisper Of Ruin — Deluxe Edition*](/music/a-whisper-of-ruin-deluxe/) — all fifteen tracks — was recorded at home. The acoustic reworkings, the new songs, even the studio cuts from the original sessions. My living room in Pittsburgh, a fireplace, old plaster walls, hardwood floors, and whatever gear I could fit in the corner without my house looking like a recording studio. It doesn't look like one. It looks like a living room where someone plays a lot of guitar. That's the point.
+Not every record in the catalogue was made that way. [*The Waking Hours*](/music/the-waking-hours/), [*Of The Sun*](/music/of-the-sun/), [*Den Of Thieves*](/music/den-of-thieves/), and [*A Whisper Of Ruin — Deluxe Edition*](/music/a-whisper-of-ruin-deluxe/) were recorded in San Francisco, with all music written by Jay Trainer. The later home-recorded work is a different chapter: quieter, more intimate, and built around whatever gear I could fit into a room without turning it into a showroom.
 
 If you're a singer-songwriter thinking about recording at home, here's what I've learned — practically, philosophically, and through a lot of trial and error.
 
@@ -24,11 +24,11 @@ I mean that literally. Sit in the space where you plan to record. Clap your hand
 
 My living room has old plaster walls — the kind they don't build anymore, thick and slightly uneven, with decades of paint layered over horsehair and lime. Plaster is dense. It reflects sound differently than drywall. The mids come back warm. The highs scatter instead of bouncing straight back at you. The hardwood floors add brightness underneath everything, a kind of natural shimmer that I've never been able to replicate with EQ.
 
-And then there's the fireplace. Not lit while I'm recording — I learned that lesson early, when the crackle of burning oak showed up louder than the guitar on a take of *The Southern Winds*. But the fireplace itself, the stone and brick, the deep cavity of the firebox, it acts as a kind of natural bass trap. It breaks up the wall surface and scatters low frequencies that would otherwise build up and muddy the sound.
+And then there's the fireplace. Not lit while I'm recording — I learned that lesson early, when the crackle of burning oak showed up louder than the guitar on a later acoustic take. But the fireplace itself, the stone and brick, the deep cavity of the firebox, it acts as a kind of natural bass trap. It breaks up the wall surface and scatters low frequencies that would otherwise build up and muddy the sound.
 
 The point is this: every room has a sound, and if you're recording folk music — music that's supposed to sound human, lived-in, honest — the room is not an obstacle. It's an instrument. Learn it the way you'd learn a guitar. Learn where it resonates and where it deadens. Learn its moods at different times of day, because a room at midnight sounds different than a room at noon.
 
-I wrote about this in [Recording by Firelight](/blog/recording-by-firelight/) — how the room shaped the Deluxe Edition not just sonically but emotionally. The room is always part of the performance.
+I wrote about this in [the Deluxe Edition story](/blog/recording-by-firelight/) — how the setting and the players shaped the record not just sonically but emotionally. The room is always part of the performance, whether that room is a San Francisco session space or a quiet room back home.
 
 ## The Essentials: What You Actually Need
 
@@ -122,7 +122,7 @@ But don't over-treat the room. A dead room — one with so much absorption that 
 
 There's a myth that real music requires a real studio. That you need a control room and a live room and a mixing console and an engineer who's worked with names you recognize. That myth keeps a lot of people from making the music they're carrying around inside them.
 
-Here's what I know after twenty years: the room I record in is a living room in Pittsburgh. The fireplace doesn't have a brand name. The plaster walls weren't designed by an acoustician. The hardwood floors are original to the house and they creak when you walk on them. And yet — almost everything in my [catalogue](/music/) was made here. The songs that people write to me about, the ones that meant something to them at 3am when they needed to hear something honest, those songs were recorded ten feet from a couch with a blanket on it.
+Here's what I know after twenty years: the room matters, but the song matters more. Some records came from San Francisco sessions with multiple musicians. Some later recordings came from a living room in Pittsburgh, ten feet from a couch with a blanket on it. The common thread is the same: all music written by Jay Trainer, captured in the place and with the people that served the song best.
 
 You don't need permission to make music. You don't need a studio. You don't need expensive gear or an engineering degree or someone else's validation that your space is "good enough." Your space is good enough if the songs are good enough. The gear is secondary. The room is secondary. The only thing that's primary is the performance — the moment when you sit down with your instrument and sing something that matters, and you're brave enough to press record.
 

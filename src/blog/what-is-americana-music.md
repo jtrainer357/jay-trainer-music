@@ -56,7 +56,7 @@ If Americana doesn't have a single sound, it does have textures you start to rec
 
 **Production that serves the song rather than the other way around.** This doesn't mean lo-fi or sparse, necessarily. It means the choices — the reverb, the arrangement, the instrumentation — exist to support what the song is trying to say, not to dress it up for commercial radio.
 
-When I recorded [*A Whisper Of Ruin*](/music/a-whisper-of-ruin-deluxe/), almost everything was tracked in my living room in Pittsburgh. Not as an aesthetic statement, though it became one. The room has old plaster walls and a hardwood floor and a fireplace that crackles faintly in the background if you listen closely enough. That's an Americana production decision, even if I didn't think of it that way at the time: let the room into the recording. Let the imperfections stay. Let the song sound like the place where it was made.
+When I recorded [*A Whisper Of Ruin*](/music/a-whisper-of-ruin-deluxe/), the songs belonged to the San Francisco years: written there, recorded there, and performed by multiple musicians. That's an Americana production decision too, even if I didn't think of it that way at the time: let the people and the place into the recording. Let the imperfections stay. Let the song sound like the life around it.
 
 ## Who's Making It Now
 
