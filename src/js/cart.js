@@ -3,6 +3,7 @@
  */
 (function () {
   const STORAGE_KEY = 'jaytrainer_cart';
+  const FULL_DISCOGRAPHY_PRICE_ID = 'price_1TbO6VEOkdyXiRRFQIt1Naie';
 
   class Cart {
     constructor() {
@@ -13,7 +14,11 @@
 
     load() {
       try {
-        return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        return (JSON.parse(localStorage.getItem(STORAGE_KEY)) || []).map(item => (
+          item.priceId === FULL_DISCOGRAPHY_PRICE_ID
+            ? { ...item, displayPrice: '$99' }
+            : item
+        ));
       } catch {
         return [];
       }
@@ -29,6 +34,10 @@
       const existing = this.items.find(i => i.priceId === item.priceId && i.format === item.format);
       if (existing) {
         existing.quantity += 1;
+        existing.name = item.name;
+        existing.displayPrice = item.displayPrice;
+        existing.image = item.image;
+        existing.type = item.type;
       } else {
         this.items.push({ ...item, quantity: 1 });
       }
@@ -147,7 +156,9 @@
             items: this.items.map(i => ({
               priceId: i.priceId,
               quantity: i.quantity,
-              format: i.format || 'mp3'
+              format: i.type === 'music' ? (i.format || 'mp3') : undefined,
+              type: i.type,
+              name: i.name
             }))
           })
         });
@@ -181,15 +192,19 @@
         const btn = e.target.closest('.add-to-cart-btn');
         if (!btn) return;
         e.preventDefault();
-        // Read selected format from format toggle (defaults to mp3)
+        if (!btn.dataset.price) {
+          alert('This item is not available for checkout yet.');
+          return;
+        }
+        // Music purchases use the selected audio format; merch should not inherit an album format label.
         const formatSelector = document.getElementById('formatSelector');
         const activeFormat = formatSelector
           ? (formatSelector.querySelector('.format-btn.active')?.dataset.format || 'mp3')
-          : 'mp3';
+          : (btn.dataset.type === 'music' ? 'mp3' : '');
         this.add({
           name: btn.dataset.name,
           priceId: btn.dataset.price,
-          displayPrice: btn.textContent.replace('Add to Cart — ', '').trim(),
+          displayPrice: btn.dataset.displayPrice || btn.textContent.replace('Add To Cart — ', '').trim(),
           image: btn.dataset.image,
           type: btn.dataset.type,
           format: activeFormat

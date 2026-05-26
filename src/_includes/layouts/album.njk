@@ -37,6 +37,7 @@ layout: layouts/base.njk
     {% endif %}
 
     <div class="album-actions">
+      {% if release.stripePrice %}
       <div class="format-selector" id="formatSelector">
         <button class="format-btn active" data-format="mp3" type="button">MP3</button>
         <button class="format-btn" data-format="wav" type="button">WAV</button>
@@ -44,10 +45,14 @@ layout: layouts/base.njk
       <button class="btn-primary add-to-cart-btn"
               data-name="{{ release.title }}"
               data-price="{{ release.stripePrice }}"
+              data-display-price="{{ release.price }}"
               data-image="{{ release.coverArt }}"
               data-type="music">
-        Add To Cart
+        Add To Cart — {{ release.price }}
       </button>
+      {% else %}
+      <a href="{{ release.bandcampUrl }}" target="_blank" rel="noopener" class="btn-secondary">Download Free</a>
+      {% endif %}
     </div>
 
     {% if release.credits %}

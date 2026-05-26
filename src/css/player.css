@@ -2,20 +2,20 @@
 
 .audio-player {
   position: fixed;
-  bottom: 2rem;
+  bottom: var(--space-7xl);
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 4rem);
-  max-width: 900px;
+  width: calc(100% - var(--space-11xl));
+  max-width: var(--player-max-width);
   background: var(--surface-player);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  padding: 0.6rem 1.5rem;
+  padding: var(--space-md-plus) var(--space-5xl);
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--space-2xl);
   z-index: 10000;
-  border: 1px solid var(--tan-a20);
+  border: var(--border-on-dark);
   border-radius: var(--radius-pill);
 }
 
@@ -30,7 +30,7 @@
 
 .player-track {
   font-family: var(--font-heading);
-  font-size: 0.85rem;
+  font-size: var(--font-size-base-sm);
   color: var(--text-light);
   font-style: italic;
   white-space: nowrap;
@@ -39,9 +39,9 @@
 }
 
 .player-artist {
-  font-size: 0.65rem;
+  font-size: var(--font-size-2xs);
   color: var(--text-accent);
-  letter-spacing: 0.12em;
+  letter-spacing: var(--tracking-wide-caps);
   text-transform: uppercase;
 }
 
@@ -50,7 +50,7 @@
 .player-controls {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--space-md);
   flex-shrink: 0;
 }
 
@@ -59,7 +59,7 @@
   border: none;
   color: var(--text-on-dark);
   cursor: pointer;
-  padding: 0.3rem;
+  padding: var(--space-xs);
   transition: color 0.2s;
   display: flex;
   align-items: center;
@@ -92,7 +92,7 @@
 .player-progress-wrap {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: var(--space-md-plus);
   flex: 1;
   min-width: 0;
 }
@@ -117,7 +117,7 @@
 
 .player-time {
   font-family: var(--font-accent);
-  font-size: 0.8rem;
+  font-size: var(--font-size-ui-md);
   color: var(--text-on-dark);
   opacity: 0.6;
   white-space: nowrap;
@@ -131,7 +131,7 @@
 .player-volume-wrap {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: var(--space-sm);
   flex-shrink: 0;
 }
 
@@ -172,10 +172,10 @@
 .album-hero {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
-  gap: 0;
+  gap: var(--space-0);
   min-height: 70vh;
-  padding: 0;
-  margin: 7rem 4rem 0;
+  padding: var(--space-0);
+  margin: var(--space-14xl) var(--space-11xl) var(--space-0);
   border-radius: var(--radius-2xl);
   overflow: hidden;
 }
@@ -193,7 +193,7 @@
 }
 
 .album-hero-info {
-  padding: 4rem;
+  padding: var(--space-11xl);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -201,30 +201,30 @@
 }
 
 .album-description {
-  font-size: 0.95rem;
-  line-height: 1.85;
+  font-size: var(--font-size-body);
+  line-height: var(--line-copy-loose);
   color: var(--text-secondary);
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-7xl);
 }
 
 .album-tracklist {
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-7xl);
 }
 
 .album-tracklist ol {
   list-style: none;
   counter-reset: track;
-  padding: 0;
-  margin: 0;
+  padding: var(--space-0);
+  margin: var(--space-0);
 }
 
 .album-tracklist li {
   counter-increment: track;
   display: flex;
   align-items: center;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid var(--coffee-a10);
-  font-size: 0.85rem;
+  padding: var(--space-md) var(--space-0);
+  border-bottom: var(--border-muted);
+  font-size: var(--font-size-base-sm);
   color: var(--text-secondary);
   transition: background 0.2s;
 }
@@ -238,7 +238,7 @@
   min-width: 2em;
   color: var(--text-accent);
   font-family: var(--font-accent);
-  font-size: 0.95rem;
+  font-size: var(--font-size-body);
   flex-shrink: 0;
 }
 
@@ -247,7 +247,7 @@
   border: none;
   cursor: pointer;
   color: var(--text-muted);
-  padding: 0.2rem 0.5rem 0.2rem 0;
+  padding: var(--space-3xs) var(--space-md) var(--space-3xs) var(--space-0);
   opacity: 0.5;
   transition: opacity 0.2s, color 0.2s;
   display: flex;
@@ -265,18 +265,18 @@
 
 .track-duration {
   font-family: var(--font-accent);
-  font-size: 0.85rem;
+  font-size: var(--font-size-base-sm);
   color: var(--text-muted);
   opacity: 0.6;
   flex-shrink: 0;
-  padding-left: 1rem;
+  padding-left: var(--space-2xl);
 }
 
 .album-actions {
   display: flex;
-  gap: 1rem;
+  gap: var(--space-2xl);
   flex-wrap: wrap;
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-7xl);
 }
 
 /* Format selector toggle */
@@ -291,10 +291,10 @@
 .format-btn {
   background: none;
   border: none;
-  padding: 0.45rem 1rem;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  padding: var(--space-sm-plus) var(--space-2xl);
+  font-size: var(--font-size-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight-caps);
   text-transform: uppercase;
   cursor: pointer;
   color: var(--text-muted);
@@ -313,97 +313,105 @@
 
 /* Cart format badge */
 .cart-item-format {
-  font-size: 0.6rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
+  font-size: var(--font-size-3xs);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-tight-caps);
   text-transform: uppercase;
   color: var(--text-accent);
-  margin-left: 0.3rem;
+  margin-left: var(--space-xs);
   opacity: 0.7;
 }
 
 .album-credits {
-  margin-top: 1rem;
-  padding-top: 1rem;
+  margin-top: var(--space-2xl);
+  padding-top: var(--space-2xl);
   border-top: 1px solid var(--coffee-a10);
 }
 
 .album-credits p {
-  font-size: 0.8rem;
+  font-size: var(--font-size-ui-md);
   color: var(--text-muted);
   opacity: 0.7;
-  line-height: 1.6;
+  line-height: var(--line-loose);
   font-style: italic;
 }
 
 .album-single-play {
-  margin-bottom: 2rem;
+  margin-bottom: var(--space-7xl);
 }
 
 .album-play-btn {
-  gap: 0.3rem;
+  gap: var(--space-xs);
 }
 
 .album-play-btn svg {
-  margin-right: 0.5rem;
+  margin-right: var(--space-md);
 }
 
 /* Album notes / liner notes */
 .album-notes {
-  padding: 5rem 4rem;
+  padding: var(--space-12xl) var(--space-11xl);
   background: var(--surface-card);
-  margin: 2rem 4rem;
+  margin: var(--space-7xl) var(--space-11xl);
   border-radius: var(--radius-2xl);
 }
 
 .album-notes-inner {
   max-width: 860px;
-  margin: 0 auto;
+  margin: var(--space-0) auto;
 }
 
 .album-notes-inner h2 {
   font-family: var(--font-heading);
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: var(--font-size-heading-md);
+  font-weight: var(--weight-semibold);
   color: var(--text-heading);
-  margin-bottom: 0.8rem;
-  margin-top: 2.5rem;
+  margin-bottom: var(--space-xl);
+  margin-top: var(--space-8xl);
 }
 
 .album-notes-inner h2:first-child {
-  margin-top: 0;
+  margin-top: var(--space-0);
 }
 
 .album-notes-inner p {
-  font-size: 0.95rem;
-  line-height: 1.9;
+  font-size: var(--font-size-body);
+  line-height: var(--line-prose);
   color: var(--text-secondary);
-  margin-bottom: 1.4rem;
+  margin-bottom: var(--space-4xl);
+}
+
+.album-description,
+.album-credits p,
+.album-notes-inner p {
+  font-kerning: normal;
+  letter-spacing: normal;
+  line-height: normal;
 }
 
 /* More music section */
 .more-music {
-  padding: 5rem 4rem;
+  padding: var(--space-12xl) var(--space-11xl);
   background: var(--surface-card);
-  margin: 0 4rem 2rem;
+  margin: var(--space-0) var(--space-11xl) var(--space-7xl);
   border-radius: var(--radius-2xl);
 }
 
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
-  .album-hero { grid-template-columns: 1fr; margin: 5rem 1.5rem 0; }
+  .album-hero { grid-template-columns: 1fr; margin: var(--space-12xl) var(--space-5xl) var(--space-0); }
   .album-hero-cover { height: 50vw; max-height: 400px; }
-  .album-hero-info { padding: 2rem 1.5rem; }
+  .album-hero-info { padding: var(--space-7xl) var(--space-5xl); }
   .audio-player {
     width: calc(100% - 2rem);
-    padding: 0.6rem 1rem;
-    gap: 0.6rem;
+    padding: var(--space-md-plus) var(--space-2xl);
+    gap: var(--space-md-plus);
     border-radius: var(--radius-xl);
   }
   .player-info { min-width: 100px; max-width: 200px; }
   .player-volume-wrap { display: none; }
-  .more-music { padding: 3rem 1.5rem; margin: 0 1.5rem 1.5rem; }
-  .album-notes { padding: 3rem 1.5rem; margin: 1.5rem; }
+  .more-music { padding: var(--space-9xl) var(--space-5xl); margin: var(--space-0) var(--space-5xl) var(--space-5xl); }
+  .album-notes { padding: var(--space-9xl) var(--space-5xl); margin: var(--space-5xl); }
 }
 
 @media (max-width: 600px) {

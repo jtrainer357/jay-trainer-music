@@ -17,7 +17,7 @@
 | **Genre** | Folk, Acoustic Rock, Americana, Singer-Songwriter |
 | **Location** | Pittsburgh, Pennsylvania |
 | **Label** | Briar Patch Records (independent, self-founded) |
-| **Domain** | jaytrainer.com |
+| **Domain** | jaytrainermusic.com |
 | **Stack** | Eleventy 2.x (SSG), Nunjucks templates, vanilla CSS/JS |
 | **Hosting target** | Netlify (serverless functions present) |
 | **Repo** | Local at `/Users/jaytrainer/Documents/jay-trainer-music` |

@@ -2,15 +2,38 @@
   "title": "Jay Trainer",
   "tagline": "Music from Pittsburgh, Pennsylvania",
   "description": "Jay Trainer is a singer-songwriter from Pittsburgh, Pennsylvania, crafting folk, acoustic rock, and Americana music rooted in storytelling, place, and deep-seated instinct. Explore eight releases spanning nearly two decades, from The Waking Hours to A Whisper of Ruin — Deluxe Edition.",
-  "url": "https://jaytrainer.com",
+  "url": "https://jaytrainermusic.com",
   "author": "Jay Trainer",
   "location": "Pittsburgh, Pennsylvania",
   "image": "/assets/images/hero-bg.jpg",
   "twitterHandle": "@jaytrainerband",
+  "themeColor": "#3d2b1a",
   "locale": "en_US",
   "ogImageWidth": 1200,
   "ogImageHeight": 630,
   "keywords": ["Jay Trainer", "folk music", "Americana", "singer-songwriter", "Pittsburgh music", "acoustic rock", "indie folk", "Briar Patch Records"],
+  "media": {
+    "decorative": {
+      "listingHeader": "/assets/images/steel-texture.png",
+      "paperCrease": "/assets/images/paper-crease.png"
+    },
+    "hero": {
+      "default": "/assets/images/hero-bg.jpg"
+    },
+    "about": {
+      "homePrimary": "/assets/images/figure-misty-field.jpg",
+      "homeSecondary": "/assets/images/jay-recording.jpg",
+      "pagePrimary": "/assets/images/about.jpg",
+      "pageSecondary": "/assets/images/jay-recording.jpg",
+      "author": "/assets/images/about.jpg"
+    },
+    "icons": {
+      "faviconSvg": "/assets/images/favicon.svg",
+      "faviconIco": "/assets/images/favicon.ico",
+      "appleTouch": "/assets/images/apple-touch-icon.png",
+      "feed": "/assets/images/favicon-32x32.png"
+    }
+  },
   "geo": {
     "latitude": 40.4406,
     "longitude": -79.9959

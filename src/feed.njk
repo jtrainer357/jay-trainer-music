@@ -14,7 +14,7 @@ eleventyExcludeFromCollections: true
   <author>
     <name>{{ site.author }}</name>
   </author>
-  <icon>{{ site.url }}/assets/images/favicon-32x32.png</icon>
+  <icon>{{ site.url }}{{ site.media.icons.feed }}</icon>
   <logo>{{ site.url }}{{ site.image }}</logo>
   {%- for post in collections.blog | reverse | limit(20) %}
   <entry>

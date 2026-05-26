@@ -10,7 +10,7 @@
     "bandcampUrl": "https://jaytrainer.bandcamp.com/album/a-whisper-of-ruin-deluxe-edition",
     "description": "Fifteen tracks shaped by loss, rootedness, and the strange beauty that grows in the cracks. The expanded edition — featuring live cuts, acoustic reworkings, and three new chapters. Recorded by firelight and instinct.",
     "price": "$7.99",
-    "stripePrice": "",
+    "stripePrice": "price_1TbO6SEOkdyXiRRFhVGZEkVw",
     "tracks": [
       { "title": "The Southern Winds", "duration": "3:28", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/01-the-southern-winds.mp3" },
       { "title": "Voodoo Chile (Live)", "duration": "6:14", "audioFile": "", "previewFile": "/assets/audio/previews/a-whisper-of-ruin-deluxe/02-voodoo-chile-live.mp3" },
@@ -42,7 +42,7 @@
     "description": "A stripped-back reimagining of Citizen Cope's meditation on resilience and the long walk home. Recorded live in one take.",
     "subtitle": "Citizen Cope cover",
     "price": "$1+",
-    "stripePrice": "",
+    "stripePrice": "price_1TbO6SEOkdyXiRRFsyady6W5",
     "tracks": [
       { "title": "Lifeline", "duration": "3:48", "audioFile": "", "previewFile": "/assets/audio/previews/lifeline/01-lifeline.mp3" }
     ],
@@ -78,7 +78,7 @@
     "description": "The East Coast Mix — a reimagined version of the album opener, built from the ground up with new arrangements and wider horizons.",
     "subtitle": "East Coast Mix",
     "price": "$1+",
-    "stripePrice": "",
+    "stripePrice": "price_1TbO6TEOkdyXiRRFiPb2qm8V",
     "tracks": [
       { "title": "The Southern Winds (East Coast Mix)", "duration": "3:30", "audioFile": "", "previewFile": "/assets/audio/previews/the-southern-winds/01-the-southern-winds-east-coast-mix.mp3" }
     ],
@@ -117,7 +117,7 @@
     "bandcampUrl": "https://jaytrainer.bandcamp.com/album/den-of-thieves",
     "description": "Six tracks spanning wide-eyed originals, reworked classics, and a blistering live closer. The sound of a songwriter finding his stride and refusing to stay still.",
     "price": "$5.99",
-    "stripePrice": "",
+    "stripePrice": "price_1TbO6TEOkdyXiRRFd9tfOf08",
     "tracks": [
       { "title": "My Wide Open Eyes", "duration": "4:26", "audioFile": "", "previewFile": "/assets/audio/previews/den-of-thieves/01-my-wide-open-eyes.mp3" },
       { "title": "Run Baby Run", "duration": "5:06", "audioFile": "", "previewFile": "/assets/audio/previews/den-of-thieves/02-run-baby-run.mp3" },
@@ -165,7 +165,7 @@
     "bandcampUrl": "https://jaytrainer.bandcamp.com/album/the-waking-hours",
     "description": "Nine tracks from the earliest sessions — where it all began. Studio recordings beside raw, unpolished live cuts. The sound of a songwriter awake and testing the edges.",
     "price": "$10.99",
-    "stripePrice": "",
+    "stripePrice": "price_1TbO6UEOkdyXiRRFJ6W28sZQ",
     "tracks": [
       { "title": "Maybe Off to Wonder", "duration": "4:12", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/01-maybe-off-to-wonder.mp3" },
       { "title": "Tiny Chinese", "duration": "5:17", "audioFile": "", "previewFile": "/assets/audio/previews/the-waking-hours/02-tiny-chinese.mp3" },

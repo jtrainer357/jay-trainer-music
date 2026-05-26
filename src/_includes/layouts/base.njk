@@ -47,10 +47,10 @@
 <meta name="twitter:image" content="{{ resolvedImage | trim }}">
 
 <!-- Theme & Icons -->
-<meta name="theme-color" content="#3d2b1a">
-<link rel="icon" href="/assets/images/favicon.svg" type="image/svg+xml">
-<link rel="icon" href="/assets/images/favicon.ico" sizes="48x48">
-<link rel="apple-touch-icon" href="/assets/images/apple-touch-icon.png">
+<meta name="theme-color" content="{{ site.themeColor }}">
+<link rel="icon" href="{{ site.media.icons.faviconSvg }}" type="image/svg+xml">
+<link rel="icon" href="{{ site.media.icons.faviconIco }}" sizes="48x48">
+<link rel="apple-touch-icon" href="{{ site.media.icons.appleTouch }}">
 
 <!-- RSS Feed -->
 <link rel="alternate" type="application/atom+xml" title="{{ site.title }} Feed" href="{{ site.url }}/feed.xml">
@@ -58,7 +58,7 @@
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <!-- Styles -->
 <link rel="stylesheet" href="/css/styles.css">
@@ -89,7 +89,7 @@
 </section>
 
 <div class="footer-crease" aria-hidden="true">
-  <img src="/assets/images/paper-crease.png" alt="">
+  <img src="{{ site.media.decorative.paperCrease }}" alt="">
 </div>
 {% include "partials/footer.njk" %}
 {% include "partials/player.njk" %}
