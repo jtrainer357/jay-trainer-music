@@ -5,7 +5,7 @@
     "detail": "12\" x 18\"",
     "price": "$14.99",
     "stripePrice": "price_1TbO6UEOkdyXiRRF5ltDX7zV",
-    "image": "https://f4.bcbits.com/img/a1192705323_10.jpg",
+    "image": "/assets/images/poster-blackout-asylum.jpg",
     "bandcampUrl": "https://jaytrainer.bandcamp.com/album/blackout-asylum-remastered",
     "type": "physical"
   },
@@ -27,7 +27,7 @@
     "detail": "All 7 releases · 35% off",
     "price": "$99",
     "stripePrice": "price_1TbO6VEOkdyXiRRFQIt1Naie",
-    "image": "https://f4.bcbits.com/img/a2678004455_10.jpg",
+    "image": "/assets/images/full-discography-covers.jpg",
     "bandcampUrl": "https://jaytrainer.bandcamp.com",
     "type": "digital"
   }

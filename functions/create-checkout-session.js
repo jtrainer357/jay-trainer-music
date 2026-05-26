@@ -7,7 +7,7 @@ const PRODUCT_CATALOG = {
   "price_1TbO6UEOkdyXiRRF5ltDX7zV": {
     name: "Blackout Asylum — Poster",
     unitAmount: 1499,
-    image: "https://f4.bcbits.com/img/a1192705323_10.jpg",
+    image: "/assets/images/poster-blackout-asylum.jpg",
     type: "physical",
   },
   "price_1TbO6VEOkdyXiRRFLlIK8ABn": {
@@ -19,7 +19,7 @@ const PRODUCT_CATALOG = {
   "price_1TbO6VEOkdyXiRRFQIt1Naie": {
     name: "Full Digital Discography",
     unitAmount: 9900,
-    image: "https://f4.bcbits.com/img/a2678004455_10.jpg",
+    image: "/assets/images/full-discography-covers.jpg",
     type: "digital",
   },
 };
