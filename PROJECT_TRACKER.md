@@ -1,7 +1,7 @@
 # Jay Trainer Music — Project Tracker
 
-> **Last updated:** 2026-03-03 @ session 7 — SEO/AIO/GEO overhaul + 5 new blog posts
-> **Updated by:** Claude (session 7)
+> **Last updated:** 2026-05-27 @ session 8 — Tolaria vault + public EPK/press foundation
+> **Updated by:** Codex (session 8)
 > **Git branch:** `main`
 > **Latest commit:** `732c5b3` — "SEO/AIO/GEO overhaul, 5 new blog posts, unique blog images, wider content"
 
@@ -260,6 +260,9 @@ jay-trainer-music/
 - [x] Merch listing page
 - [x] Blog/Journal listing and 8 blog posts (each with unique feature image)
 - [x] Briar Patch Records label page
+- [x] Press kit / EPK page
+- [x] Contact page with verified public inquiry paths
+- [x] Tolaria + Paperclip private-vault operating docs
 - [x] Persistent HTML5 audio player (master playlist, continuous playback, seek, volume, prev/next)
 - [x] PJAX soft navigation — player keeps playing seamlessly across page navigations
 - [x] Shopping cart (localStorage-based, slide-out drawer, format selection)
@@ -301,6 +304,7 @@ jay-trainer-music/
 - [ ] **Analytics** — No analytics script included (no Google Analytics, Plausible, etc.)
 - [x] **Deployment** — `netlify.toml` created with build config, 404 redirect, security headers, and cache rules
 - [ ] **Dark mode** — No dark mode support
+- [x] **Tolaria vault** — Private local vault created at `/Users/jaytrainer/Documents/briar-patch-records-vault` with note types, release/track catalog, Paperclip agent briefs, approval gates, and public-export workflow
 
 ---
 
@@ -313,6 +317,8 @@ jay-trainer-music/
 | **Bandcamp** | Music hosting, streaming, downloads | Active — all release URLs point here |
 | **Google Fonts** | Typography (Inter, Playfair Display, Caveat) | Active |
 | **Bandcamp CDN** | Cover art image hosting (f4.bcbits.com) | Active |
+| **Tolaria** | Private label vault and Markdown knowledge base | Local vault created, private GitHub repo pending/active depending on remote setup |
+| **Paperclip** | AI label operating system for agents/goals/budgets/approvals | Operating model and agent briefs created in Tolaria vault |
 | **YouTube** | Video content | URL configured |
 | **Instagram** | Social presence | URL configured |
 | **Twitter/X** | Social presence | URL configured |
@@ -414,10 +420,10 @@ jay-trainer-music/
 - Add analytics (Plausible or similar privacy-respecting option)
 - Dark mode toggle
 - Contact form / booking inquiry page
+- Replace current contact page with a real form once routing, spam protection, and notification handling are configured
 - Email download delivery system (post-Stripe webhook)
 - Live show / tour dates page
 - Video/media gallery
-- Press kit / EPK page
 
 ---
 
@@ -425,6 +431,7 @@ jay-trainer-music/
 
 | Date | Session | Summary |
 |---|---|---|
+| 2026-05-27 | Session 8 | **Tolaria + Paperclip foundation**: Created private Tolaria vault outside the public site repo at `/Users/jaytrainer/Documents/briar-patch-records-vault`, with Markdown/YAML note types for Artist, Release, Track, Campaign, Audience, Channel, Contact, Asset, Offer, Procedure, AgentBrief, and MetricReport. Seeded Briar Patch Records, Jay Trainer, Jay Trainer Band lane, AI-native label lane, approval gates, public export workflow, Paperclip company model, six Paperclip agent briefs, 90-day audience growth goal, EPK draft, AI disclosure standard, and generated all 8 release notes plus 48 track notes from `src/_data/releases.json`. Added public `/press/` EPK page, `/contact/` page, sitemap entries, footer/nav links, structured data, stronger `llms.txt`, label page AI-lane disclosure, and `docs/TOLARIA_PAPERCLIP_OPERATIONS.md`. |
 | 2026-03-02 | Session 1 | Full project audit. Created PROJECT_TRACKER.md. Set up auto-memory for session persistence. No code changes made. |
 | 2026-03-02 | Session 2 | Font exploration: tested Caveat, Reenie Beanie, Splash, Babylonica, Comforter Brush, Square Peg, Quentin, Fuggles, Rock 3D, Special Elite, Waiting for the Sunrise, Whisper, Grahamo, Gloriousity Two, Herbert Cooper, Jeff Dungan. Settled on **Jeff Dungan** (self-hosted). Neutralized body text colors from brown to dark grey (--bark, --ink, --coffee-dark). Replaced footer social text initials (YT/IG/TW/FB/BC) with proper SVG icons. Fixed Apple Music icon (was GitHub Octocat) and Spotify icon (was solid circle) in streaming banner. Added fonts passthrough to Eleventy config. Created PROJECT_TRACKER.md. |
 | 2026-03-03 | Session 6 | **Deployment & Cleanup**: Created `netlify.toml` (build config, 404 redirect, security headers: X-Frame-Options DENY, X-Content-Type-Options nosniff, Referrer-Policy, Permissions-Policy; cache rules for CSS/JS/assets/audio). Added `loading="lazy"` to 5 below-fold images across about.njk, index.njk, post.njk. Added `Distressed Assets/` to .gitignore (Affinity design resource packs, not site content). Audited and confirmed: favicons already present (4 files), footer year already dynamic, mobile nav hamburger fully functional, Spotify/Apple Music links already real. Updated PROJECT_TRACKER known issues (resolved 5 items). |

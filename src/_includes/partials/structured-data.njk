@@ -277,3 +277,46 @@
 }
 </script>
 {% endif %}
+
+{# ─── PRESS PAGE: EPK / AboutPage ─── #}
+{% if page.url == "/press/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "Jay Trainer Press Kit",
+  "url": "{{ site.url }}/press/",
+  "description": "Electronic press kit for Jay Trainer and Briar Patch Records, including bio, key facts, music links, press angles, and contact paths.",
+  "about": {
+    "@type": "MusicGroup",
+    "name": "{{ site.title }}",
+    "genre": ["Folk", "Acoustic Rock", "Americana", "Singer-Songwriter"],
+    "url": "{{ site.url }}/",
+    "sameAs": {{ site.sameAs | dump | safe }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Briar Patch Records",
+    "url": "{{ site.url }}/label/"
+  }
+}
+</script>
+{% endif %}
+
+{# ─── CONTACT PAGE ─── #}
+{% if page.url == "/contact/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact Jay Trainer and Briar Patch Records",
+  "url": "{{ site.url }}/contact/",
+  "description": "Contact paths for press, playlist, licensing, booking, and collaboration inquiries.",
+  "about": {
+    "@type": "Organization",
+    "name": "Briar Patch Records",
+    "url": "{{ site.url }}/label/"
+  }
+}
+</script>
+{% endif %}

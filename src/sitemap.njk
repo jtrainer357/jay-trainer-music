@@ -40,6 +40,18 @@ eleventyExcludeFromCollections: true
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+  <url>
+    <loc>{{ site.url }}/press/</loc>
+    <lastmod>{{ "now" | w3Date }}</lastmod>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>{{ site.url }}/contact/</loc>
+    <lastmod>{{ "now" | w3Date }}</lastmod>
+    <priority>0.7</priority>
+    <changefreq>monthly</changefreq>
+  </url>
   {%- for release in releases %}
   <url>
     <loc>{{ site.url }}/music/{{ release.slug }}/</loc>
