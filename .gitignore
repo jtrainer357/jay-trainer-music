@@ -29,3 +29,6 @@ Jay Trainer Site Inspiration Images/
 
 # Local Netlify folder
 .netlify
+
+# Private local working files that must not be deployed or pushed
+private/
