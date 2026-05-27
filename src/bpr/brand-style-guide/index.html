@@ -1,0 +1,1161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<title>Jay Trainer Music — Visual Brand Guidelines</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+@font-face { font-family:'Jeff Dungan'; src:url('fonts/JeffDungan.ttf') format('truetype'); font-weight:400; font-style:normal; font-display:swap; }
+@font-face { font-family:'Fraunces'; src:url('fonts/Fraunces_SOFT_WONK_opsz_wght_.ttf') format('truetype'); font-weight:100 900; font-style:normal; font-display:swap; }
+@font-face { font-family:'Fraunces'; src:url('fonts/Fraunces-Italic_SOFT_WONK_opsz_wght_.ttf') format('truetype'); font-weight:100 900; font-style:italic; font-display:swap; }
+
+:root {
+  --ink:#111110; --smoke:#1e1d1b; --cinder:#2e2c28; --ash:#5a5650; --dust:#8c8680;
+  --bone:#d4cdc0; --parch:#ede8dd; --ember:#c47a2a; --rust:#b04520;
+  --coal:#080808; --white:#faf8f4;
+  --approve:#3d5a40; --forbid:#8a1f1f;
+}
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; font-size:15px; }
+body { background:var(--ink); color:var(--bone); font-family:'Inter',system-ui,sans-serif; -webkit-font-smoothing:antialiased; display:flex; min-height:100vh; }
+
+/* ── SIDEBAR ── */
+nav {
+  width:220px; flex-shrink:0; position:sticky; top:0; height:100vh; overflow-y:auto;
+  background:var(--smoke); border-right:1px solid var(--cinder);
+  display:flex; flex-direction:column; padding:32px 0;
+}
+.nav-logo { padding:0 22px 28px; border-bottom:1px solid var(--cinder); margin-bottom:20px; }
+.nav-logo img { width:130px; height:auto; display:block; filter:brightness(0) invert(0.85); }
+.nav-section { padding:0 22px; }
+.nav-label { font-family:'Space Mono',monospace; font-size:8px; text-transform:uppercase; letter-spacing:.16em; color:var(--ash); margin-bottom:10px; }
+.nav-item { display:block; padding:6px 0; font-family:'Space Mono',monospace; font-size:9px; text-transform:uppercase; letter-spacing:.1em; color:var(--dust); text-decoration:none; transition:color 180ms; line-height:1.4; }
+.nav-item:hover { color:var(--ember); }
+.nav-item span { color:var(--cinder); margin-right:8px; }
+
+/* ── MAIN CONTENT ── */
+main { flex:1; min-width:0; }
+.doc-header { background:var(--coal); padding:72px 80px 64px; border-bottom:1px solid var(--cinder); }
+.doc-eyebrow { font-family:'Jeff Dungan',cursive; font-size:20px; color:var(--ember); margin-bottom:10px; }
+.doc-title { font-family:'Fraunces',serif; font-weight:700; font-size:56px; line-height:1; letter-spacing:-.02em; color:var(--white); margin-bottom:16px; }
+.doc-title em { font-style:italic; color:var(--ember); }
+.doc-sub { font-size:14px; line-height:1.7; color:var(--ash); max-width:580px; margin-bottom:28px; }
+.doc-version { font-family:'Space Mono',monospace; font-size:8px; text-transform:uppercase; letter-spacing:.16em; color:var(--cinder); }
+
+section.s { padding:64px 80px; border-bottom:1px solid var(--cinder); }
+section.s:last-child { border-bottom:none; }
+.s-num { font-family:'Space Mono',monospace; font-size:9px; text-transform:uppercase; letter-spacing:.2em; color:var(--ember); margin-bottom:10px; }
+.s-title { font-family:'Fraunces',serif; font-weight:700; font-size:36px; line-height:1.05; letter-spacing:-.02em; color:var(--white); margin-bottom:8px; }
+.s-sub { font-size:13px; color:var(--ash); margin-bottom:40px; line-height:1.65; max-width:640px; }
+h3 { font-family:'Fraunces',serif; font-weight:700; font-size:20px; color:var(--white); margin:36px 0 12px; letter-spacing:-.01em; }
+h3:first-of-type { margin-top:0; }
+h4 { font-family:'Space Mono',monospace; font-size:9px; text-transform:uppercase; letter-spacing:.15em; color:var(--ember); margin:24px 0 8px; }
+p { font-size:14px; line-height:1.75; color:var(--bone); margin-bottom:12px; }
+p:last-child { margin-bottom:0; }
+ul, ol { padding-left:20px; margin-bottom:12px; }
+li { font-size:14px; line-height:1.75; color:var(--bone); margin-bottom:3px; }
+strong { color:var(--white); font-weight:600; }
+
+/* ── CARDS ── */
+.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:16px; margin:20px 0; }
+.card { background:var(--smoke); border:1px solid var(--cinder); border-radius:2px; padding:22px 24px; }
+.card-label { font-family:'Space Mono',monospace; font-size:8px; text-transform:uppercase; letter-spacing:.14em; color:var(--dust); margin-bottom:8px; }
+.card-title { font-family:'Fraunces',serif; font-weight:700; font-size:17px; color:var(--white); margin-bottom:10px; letter-spacing:-.01em; }
+.card p { font-size:13px; color:var(--bone); }
+
+/* ── TERRITORY BLOCKS ── */
+.territory { background:var(--smoke); border:1px solid var(--cinder); border-left:3px solid var(--ember); border-radius:2px; margin-bottom:24px; padding:28px 32px; }
+.t-name { font-family:'Fraunces',serif; font-weight:700; font-size:22px; color:var(--white); margin-bottom:4px; }
+.t-purpose { font-size:13px; font-style:italic; color:var(--ember); margin-bottom:20px; }
+.t-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px 32px; }
+.t-item h4 { margin-top:0; margin-bottom:6px; }
+.t-item ul { margin-bottom:0; }
+.t-item li { font-size:12px; }
+
+/* ── PROMPT BLOCK ── */
+.prompt { background:var(--coal); border:1px solid var(--cinder); border-radius:2px; padding:16px 20px; margin:10px 0; }
+.prompt-label { font-family:'Space Mono',monospace; font-size:8px; text-transform:uppercase; letter-spacing:.14em; color:var(--ember); margin-bottom:8px; }
+.prompt code { font-family:'Space Mono',monospace; font-size:11px; color:var(--bone); line-height:1.7; display:block; white-space:pre-wrap; word-break:break-word; }
+.neg { border-color:var(--forbid); }
+.neg .prompt-label { color:var(--rust); }
+.neg code { color:#c09090; }
+
+/* ── RUBRIC TABLE ── */
+table { width:100%; border-collapse:collapse; margin:16px 0; font-size:13px; }
+th { font-family:'Space Mono',monospace; font-size:8px; text-transform:uppercase; letter-spacing:.12em; color:var(--dust); text-align:left; padding:10px 14px; border-bottom:1px solid var(--cinder); }
+td { padding:11px 14px; border-bottom:1px solid var(--cinder); color:var(--bone); line-height:1.5; vertical-align:top; }
+tr:last-child td { border-bottom:none; }
+.score { font-family:'Space Mono',monospace; font-size:12px; font-weight:700; color:var(--ember); }
+.pass { color:var(--approve); font-family:'Space Mono',monospace; font-size:11px; }
+.fail { color:var(--rust); font-family:'Space Mono',monospace; font-size:11px; }
+
+/* ── CALLOUTS ── */
+.callout { border-radius:2px; padding:16px 20px; margin:16px 0; font-size:13px; line-height:1.65; }
+.callout-ok { background:rgba(61,90,64,.18); border-left:2px solid var(--approve); color:#a0c8a4; }
+.callout-warn { background:rgba(138,31,31,.15); border-left:2px solid var(--forbid); color:#d49090; }
+.callout-note { background:rgba(196,122,42,.1); border-left:2px solid var(--ember); color:var(--bone); }
+.callout strong { color:var(--white); }
+
+/* ── COLOR SWATCHES ── */
+.swatches { display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 20px; }
+.swatch { display:flex; flex-direction:column; gap:6px; }
+.sw { width:52px; height:52px; border-radius:2px; border:1px solid rgba(255,255,255,.08); }
+.sw-n { font-family:'Space Mono',monospace; font-size:8px; text-transform:uppercase; letter-spacing:.1em; color:var(--dust); line-height:1.4; }
+
+/* ── INLINE TAGS ── */
+.tag { display:inline-block; font-family:'Space Mono',monospace; font-size:9px; text-transform:uppercase; letter-spacing:.1em; padding:2px 7px; border-radius:2px; margin:2px 3px 2px 0; }
+.tag-ok  { background:rgba(61,90,64,.3);  color:#a0c8a4; }
+.tag-no  { background:rgba(138,31,31,.3); color:#d49090; }
+.tag-ref { background:rgba(196,122,42,.18); color:var(--ember); }
+
+.rule-row { display:flex; gap:10px; margin-bottom:8px; align-items:baseline; }
+.rule-do  { font-family:'Space Mono',monospace; font-size:9px; color:var(--approve); letter-spacing:.1em; flex-shrink:0; width:28px; }
+.rule-dont{ font-family:'Space Mono',monospace; font-size:9px; color:var(--rust); letter-spacing:.1em; flex-shrink:0; width:28px; }
+.rule-txt { font-size:13px; line-height:1.6; color:var(--bone); }
+
+.divider { height:1px; background:var(--cinder); margin:32px 0; }
+.mono { font-family:'Space Mono',monospace; font-size:11px; color:var(--dust); }
+
+/* ── CAMPAIGN SECTION ── */
+.c-ov-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;margin-bottom:8px}
+.c-ov-cell{border-radius:2px;padding:9px 10px 7px}
+.c-ov-d{font-family:'Space Mono',monospace;font-size:7px;text-transform:uppercase;letter-spacing:.1em;margin-bottom:3px}
+.c-ov-s{font-size:9px;font-weight:600;line-height:1.25;margin-bottom:3px;word-wrap:break-word}
+.c-ov-p{font-family:'Space Mono',monospace;font-size:6px;text-transform:uppercase;letter-spacing:.08em;opacity:.7}
+.c-sp{background:#2a1a08}.c-sp .c-ov-d,.c-sp .c-ov-p{color:rgba(184,133,42,.7)}.c-sp .c-ov-s{color:#e0c890}
+.c-tm{background:#e8dcc8;border:1px solid #b8852a}.c-tm .c-ov-d{color:#b8852a}.c-tm .c-ov-s{color:#1a1917}.c-tm .c-ov-p{color:#4a4238}
+.c-rs{background:#d8ccaa}.c-rs .c-ov-d,.c-rs .c-ov-p{color:#6b5040}.c-rs .c-ov-s{color:#2a1e10}
+.c-pc{background:#1a1208}.c-pc .c-ov-d,.c-pc .c-ov-p{color:rgba(184,133,42,.6)}.c-pc .c-ov-s{color:rgba(240,232,213,.75)}
+.c-ov-legend{display:flex;gap:18px;flex-wrap:wrap;margin-top:6px}
+.c-ovl{display:flex;align-items:center;gap:6px;font-family:'Space Mono',monospace;font-size:7px;text-transform:uppercase;letter-spacing:.1em;color:var(--ash)}
+.c-ovl-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+.c-wk-hd{font-family:'Space Mono',monospace;font-size:7px;text-transform:uppercase;letter-spacing:.14em;color:var(--ash);margin-bottom:5px;margin-top:24px}
+.c-wk-hd:first-child{margin-top:0}
+.c-day-block{margin-bottom:52px;padding-bottom:52px;border-bottom:1px solid var(--cinder)}
+.c-day-block:last-child{border-bottom:none;margin-bottom:0}
+.c-day-hd{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.c-day-n{font-family:'Space Mono',monospace;font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--ash)}
+.c-day-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.c-day-pil{font-family:'Space Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.12em;color:var(--dust)}
+.c-day-song{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--white);letter-spacing:-.01em}
+.c-thumb-row{display:flex;gap:10px;align-items:flex-start;overflow-x:auto;padding-bottom:6px;scrollbar-width:none;margin-bottom:16px}
+.c-thumb-row::-webkit-scrollbar{display:none}
+.c-thumb-col{display:flex;flex-direction:column;gap:6px;flex-shrink:0}
+.c-thumb-wrap{position:relative;overflow:hidden;border-radius:2px;box-shadow:0 2px 16px rgba(0,0,0,.6);flex-shrink:0}
+.c-thumb-lbl{font-family:'Space Mono',monospace;font-size:6px;text-transform:uppercase;letter-spacing:.08em;color:var(--ash);text-align:center;line-height:1.5}
+.c-cap-row{display:grid;grid-template-columns:1fr 290px;gap:12px;align-items:start}
+.c-cap-box{background:var(--coal);border:1px solid var(--cinder);border-radius:2px;padding:14px 16px;margin-bottom:0}
+.c-cap-lbl{font-family:'Space Mono',monospace;font-size:7px;text-transform:uppercase;letter-spacing:.16em;color:var(--ash);margin-bottom:7px}
+.c-cap-txt{font-size:13px;line-height:1.65;color:rgba(240,232,213,.88);font-style:italic;margin-bottom:8px}
+.c-cap-tags{font-family:'Space Mono',monospace;font-size:10px;color:var(--ember);line-height:1.7}
+.c-side-col{display:flex;flex-direction:column;gap:10px}
+.c-plat-box{background:var(--smoke);border:1px solid var(--cinder);border-radius:2px;padding:12px 14px}
+.c-plat-hd{font-family:'Space Mono',monospace;font-size:7px;text-transform:uppercase;letter-spacing:.14em;color:var(--ash);margin-bottom:8px}
+.c-plat-row{display:flex;align-items:baseline;gap:8px;margin-bottom:5px}
+.c-plat-row:last-child{margin-bottom:0}
+.c-plat-name{font-family:'Space Mono',monospace;font-size:7px;text-transform:uppercase;letter-spacing:.08em;color:var(--dust);white-space:nowrap;flex-shrink:0;min-width:66px}
+.c-plat-fmt{font-size:10px;color:var(--bone);line-height:1.4}
+/* ── LOGO SECTION ── */
+.logo-hero{background:#080808;border-radius:2px;padding:72px 48px 56px;display:flex;flex-direction:column;align-items:center;gap:14px;margin:20px 0 32px;position:relative;overflow:hidden}
+.logo-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px;opacity:.04;pointer-events:none}
+.logo-hero-wordmark{width:480px;max-width:80%;height:auto;display:block;filter:brightness(0) invert(1);position:relative;z-index:1}
+.logo-hero-caption{font-family:'Space Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.18em;color:var(--ash);text-align:center;position:relative;z-index:1}
+.logo-variants{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:16px 0 32px}
+.lv{border-radius:2px;padding:36px 28px 22px;display:flex;flex-direction:column;gap:16px}
+.lv-logo{height:28px;width:auto;max-width:220px;display:block}
+.lv-meta{display:flex;flex-direction:column;gap:4px}
+.lv-name{font-family:'Space Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.14em}
+.lv-use{font-size:12px;line-height:1.5;margin-bottom:0}
+.logo-clearspace{background:var(--smoke);border:1px solid var(--cinder);border-radius:2px;padding:48px;display:flex;flex-direction:column;align-items:center;gap:14px;margin:16px 0 28px}
+.cs-inner{position:relative;display:inline-block}
+.cs-logo{width:300px;height:auto;display:block;filter:brightness(0) invert(1)}
+.cs-box{position:absolute;top:-20px;left:-20px;right:-20px;bottom:-20px;border:1px dashed rgba(196,122,42,.45)}
+.cs-tick{position:absolute;font-family:'Space Mono',monospace;font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:var(--ember)}
+.cs-tick-t{top:-34px;left:50%;transform:translateX(-50%)}
+.cs-tick-l{left:-52px;top:50%;transform:translateY(-50%)}
+.cs-caption{font-family:'Space Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.14em;color:var(--ash);text-align:center}
+.logo-sizes{display:flex;align-items:flex-end;gap:36px;background:var(--coal);border-radius:2px;padding:32px 40px;margin:16px 0 8px;flex-wrap:wrap}
+.ls-unit{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.ls-img{display:block;filter:brightness(0) invert(1)}
+.ls-lbl{font-family:'Space Mono',monospace;font-size:7px;text-transform:uppercase;letter-spacing:.1em;color:var(--ash)}
+.logo-pillar-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:16px 0 28px}
+.lpg-cell{border-radius:2px;overflow:hidden}
+.lpg-bg{height:110px;display:flex;align-items:center;justify-content:center;padding:16px;position:relative}
+.lpg-bg img{height:auto;max-width:80%;display:block}
+.lpg-lbl{font-family:'Space Mono',monospace;font-size:7px;text-transform:uppercase;letter-spacing:.1em;color:var(--dust);text-align:center;padding:7px 8px;background:var(--smoke)}
+.never-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:16px 0}
+.never-item{background:rgba(138,31,31,.1);border:1px solid rgba(138,31,31,.25);border-radius:2px;padding:14px 16px}
+.never-n{font-family:'Space Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:var(--rust);margin-bottom:5px}
+.never-txt{font-size:12px;line-height:1.55;color:var(--bone)}
+@media (max-width:900px) {
+  nav { display:none; }
+  section.s, .doc-header { padding:48px 32px; }
+  .t-grid { grid-template-columns:1fr; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">
+    <img src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer">
+  </div>
+  <div class="nav-section">
+    <div class="nav-label">Visual Brand Guidelines</div>
+    <a class="nav-item" href="#s1"><span>01</span>Core Identity</a>
+    <a class="nav-item" href="#slogo"><span>&mdash;</span>Logo &amp; Wordmark</a>
+    <a class="nav-item" href="#s2"><span>02</span>Reference Library</a>
+    <a class="nav-item" href="#s3"><span>03</span>Creative Territories</a>
+    <a class="nav-item" href="#s4"><span>04</span>Visual Rules</a>
+    <a class="nav-item" href="#s5"><span>05</span>AI Generation Rules</a>
+    <a class="nav-item" href="#s6"><span>06</span>Quality Rubric</a>
+    <a class="nav-item" href="#s7"><span>07</span>Video Direction</a>
+    <a class="nav-item" href="#s8"><span>08</span>Brand Examples</a>
+    <a class="nav-item" href="#s9"><span>09</span>Governance</a>
+    <a class="nav-item" href="#s10"><span>10</span>Campaign Creative</a>
+  </div>
+</nav>
+
+<main>
+
+<div class="doc-header">
+  <div class="doc-eyebrow">Jay Trainer Music</div>
+  <h1 class="doc-title">Visual Brand <em>Guidelines</em></h1>
+  <p class="doc-sub">A complete visual canon for agents, designers, and AI tools producing creative for Jay Trainer Music. Specific enough to be an operating manual. Built to prevent generic output and protect creative integrity.</p>
+  <div class="doc-version">Version 1.0 &nbsp;·&nbsp; May 2026 &nbsp;·&nbsp; Briar Patch Records</div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="s" id="s1">
+  <div class="s-num">Section 01</div>
+  <h2 class="s-title">Core Visual Identity</h2>
+  <p class="s-sub">What Jay Trainer should feel like before it looks like anything. These are the emotional briefs that govern every creative decision downstream.</p>
+
+  <h3>The Feeling Brief</h3>
+  <p>You are sitting in a room where someone recently played guitar. The amp is still warm. There is a coffee ring on a lyric sheet. Outside the window is a Pittsburgh sky in November — neither romantic nor grim, just real. The music playing back on a rough phone recording sounds better than it has any right to.</p>
+  <p>This is the emotional center of Jay Trainer's brand. <strong>Lived-in. Unsentimental. Quietly serious.</strong> The work speaks because it was earned. The visuals must earn their place the same way — through specificity, not style.</p>
+
+  <h3>Brand Personality in Three Words</h3>
+  <div class="cards">
+    <div class="card"><div class="card-label">Pillar 01</div><div class="card-title">Grit</div><p>Authentic, unpolished, human. The process shows. The calluses show. No smoke machines, no aspirational skylines.</p></div>
+    <div class="card"><div class="card-label">Pillar 02</div><div class="card-title">Soul</div><p>Emotionally resonant, warm but dark. The lyricism is stark. Visuals should earn silence, not fill it.</p></div>
+    <div class="card"><div class="card-label">Pillar 03</div><div class="card-title">Cosmic</div><p>Psychedelic depth. Not sci-fi. Not festival. The infinite sustain of a well-placed fuzz pedal — uncontrolled beauty within tight craft.</p></div>
+  </div>
+
+  <h3>What It Is Not</h3>
+  <div class="callout callout-warn">
+    <strong>Generic Americana:</strong> No barn doors, no wheat fields, no Route 66 road signs, no mason jars, no flannel-and-denim pose shots, no sepia Instagram "vintage" filter on a guitar lying in grass. These are aesthetic shortcuts that say nothing about this music specifically.
+  </div>
+  <div class="callout callout-warn">
+    <strong>Music Industry Cliché:</strong> No crowd shots with phone lights, no studio-montage clichés (headphones around neck, pointing at screen), no album release announcement graphics that look like Spotify playlist covers. No gradient text. No neon.
+  </div>
+  <div class="callout callout-warn">
+    <strong>Clean Digital Perfection:</strong> This brand is not polished. Heavily retouched photography, 4K-sharp digital renders, and stock-feeling composites are off-brand. The standard is analog warmth — grain, weight, wear.
+  </div>
+
+  <h3>The Pittsburgh Specificity Rule</h3>
+  <p>Pittsburgh is not a backdrop. It is a material. Wet steel. River-grey skies. Bridge geometry. The smell of old rehearsal rooms on the South Side. Brick walls with paint palimpsests. If "Pittsburgh" could be swapped out for "Nashville" or "Brooklyn" without changing the image, it is not specific enough.</p>
+
+  <h3>The Catalog Gravity Rule</h3>
+  <p>Jay Trainer has a deep catalog spanning <em>Blackout Asylum</em>, <em>A Whisper Of Ruin</em>, <em>Den Of Thieves</em>, <em>Of The Sun</em>, <em>The Waking Hours</em>, and "Lifeline." The visual brand must carry that weight. It cannot look like a debut act. It must look like someone who has been making serious records for years and has the rooms to prove it.</p>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="s" id="slogo">
+  <div class="s-num">Brand Identity</div>
+  <h2 class="s-title">Logo &amp; Wordmark</h2>
+  <p class="s-sub">The calligraphic wordmark is the only logo. It cannot be recreated in type, substituted with another font, or generated by AI. It is a handcrafted artifact — treat it accordingly.</p>
+
+  <div class="logo-hero">
+    <img class="logo-hero-wordmark" src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer wordmark">
+    <div class="logo-hero-caption">Primary wordmark &nbsp;&middot;&nbsp; Light on Coal &nbsp;&middot;&nbsp; The only approved version for dark surfaces</div>
+  </div>
+
+  <h3>Color Variants</h3>
+  <p>There are exactly four approved color treatments. No others are permitted.</p>
+  <div class="logo-variants">
+    <div class="lv" style="background:#080808;border:1px solid #2e2c28">
+      <img class="lv-logo" src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="filter:brightness(0) invert(1)">
+      <div class="lv-meta">
+        <div class="lv-name" style="color:#d4cdc0">01 &mdash; White on Coal</div>
+        <p class="lv-use" style="color:#5a5650">Primary. Dark backgrounds: page headers, stage graphics, album art on dark ground, social post templates, merchandise on black.</p>
+      </div>
+    </div>
+    <div class="lv" style="background:#1e1d1b;border:1px solid #2e2c28">
+      <img class="lv-logo" src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="filter:brightness(0) invert(1);opacity:.78">
+      <div class="lv-meta">
+        <div class="lv-name" style="color:#d4cdc0">02 &mdash; White 78% on Smoke</div>
+        <p class="lv-use" style="color:#5a5650">Social assets. Used on Screen Print and Psychedelic Collage pillars. Slightly dimmed so the type reads as a brand mark, not a foreground element competing with the main visual.</p>
+      </div>
+    </div>
+    <div class="lv" style="background:#ede8dd;border:1px solid #d4cdc0">
+      <img class="lv-logo" src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="opacity:.65">
+      <div class="lv-meta">
+        <div class="lv-name" style="color:#2e2c28">03 &mdash; Coal 65% on Parchment</div>
+        <p class="lv-use" style="color:#5a5650">Light surfaces: lyric cards, press quotes, liner-note insets, newsletter headers, Record Sleeve social pillar. The original dark fill at reduced opacity to prevent harshness against warm paper.</p>
+      </div>
+    </div>
+    <div class="lv" style="background:#c47a2a;border:1px solid #b04520">
+      <img class="lv-logo" src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="filter:brightness(0);opacity:.55">
+      <div class="lv-meta">
+        <div class="lv-name" style="color:#080808">04 &mdash; Black 55% on Ember</div>
+        <p class="lv-use" style="color:rgba(8,8,8,.6)">Accent use only. Type Monument amber pillar, limited-edition print, secondary merchandise colourway. Never used as the primary brand presentation.</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Clear Space Rule</h3>
+  <p>The wordmark requires a minimum clear zone on all sides equal to the cap-height of the letter J (approximately 1/5 of the logo height). Nothing — text, images, page edges, other logos — may enter this zone.</p>
+  <div class="logo-clearspace">
+    <div class="cs-inner">
+      <img class="cs-logo" src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer">
+      <div class="cs-box"></div>
+      <span class="cs-tick cs-tick-t">1/5 logo height</span>
+      <span class="cs-tick cs-tick-l">1/5</span>
+    </div>
+    <div class="cs-caption">The dashed zone is clear space &mdash; keep it free on all four sides</div>
+  </div>
+
+  <h3>Minimum Display Size</h3>
+  <p>Below 120px wide the calligraphic letterforms degrade. At 80px and below the wordmark becomes illegible. Never use below 120px on screen; never below 30mm in print.</p>
+  <div class="logo-sizes">
+    <div class="ls-unit">
+      <img class="ls-img" src="assets/jaytrainer-logo-v1.svg" alt="" style="width:400px">
+      <div class="ls-lbl">400px &middot; Hero / cover</div>
+    </div>
+    <div class="ls-unit">
+      <img class="ls-img" src="assets/jaytrainer-logo-v1.svg" alt="" style="width:200px">
+      <div class="ls-lbl">200px &middot; Standard</div>
+    </div>
+    <div class="ls-unit">
+      <img class="ls-img" src="assets/jaytrainer-logo-v1.svg" alt="" style="width:120px">
+      <div class="ls-lbl">120px &middot; Minimum</div>
+    </div>
+    <div class="ls-unit" style="opacity:.35">
+      <img class="ls-img" src="assets/jaytrainer-logo-v1.svg" alt="" style="width:80px">
+      <div class="ls-lbl" style="color:var(--rust)">80px &middot; Do not use</div>
+    </div>
+  </div>
+
+  <h3>Logo on Each Social Pillar</h3>
+  <p>The logo appears on every post in the social system. Here is the exact treatment per pillar background.</p>
+  <div class="logo-pillar-grid">
+    <div class="lpg-cell">
+      <div class="lpg-bg" style="background:linear-gradient(135deg,#c07030,#1a0e14)">
+        <img src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="filter:brightness(0) invert(1);opacity:.78;width:85%">
+      </div>
+      <div class="lpg-lbl">Screen Print &middot; White 78%<br>Top-left, above year</div>
+    </div>
+    <div class="lpg-cell">
+      <div class="lpg-bg" style="background:#1a1917">
+        <img src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="filter:brightness(0) invert(1);opacity:.7;width:85%">
+      </div>
+      <div class="lpg-lbl">Type Monument &middot; White 70%<br>Above title, left-aligned</div>
+    </div>
+    <div class="lpg-cell">
+      <div class="lpg-bg" style="background:#ddd0b0">
+        <img src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="opacity:.4;width:75%">
+      </div>
+      <div class="lpg-lbl">Record Sleeve &middot; Dark 40%<br>Above footer handle line</div>
+    </div>
+    <div class="lpg-cell">
+      <div class="lpg-bg" style="background:#0d0d0c">
+        <img src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="filter:brightness(0) invert(1);opacity:.72;width:85%">
+      </div>
+      <div class="lpg-lbl">Psychedelic Collage &middot; White 72%<br>Centered, top zone</div>
+    </div>
+  </div>
+
+  <h3>Never Do This</h3>
+  <p>These are not guidelines. They are prohibitions. Any asset violating them must be rejected.</p>
+  <div class="never-grid">
+    <div class="never-item"><div class="never-n">No stretching</div><div class="never-txt">Never alter the aspect ratio of the wordmark. The calligraphic proportions are fixed. Scaling is uniform only.</div></div>
+    <div class="never-item"><div class="never-n">No recreation in type</div><div class="never-txt">Never attempt to replicate the wordmark using any typeface, including script fonts. There is no typographic substitute. If the SVG is unavailable, use no logo.</div></div>
+    <div class="never-item"><div class="never-n">No color outside the four variants</div><div class="never-txt">Do not colorize the logo in brand colors (amber, rust) or any other color. The four approved treatments are white-on-dark, white-dimmed, coal-on-parchment, and black-on-amber.</div></div>
+    <div class="never-item"><div class="never-n">No drop shadows or glows</div><div class="never-txt">Never add drop shadows, outer glows, inner glows, emboss effects, or any layer style to the wordmark. Legibility is achieved through background contrast alone.</div></div>
+    <div class="never-item"><div class="never-n">No rotation</div><div class="never-txt">The logo runs horizontal. It is never tilted, angled, or placed on a curve. On merchandise, it is level.</div></div>
+    <div class="never-item"><div class="never-n">No AI generation of the logo</div><div class="never-txt">Never ask an AI image tool to generate, recreate, or approximate the Jay Trainer wordmark. AI generation will produce a plausible-looking fake. The SVG file is the only source.</div></div>
+    <div class="never-item"><div class="never-n">No placement on busy backgrounds</div><div class="never-txt">The logo must always have sufficient contrast. On photography, use a vignette, overlay, or solid zone behind the wordmark. Never place it on a mid-tone busy image without contrast treatment.</div></div>
+    <div class="never-item"><div class="never-n">No minimum size violations</div><div class="never-txt">Never render the logo below 120px wide on screen or 30mm in print. At small sizes, use the wordmark as a text credit only — never as a visual focal point.</div></div>
+  </div>
+
+  <div class="callout callout-note" style="margin-top:12px">
+    <strong>File source:</strong> The authoritative wordmark file is <span class="mono">assets/jaytrainer-logo-v1.svg</span>. It is an SVG with a fixed viewBox of 2771×790. All agents must reference this path. Never re-export, re-trace, or re-render from a screenshot or raster image.
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="s" id="s2">
+  <div class="s-num">Section 02</div>
+  <h2 class="s-title">Reference Library Requirements</h2>
+  <p class="s-sub">What must be collected, organized, and made available to every creative agent. References are the difference between good art direction and generic output.</p>
+
+  <h3>Category A — Primary Jay Trainer Assets</h3>
+  <p>These are non-negotiable. Every AI generation pipeline must have access to these before producing any output.</p>
+
+  <div class="cards">
+    <div class="card"><div class="card-label">A1 · Jay Photos</div><div class="card-title">Artist Photography</div><p>Performance shots, studio sessions, behind-the-scenes. Minimum 20 approved images in varied lighting. <strong>Required:</strong> at least 5 with guitar in hand, 3 close-up/portrait, 3 full-body stage shots. <strong>Risk:</strong> Never use these as AI training references to generate fake likenesses.</p></div>
+    <div class="card"><div class="card-label">A2 · Album Covers</div><div class="card-title">Real Album Art</div><p>All six releases as high-res reference. Study the color temperature, type treatment, and compositional logic of each. Use to understand how each era looked — not to copy, but to maintain coherence.</p></div>
+    <div class="card"><div class="card-label">A3 · Gear</div><div class="card-title">Real Instruments & Equipment</div><p>Jay's specific guitars, amps, pedal board (with fuzz and wah prominently), microphones, and cables. These objects are characters in the visual narrative. <strong>Risk:</strong> Generic guitar stock images immediately read as fake.</p></div>
+    <div class="card"><div class="card-label">A4 · Spaces</div><div class="card-title">Real Rooms & Venues</div><p>Rehearsal room, home recording space, Pittsburgh venues where Jay plays regularly. These are the settings. <strong>Risk:</strong> Never imply large arenas, sold-out shows, or crowds that don't exist.</p></div>
+    <div class="card"><div class="card-label">A5 · Handwritten Materials</div><div class="card-title">Lyric Sheets & Notebooks</div><p>Real lyric sheets, chord charts, notebook pages in Jay's actual handwriting. These are irreplaceable brand artifacts. Photographed flat or in situ.</p></div>
+    <div class="card"><div class="card-label">A6 · Pittsburgh Textures</div><div class="card-title">Local Material Library</div><p>Bridge steel, river surfaces, brick walls, wet pavement, wood grain, industrial windows. Shot in Pittsburgh. Specifically: the Mon, the 40th Street Bridge, South Side streets, winter light on water.</p></div>
+  </div>
+
+  <h3>Category B — Outside Visual References (20–40 images)</h3>
+  <p>These should be collected as a private Moodboard folder. Each reference must be tagged with what it contributes and what to avoid borrowing too directly.</p>
+
+  <h4>Approved reference directions and their purpose</h4>
+  <ul>
+    <li><strong>Mark Seliger / Danny Clinch portrait work:</strong> Grain, weight, natural light, the subject being real rather than posed. Not the celebrity staging — the intimacy of the best frames.</li>
+    <li><strong>ECM Records album art (1970s–1990s):</strong> Typographic austerity, open space, photography that breathes. The cold-but-emotional quality of Manfred Eicher's label aesthetic.</li>
+    <li><strong>Robert Frank's "The Americans" (1958):</strong> Documentary grain, American mundanity elevated, the unflattering made honest. Use for spatial language, not subject matter.</li>
+    <li><strong>Ryan Adams' "Heartbreaker" / "Gold" era press photography:</strong> Singer-songwriter in real spaces, natural light, guitar as natural extension of the body.</li>
+    <li><strong>Jim Marshall's concert photography:</strong> Stage light carving through dark rooms. Heat and electricity in still images.</li>
+    <li><strong>Vintage Blue Note Records sleeves (1950s–60s):</strong> Type-as-image, geometric composition, bold two-color printing, real photographs not stock.</li>
+    <li><strong>Beggars Group / 4AD art direction (1980s):</strong> Texture, collage, the physical process of making a printed object. Applicable to album art and poster work.</li>
+    <li><strong>Anders Petersen photography:</strong> Intimacy, bar rooms, late-night proximity. Not appropriated literally — use to understand spatial and emotional closeness.</li>
+    <li><strong>Nan Goldin's "The Ballad of Sexual Dependency":</strong> Color temperature of real rooms, the non-performance of real life. Applies to environment references.</li>
+    <li><strong>Gary Clark Jr. press photography:</strong> Contemporary analog feel, guitar-centric, urban-rooted without being generic urban.</li>
+  </ul>
+
+  <h4>What to never reference</h4>
+  <div class="callout callout-warn">
+    <strong>Never reference:</strong> Mumford &amp; Sons-era folk aesthetic · Generic Spotify editorial photography · "Indie band in field" shoots · Taylor Swift's vintage aesthetic (too clean, too feminine) · Ed Sheeran stage photography (too stadium) · Stock music photography of any kind · AI-generated "guitarist" images from Midjourney defaults · Any imagery suggesting religious iconography (misreads the lyrical themes) · Heavy metal / stoner rock visual language (wrong genre register) · Hip-hop visual references (wrong cultural context)
+  </div>
+
+  <h3>Reference Library File Structure</h3>
+  <div class="prompt">
+    <div class="prompt-label">Folder convention</div>
+    <code>references/
+  A1-jay-photos/          ← real Jay photography, approved only
+  A2-album-covers/        ← all six releases, high-res
+  A3-gear/                ← instruments, amps, pedals, mics
+  A4-spaces/              ← rooms, venues, Pittsburgh locations
+  A5-handwritten/         ← lyric sheets, notebooks, chord charts
+  A6-pittsburgh/          ← textures, streets, bridges, weather
+  B-outside-references/   ← tagged external moodboard images
+  C-approved-outputs/     ← past AI outputs that scored 4+ on rubric
+  X-rejected/             ← rejected outputs with notes on why</code>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="s" id="s3">
+  <div class="s-num">Section 03</div>
+  <h2 class="s-title">Creative Territories</h2>
+  <p class="s-sub">Six repeatable visual lanes. Each is a complete creative system with its own emotional logic, technical parameters, and example prompts. Use exactly one territory per post or asset — do not blend.</p>
+
+  <!-- Territory 01 -->
+  <div class="territory">
+    <div class="t-name">01 — Weathered Lyric Sheet</div>
+    <div class="t-purpose">The intimacy of the writing process. Words before they became music.</div>
+    <div class="t-grid">
+      <div class="t-item"><h4>Emotional purpose</h4><ul><li>Brings the audience inside the creative act</li><li>Communicates that lyrics are literature, not filler</li><li>Creates intimacy without performance</li></ul></div>
+      <div class="t-item"><h4>Best use cases</h4><ul><li>Lyric posts and quote graphics</li><li>Song announcement posts</li><li>Behind-the-scenes social content</li><li>Website lyric section headers</li></ul></div>
+      <div class="t-item"><h4>Approved subjects</h4><ul><li>Real handwritten lyric pages — Jay's actual writing</li><li>Coffee rings, pen marks, strike-throughs</li><li>A single guitar string or pick resting on paper</li><li>Aged paper on wood table with afternoon window light</li></ul></div>
+      <div class="t-item"><h4>Forbidden subjects</h4><ul><li>Typed or printed lyrics (must be handwritten)</li><li>Fake handwriting fonts as substitutes</li><li>Multiple items cluttering the frame</li><li>Overly styled flat lays</li><li>Any person visible in frame</li></ul></div>
+      <div class="t-item"><h4>Lighting</h4><ul><li>Raking natural light from one side — morning or late afternoon</li><li>Warm, never flash-lit or clinical</li><li>Some areas may fall into shadow</li></ul></div>
+      <div class="t-item"><h4>Color palette</h4><ul><li>Warm cream/parchment paper</li><li>Amber light on surface edges</li><li>Deep shadow fills — near coal</li><li>Occasional blue-grey of afternoon light</li></ul></div>
+      <div class="t-item"><h4>Texture requirements</h4><ul><li>Paper grain must be visible</li><li>Ink must look real — slight bleed, not vector-clean</li><li>Wood grain visible in background</li><li>15–20% grain overlay in final output</li></ul></div>
+      <div class="t-item"><h4>Camera / framing language</h4><ul><li>Close-up, slightly overhead — 60° angle</li><li>Shallow depth of field if letter edges go soft</li><li>Do not center perfectly — slight off-center tension</li></ul></div>
+    </div>
+    <div class="divider"></div>
+    <div class="prompt"><div class="prompt-label">Still image prompt — Weathered Lyric Sheet</div><code>Overhead close-up photograph of a handwritten lyric page on aged cream paper, afternoon raking light from window left, coffee ring on lower right corner, pen resting across lyrics, faint wood grain table surface visible at edges, shallow depth of field, warm amber cast, 35mm film grain, moody — NOT styled, NOT stock, NOT generic</code></div>
+    <div class="prompt neg"><div class="prompt-label">Negative prompt</div><code>printed lyrics, typed text, computer, laptop, styled flat lay, multiple objects, person, face, microphone, guitar, neon, clean white background, sharp everywhere, AI smooth, digital render</code></div>
+  </div>
+
+  <!-- Territory 02 -->
+  <div class="territory">
+    <div class="t-name">02 — Small Stage Before Doors</div>
+    <div class="t-purpose">The hour before a show. The room belongs to the music, not the crowd.</div>
+    <div class="t-grid">
+      <div class="t-item"><h4>Emotional purpose</h4><ul><li>Evokes anticipation and intimacy</li><li>The space belongs to the artist — not the audience</li><li>Communicates club-scale authenticity over arena aspiration</li></ul></div>
+      <div class="t-item"><h4>Best use cases</h4><ul><li>Show announcement posts</li><li>Music video establishing shots</li><li>Album art for live-recorded releases</li><li>Press EPK backgrounds</li></ul></div>
+      <div class="t-item"><h4>Approved subjects</h4><ul><li>Empty stage with lit equipment — amps, pedals powered on</li><li>Set list taped to the floor monitor</li><li>Single mic stand in front of empty chairs</li><li>Stage from the back of a 100-200 capacity room</li><li>Bar lights warm in background, stage lit differently</li></ul></div>
+      <div class="t-item"><h4>Forbidden subjects</h4><ul><li>Any crowd — zero people, zero implied people</li><li>Large venue / arena / festival stage (wrong scale)</li><li>Celebrity-style spotlight hero shots</li><li>Confetti, pyro, production elements</li><li>Any signage implying sold-out shows or awards</li></ul></div>
+      <div class="t-item"><h4>Lighting</h4><ul><li>Stage lighting warm — tungsten, amber, amber-teal mix</li><li>House lights low or off</li><li>Single dominant light source carving the space</li><li>Deep shadow in the audience area</li></ul></div>
+      <div class="t-item"><h4>Color palette</h4><ul><li>Tungsten gold on stage surfaces</li><li>Deep coal in audience area</li><li>Amber-rust on amp grilles and floor monitors</li><li>Occasional teal bounce from a side wash</li></ul></div>
+      <div class="t-item"><h4>Camera / framing language</h4><ul><li>Wide-angle from audience perspective looking at stage</li><li>OR tight on one element: the pedal board, the set list, the amp</li><li>Never the artist — this is the room, not the person</li></ul></div>
+      <div class="t-item"><h4>Motion language (video)</h4><ul><li>Slow push toward stage over 4–5 seconds</li><li>Subtle flicker of stage light</li><li>No camera movement except the push</li></ul></div>
+    </div>
+    <div class="divider"></div>
+    <div class="prompt"><div class="prompt-label">Still image prompt — Small Stage Before Doors</div><code>Empty small music venue stage, 100-capacity club, warm tungsten stage lights on, amps glowing, set list on floor monitor, no audience, no people, deep shadow in room, wide angle from back of house, Pittsburgh dive bar feel, analog film grain, 1970s grain and color temperature</code></div>
+    <div class="prompt neg"><div class="prompt-label">Negative prompt</div><code>crowd, audience, people, large arena, festival, confetti, spotlights pointing at camera, modern LED rig, clean bright room, sold-out, sold out, awards, backstage passes, digital render, stock</code></div>
+  </div>
+
+  <!-- Territory 03 -->
+  <div class="territory">
+    <div class="t-name">03 — Pittsburgh River / Bridge Night</div>
+    <div class="t-purpose">The city as emotional landscape. Not a backdrop — a character with weight.</div>
+    <div class="t-grid">
+      <div class="t-item"><h4>Emotional purpose</h4><ul><li>Grounds the music in a specific place and working-class gravity</li><li>The river and bridges carry industrial beauty — not romantic nostalgia</li><li>Night removes the tourist gloss; what remains is structure and reflection</li></ul></div>
+      <div class="t-item"><h4>Best use cases</h4><ul><li>Album art and single covers</li><li>Music video backgrounds</li><li>YouTube channel art</li><li>Social campaign headers</li></ul></div>
+      <div class="t-item"><h4>Approved subjects</h4><ul><li>Pittsburgh bridge steel at night — the 40th Street, the Fort Pitt</li><li>Mon or Allegheny river surface with light distortion</li><li>Bridge geometry abstracted — cables, trusses, shadows</li><li>Wet pavement with bridge reflection, no people</li><li>A figure from behind only — never identifiable as Jay</li></ul></div>
+      <div class="t-item"><h4>Forbidden subjects</h4><ul><li>Identifiable Jay likeness without real photography</li><li>Generic "city at night" skylines</li><li>Generic "romantic bridge" imagery (Paris, NYC, etc.)</li><li>Warm golden-hour Pittsburgh tourist shots</li><li>Sports stadium references (wrong brand register)</li></ul></div>
+      <div class="t-item"><h4>Lighting</h4><ul><li>Sodium-vapor orange-amber on bridge structures</li><li>Cold blue-grey in sky and water</li><li>The tension between warm artificial light and cold ambient</li></ul></div>
+      <div class="t-item"><h4>Color palette</h4><ul><li>Deep coal-black river shadows</li><li>Sodium amber on steel structures</li><li>Cold river grey / steel blue in sky</li><li>Occasional green-grey from water distortion</li></ul></div>
+      <div class="t-item"><h4>Camera / framing language</h4><ul><li>Low angle — looking up at bridge geometry</li><li>Wide to capture the scale of the structure</li><li>OR tight abstraction of steel texture in artificial light</li></ul></div>
+      <div class="t-item"><h4>Motion language (video)</h4><ul><li>Very slow upward tilt from water to bridge structure</li><li>Stationary shot of water surface with light movement</li><li>3–4 second static hold with light flicker only</li></ul></div>
+    </div>
+    <div class="divider"></div>
+    <div class="prompt"><div class="prompt-label">Still image prompt — Pittsburgh River Bridge Night</div><code>Pittsburgh bridge at night, steel bridge structure with sodium vapor orange light, Monongahela river reflection below, no people, low angle looking up at bridge geometry, cold blue-grey sky, industrial beauty, 35mm film grain, analog, long exposure feel, high contrast</code></div>
+    <div class="prompt neg"><div class="prompt-label">Negative prompt</div><code>people, crowd, tourist, daytime, golden hour, romantic, Paris bridge, Brooklyn Bridge, Nashville, generic city skyline, sports stadium, PNC Park, clean digital render, drone shot aesthetic, bright cheerful</code></div>
+  </div>
+
+  <!-- Territory 04 -->
+  <div class="territory">
+    <div class="t-name">04 — Rehearsal Room Evidence</div>
+    <div class="t-purpose">The ongoing life of the music. The room between performances tells the truth.</div>
+    <div class="t-grid">
+      <div class="t-item"><h4>Emotional purpose</h4><ul><li>Communicates serious craft without performance</li><li>The clutter is evidence — real work happened here</li><li>Counteracts the polished "studio session" cliché</li></ul></div>
+      <div class="t-item"><h4>Best use cases</h4><ul><li>Behind-the-scenes social content</li><li>Newsletter headers</li><li>Recording announcement graphics</li><li>Bio page imagery</li></ul></div>
+      <div class="t-item"><h4>Approved subjects</h4><ul><li>Amp with cable coiled nearby, warm power light</li><li>Pedal board on floor — fuzz, wah, gain</li><li>Guitar leaning against chair or wall — unposed</li><li>Notebook with set list on music stand</li><li>Empty beer can, coffee cup — evidence of time spent</li><li>Cables crossing a floor with extension cord</li></ul></div>
+      <div class="t-item"><h4>Forbidden subjects</h4><ul><li>Posed shots — "here is my equipment" marketing photos</li><li>Pristine gear without wear</li><li>Brand-new everything — no authenticity in that</li><li>Gold records, platinum records, awards on walls</li><li>Anyone posing with the equipment</li></ul></div>
+      <div class="t-item"><h4>Lighting</h4><ul><li>Bare-bulb overhead mixed with amp glow</li><li>Ugly practical lighting — that's the point</li><li>Warm yellow with zones of deep shadow</li></ul></div>
+      <div class="t-item"><h4>Color palette</h4><ul><li>Warm yellow incandescent</li><li>Deep brown shadow</li><li>Amp grille cloth color — grey-beige</li><li>Cable rubber — black, dark brown</li></ul></div>
+    </div>
+    <div class="divider"></div>
+    <div class="prompt"><div class="prompt-label">Still image prompt — Rehearsal Room Evidence</div><code>Guitar leaning against wall in rehearsal room, amp glowing warm in background, pedal board on floor with cables, bare bulb overhead light, worn wood floor, lived-in and cluttered, no people, film photography style, 35mm grain, warm yellow tones, real and unposed</code></div>
+    <div class="prompt neg"><div class="prompt-label">Negative prompt</div><code>person, clean studio, pristine gear, promotional pose, gold record, award, trophy, modern recording studio console, neon lights, polished floor, stock photography, artificial smile</code></div>
+  </div>
+
+  <!-- Territory 05 -->
+  <div class="territory">
+    <div class="t-name">05 — Road After Rain</div>
+    <div class="t-purpose">The in-between. Traveling between places, the music carrying forward.</div>
+    <div class="t-grid">
+      <div class="t-item"><h4>Emotional purpose</h4><ul><li>Solitude without self-pity</li><li>Movement as metaphor — the ongoing nature of the catalog</li><li>The world looks different and more honest after rain</li></ul></div>
+      <div class="t-item"><h4>Best use cases</h4><ul><li>Single artwork</li><li>Show run announcement graphics</li><li>Tour log social posts</li><li>Music video transition shots</li></ul></div>
+      <div class="t-item"><h4>Approved subjects</h4><ul><li>Two-lane road at dusk with standing water</li><li>Rear-window perspective from a moving car</li><li>Van / touring vehicle interior — steering wheel, dashboard</li><li>Gas station overhang with rain reflection, no people</li><li>Tree line on both sides, no destination visible</li></ul></div>
+      <div class="t-item"><h4>Forbidden subjects</h4><ul><li>Romantic Route 66 sunset imagery</li><li>Tour bus lifestyle references (wrong scale)</li><li>Any town sign implying a major tour</li><li>People visible in the car beyond silhouette</li><li>Sunny, clear-weather equivalent of any of the above</li></ul></div>
+      <div class="t-item"><h4>Lighting</h4><ul><li>Post-storm overcast — flat grey-blue light</li><li>Headlights on in daylight (atmospheric)</li><li>Reflection-heavy: wet road doubles everything</li></ul></div>
+      <div class="t-item"><h4>Color palette</h4><ul><li>Blue-grey overcast sky</li><li>Dark asphalt with bright water reflection</li><li>Warm dashboard light if interior</li><li>Yellow-white of headlights doubling in puddles</li></ul></div>
+    </div>
+    <div class="divider"></div>
+    <div class="prompt"><div class="prompt-label">Still image prompt — Road After Rain</div><code>Two-lane road after heavy rain, overcast grey sky, standing water on asphalt reflecting white sky, trees on both sides, no destination sign visible, no people, dusk, headlights visible in reflection, melancholy and real, 35mm film stock color, documentary photography</code></div>
+    <div class="prompt neg"><div class="prompt-label">Negative prompt</div><code>sunny, blue sky, Route 66, desert highway, tourist road trip, Americana cliché, people, romantic, sepia filter, stock travel photography, clean digital render, aerial drone</code></div>
+  </div>
+
+  <!-- Territory 06 -->
+  <div class="territory">
+    <div class="t-name">06 — Album-Cover Collage</div>
+    <div class="t-purpose">The full catalog as physical artifact. History made visible through accumulation.</div>
+    <div class="t-grid">
+      <div class="t-item"><h4>Emotional purpose</h4><ul><li>Communicates depth of catalog without listing it</li><li>The physicality of vinyl and print is the message</li><li>Collage implies layers — both in the music and the career</li></ul></div>
+      <div class="t-item"><h4>Best use cases</h4><ul><li>Catalog posts and anniversary content</li><li>Press and EPK graphics</li><li>Website hero sections</li><li>This pillar is the "Psychedelic Collage" from the social system</li></ul></div>
+      <div class="t-item"><h4>Approved subjects</h4><ul><li>Real Jay Trainer album covers in a physical pile/stack</li><li>Torn edges, coffee staining, wear</li><li>Records overlapping at angles — not grid-aligned</li><li>Lyric sheets beneath, handwriting visible at edges</li><li>Abstract layering with texture overlays</li></ul></div>
+      <div class="t-item"><h4>Forbidden subjects</h4><ul><li>Digitally-rendered fake records (wrong grain)</li><li>Other artists' records visible</li><li>Clean flat-lay product photography of albums</li><li>Streaming platform visual language</li><li>Any award or chart position visual</li></ul></div>
+      <div class="t-item"><h4>Color palette</h4><ul><li>Aged cardboard amber</li><li>Deep coal shadow between records</li><li>Warm amber accent light raking across surface</li><li>Occasional desaturated photo peeking through</li></ul></div>
+      <div class="t-item"><h4>Texture requirements</h4><ul><li>Paper foxing, ring stains, edge wear</li><li>Analog noise/grain as base layer</li><li>Never digitally clean — the age is the point</li></ul></div>
+    </div>
+    <div class="divider"></div>
+    <div class="prompt"><div class="prompt-label">Still image prompt — Album-Cover Collage</div><code>Physical record album covers piled at angles on worn wood surface, torn edges, coffee ring stains, raking amber light, dark shadow between covers, handwritten lyric sheets partially visible underneath, analog film photography style, heavy grain, no clean surfaces, warm and aged</code></div>
+    <div class="prompt neg"><div class="prompt-label">Negative prompt</div><code>clean product shot, digital render, streaming app, Spotify, flat-lay styling, white background, pristine corners, other artists, chart numbers, award plaques, neon, modern, bright</code></div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="s" id="s4">
+  <div class="s-num">Section 04</div>
+  <h2 class="s-title">Visual Rules</h2>
+  <p class="s-sub">The complete technical system. Every rule is binding. If you don't know whether something is allowed, default to: does it feel earned?</p>
+
+  <h3>Color System</h3>
+  <div class="swatches">
+    <div class="swatch"><div class="sw" style="background:#080808"></div><div class="sw-n">Coal<br>#080808</div></div>
+    <div class="swatch"><div class="sw" style="background:#111110"></div><div class="sw-n">Ink<br>#111110</div></div>
+    <div class="swatch"><div class="sw" style="background:#1e1d1b"></div><div class="sw-n">Smoke<br>#1e1d1b</div></div>
+    <div class="swatch"><div class="sw" style="background:#2e2c28"></div><div class="sw-n">Cinder<br>#2e2c28</div></div>
+    <div class="swatch"><div class="sw" style="background:#5a5650"></div><div class="sw-n">Ash<br>#5a5650</div></div>
+    <div class="swatch"><div class="sw" style="background:#d4cdc0"></div><div class="sw-n">Bone<br>#d4cdc0</div></div>
+    <div class="swatch"><div class="sw" style="background:#ede8dd"></div><div class="sw-n">Parchment<br>#ede8dd</div></div>
+    <div class="swatch"><div class="sw" style="background:#c47a2a"></div><div class="sw-n">Ember<br>#c47a2a</div></div>
+    <div class="swatch"><div class="sw" style="background:#b04520"></div><div class="sw-n">Rust<br>#b04520</div></div>
+  </div>
+  <p><strong>Dark-first rule:</strong> The default canvas is Ink (#111110). Light surfaces (Parchment) appear only for lyric cards, press quotes, and liner-note-style insets. Never use pure white (#ffffff) as a background.</p>
+  <p><strong>Gradient rule:</strong> Only black-to-transparent vignettes over photography. No color-to-color gradients. No purple-to-pink. No glow effects.</p>
+
+  <h3>Typography Direction</h3>
+  <h4>Display</h4><p><strong>Fraunces</strong> (variable, SOFT + WONK axes available). Used for primary titles, album names, pull quotes. Weight 700+. Letter-spacing tight at −0.02em to −0.04em for large sizes. Not for body text.</p>
+  <h4>Accent Script</h4><p><strong>Jeff Dungan</strong> (licensed). Used sparingly — song titles in script treatment, era labels, single-word emotional accents. Never for full sentences. Never for UI labels.</p>
+  <h4>Utility / Mono</h4><p><strong>Space Mono</strong>. Track listings, timestamps, metadata, catalog numbers, file names, captions. All uppercase with generous letter-spacing (0.15–0.20em). This is the gritty-technical voice of the brand.</p>
+  <h4>Body</h4><p><strong>Inter</strong> (or Lora for print/press contexts). 14px minimum on screen. Line height 1.7 for body copy. Never condensed, never below 14px.</p>
+
+  <h3>Layout Rules</h3>
+  <div class="rule-row"><span class="rule-do">DO</span><span class="rule-txt">Use asymmetric composition — the interesting tension is always off-center</span></div>
+  <div class="rule-row"><span class="rule-do">DO</span><span class="rule-txt">Allow generous negative space — silence is part of this brand</span></div>
+  <div class="rule-row"><span class="rule-do">DO</span><span class="rule-txt">Bleed photography to edges — do not box images in decorative frames</span></div>
+  <div class="rule-row"><span class="rule-dont">NO</span><span class="rule-txt">Centered layouts with perfectly equal margins — too inert</span></div>
+  <div class="rule-row"><span class="rule-dont">NO</span><span class="rule-txt">Drop shadows on text — use color contrast or background for legibility</span></div>
+  <div class="rule-row"><span class="rule-dont">NO</span><span class="rule-txt">Rounded corners greater than 4px on primary design elements</span></div>
+  <div class="rule-row"><span class="rule-dont">NO</span><span class="rule-txt">Grid-aligned stacks of equal-sized elements — introduce scale variation</span></div>
+
+  <h3>Photography Style</h3>
+  <ul>
+    <li>Color grading: warm analog — amber highlights, shadows crushed to near-black, not lifted</li>
+    <li>Grain: always present — 15–25% noise at output. No clean digital photographs.</li>
+    <li>Faces: close-up portraits must have depth, shadow, and weight. Not beauty-retouched.</li>
+    <li>Environments: photographed as-found. No art-directed set dressing unless it is real.</li>
+    <li>B&amp;W: acceptable for press photos — prefer warm sepia lean over cold grey.</li>
+  </ul>
+
+  <h3>Social Media Rules</h3>
+  <ul>
+    <li>Use the four established pillars: Screen Print, Type Monument, Record Sleeve, Psychedelic Collage</li>
+    <li>Never repeat the same pillar on consecutive days</li>
+    <li>Every post carries the Jay Trainer calligraphic logo — always visible, never obscured</li>
+    <li>No emoji in captions. No exclamation points. No "just dropped" language.</li>
+    <li>Caption voice: first person, sparse. 1–3 sentences maximum. 5–8 relevant hashtags.</li>
+    <li>No fake engagement tactics — no "what's your favorite song?" content farm questions</li>
+  </ul>
+
+  <h3>Album Art Rules</h3>
+  <ul>
+    <li>Must reference one of the six Creative Territories — no free-floating concept</li>
+    <li>Photography-based preferred over illustration</li>
+    <li>No stock photography under any circumstances</li>
+    <li>Type treatment must use approved typefaces — no display font outside the system</li>
+    <li>Minimum one analog texture layer (grain, foxing, tanning, water stain)</li>
+    <li>Square format primary; vertical variants derived from square, not designed separately</li>
+  </ul>
+
+  <h3>Lyric Video Rules</h3>
+  <ul>
+    <li>Background must be one of the six Creative Territories in motion</li>
+    <li>Lyric type: Fraunces for display words, Space Mono for metadata (time, track number)</li>
+    <li>Text entry: cut, fade, or slow push — never wipe, bounce, or karaoke highlight</li>
+    <li>No animated text effects — the word arrives, holds, and leaves</li>
+    <li>Duration: one visual territory per section (verse, chorus, bridge)</li>
+    <li>Grain overlay required throughout — minimum 12% opacity</li>
+  </ul>
+
+  <h3>Music Video Rules</h3>
+  <ul>
+    <li>See Section 07 — Video Direction for full specification</li>
+    <li>No fake crowds, no fake venues, no implied commercial success</li>
+    <li>Documentary or implied-documentary aesthetic only</li>
+    <li>If Jay appears, use real photography or real footage only — never AI-generated likeness</li>
+  </ul>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="s" id="s5">
+  <div class="s-num">Section 05</div>
+  <h2 class="s-title">AI Generation Rules</h2>
+  <p class="s-sub">The discipline required to get AI tools to produce specific, honest output instead of confident-looking garbage.</p>
+
+  <h3>Prompt Architecture</h3>
+  <p>Every AI image prompt must follow this structure, in order:</p>
+  <div class="prompt"><div class="prompt-label">Prompt structure template</div><code>[SHOT TYPE] + [PRIMARY SUBJECT from approved list] + [ENVIRONMENT specifics] + [LIGHTING description] + [COLOR PALETTE] + [FILM/TEXTURE style] + [EMOTIONAL TONE] + "NOT [top 3 negatives]"</code></div>
+
+  <h3>Required Prompt Ingredients</h3>
+  <p>Every prompt must include at minimum:</p>
+  <ul>
+    <li><strong>Shot type:</strong> close-up, wide angle, overhead, from behind, etc.</li>
+    <li><strong>Specific subject:</strong> not "guitar" — "guitar leaning against amp with cable coiled, power light on"</li>
+    <li><strong>Lighting description:</strong> not "moody" — "raking afternoon light from single window left, deep shadow right"</li>
+    <li><strong>Film reference:</strong> "35mm grain," "analog film photography," "Kodak Portra 400," "Fuji Superia 1600"</li>
+    <li><strong>At least one negative qualifier</strong> appended at end: "NOT stock, NOT clean, NOT digital render"</li>
+  </ul>
+
+  <h3>Master Negative Prompt Library</h3>
+  <p>Always include relevant items from this list. More negatives = more specific output.</p>
+  <div class="prompt neg"><div class="prompt-label">Master negatives — always applicable</div><code>stock photography, AI default aesthetic, overly saturated, fake lighting, smooth textures, digital render, CGI, 3D render, plastic, unrealistic, lens flare, bokeh balls, HDR, overexposed, clean white background, centered composition, symmetrical, commercial photography feel, lifestyle photography, fashion model, brand ambassador pose, modern studio, corporate headshot</code></div>
+  <div class="prompt neg"><div class="prompt-label">Music-specific negatives</div><code>crowd, audience, large venue, arena, festival stage, sold out, chart position, award, gold record, platinum record, streaming numbers, tour bus luxury, celebrity lifestyle, generic guitarist, guitar in grass, road trip cliché, barn, wheat field, mason jar, flannel shirt pose, whiskey bottle, campfire</code></div>
+  <div class="prompt neg"><div class="prompt-label">Jay-likeness negatives — ALWAYS include when no real photo is base</div><code>person, face, man, artist, musician, performer, singer, guitarist, anyone identifiable, human likeness, portrait, close-up of face</code></div>
+
+  <h3>How to Avoid Generic AI Aesthetics</h3>
+  <div class="callout callout-note">
+    <strong>The AI default problem:</strong> When you type "guitarist in a dark room," every AI model has been trained on millions of near-identical images and will give you its statistical average. To escape: be <em>specific to a degree that the AI has no average to fall back on.</em> "Worn Telecaster-style guitar leaning against a vintage Fender Deluxe Reverb amp with the pilot light on, seen from floor level, afternoon light through venetian blinds making horizontal stripes across the amp grille cloth" produces something different.
+  </div>
+  <ul>
+    <li>Specify exact angles that are unusual — from floor level looking up, from directly above, from behind a foreground object</li>
+    <li>Include imperfections in the prompt: "scratch on guitar body," "coffee ring on lyric sheet," "worn knob on amp"</li>
+    <li>Reference specific film stocks and photographers — not as copyright claims, but as aesthetic anchors</li>
+    <li>Generate in batches of 6–10 and select the least AI-looking option</li>
+    <li>Reject anything with smooth gradients in unexpected places, plastic-looking surfaces, or mathematically perfect symmetry</li>
+  </ul>
+
+  <h3>What Must Never Be Implied Visually</h3>
+  <div class="callout callout-warn">
+    <strong>Hard prohibitions — any image doing these must be rejected immediately:</strong>
+    <ul style="margin-top:8px">
+      <li>Fake crowds or audiences implying a scale of success not documented</li>
+      <li>Fake live footage or implication of real concert footage when it is AI-generated</li>
+      <li>Jay Trainer's likeness generated by AI — his face, body, or identifiable appearance</li>
+      <li>Fake press clippings, fake chart positions, fake award designations</li>
+      <li>Fake tour posters implying past tours that did not happen</li>
+      <li>Venue names implying past shows at venues not played</li>
+      <li>Any implied endorsement — gear companies, media outlets, other artists</li>
+    </ul>
+  </div>
+
+  <h3>Batch Generation Workflow</h3>
+  <ol>
+    <li><strong>Define territory</strong> — which of the 6 Creative Territories is this for?</li>
+    <li><strong>Write base prompt</strong> using the structure template above</li>
+    <li><strong>Generate 8–12 variants</strong> — vary seed, not the core prompt</li>
+    <li><strong>First pass filter:</strong> reject anything with person/crowd/award/AI-smooth surfaces immediately</li>
+    <li><strong>Score remaining against Quality Rubric</strong> (Section 06)</li>
+    <li><strong>Minimum threshold:</strong> 4/5 on Brand Fit, all three Pass/Fail criteria must pass</li>
+    <li><strong>Upscale only approved items</strong> — do not upscale for review; upscale for delivery</li>
+    <li><strong>Move to C-approved-outputs/</strong> with file naming per Section 09</li>
+  </ol>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="s" id="s6">
+  <div class="s-num">Section 06</div>
+  <h2 class="s-title">Quality Rubric</h2>
+  <p class="s-sub">Every image and video must be scored before use. Minimum approval: 4/5 on Brand Fit, 3/5 on all other scored criteria, all three pass/fail criteria must pass.</p>
+
+  <h3>Scoring Matrix</h3>
+  <table>
+    <thead>
+      <tr><th>Criterion</th><th>1 — Fail</th><th>3 — Acceptable</th><th>5 — Excellent</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Brand Fit</strong></td>
+        <td>Could be any Americana act. No Pittsburgh specificity. Generic aesthetic.</td>
+        <td>Generally on-brand. One or two generic elements present but not dominant.</td>
+        <td>Unmistakably Jay Trainer. Specific, earned, would not work for another artist.</td>
+      </tr>
+      <tr>
+        <td><strong>Image Quality</strong></td>
+        <td>AI artifacts visible: smooth gradients where grain expected, warped text, plastic surfaces.</td>
+        <td>Mostly believable. Slight AI smoothness but not distracting.</td>
+        <td>Indistinguishable from analog photography. Grain is correct. Surfaces have weight.</td>
+      </tr>
+      <tr>
+        <td><strong>Music Relevance</strong></td>
+        <td>Could illustrate any genre. Nothing connects to psychedelic blues rock.</td>
+        <td>Consistent with the musical territory but could belong to several genres.</td>
+        <td>The image feels like it belongs to this music specifically — the temperature, the weight, the time of day.</td>
+      </tr>
+      <tr>
+        <td><strong>Distinctiveness</strong></td>
+        <td>I have seen this exact image before. It is the default for its category.</td>
+        <td>Not remarkable but not derivative. An acceptable choice.</td>
+        <td>I have not seen this angle, this combination of elements, this specific moment before.</td>
+      </tr>
+      <tr>
+        <td><strong>Mobile / Social Usefulness</strong></td>
+        <td>Important elements are at edges or corners. Does not scale to 1:1 or 9:16.</td>
+        <td>Works at primary size. Requires cropping to work in all formats.</td>
+        <td>Primary subject reads clearly at thumbnail size. Works in all required formats without critical cropping.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Pass / Fail Criteria</h3>
+  <table>
+    <thead>
+      <tr><th>Criterion</th><th>Pass condition</th><th>Fail condition</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>No Fake Claims</strong></td>
+        <td class="pass">PASS — No implied crowd size, no fake chart/award/press, no implied tour or commercial scale not documented in reality</td>
+        <td class="fail">FAIL — Any visual element that implies success, touring scale, or commercial achievement not factually documented. Immediate reject.</td>
+      </tr>
+      <tr>
+        <td><strong>No Generic AI Look</strong></td>
+        <td class="pass">PASS — No smooth plastic surfaces, no mathematically perfect symmetry, no lens flare, no HDR, no AI-default color temperature</td>
+        <td class="fail">FAIL — AI artifacts are immediately visible to anyone familiar with AI-generated images. Immediate reject.</td>
+      </tr>
+      <tr>
+        <td><strong>Public-Safe Facts Only</strong></td>
+        <td class="pass">PASS — All implied facts (venue, city, event) are verifiable and true OR clearly abstract/metaphorical with no factual implication</td>
+        <td class="fail">FAIL — Image implies specific factual claims that are false (Jay played this venue, this event happened, this quote was said). Immediate reject.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>Minimum Approval Thresholds</h3>
+  <div class="callout callout-note">
+    <strong>To advance from Draft to Approved:</strong> Brand Fit ≥ 4/5 · All other scored criteria ≥ 3/5 · All three Pass/Fail criteria: PASS.<br><br>
+    <strong>To advance from Approved to Published:</strong> Jay approval required for anything featuring a person, any implied location claim, or any asset used in paid promotion. All other approved assets may be scheduled by the campaign manager.
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="s" id="s7">
+  <div class="s-num">Section 07</div>
+  <h2 class="s-title">Video Direction</h2>
+  <p class="s-sub">Real AI video is built from short approved shots, not from a single long generation. The slideshow era is over. This is the production standard.</p>
+
+  <h3>The Shot Unit</h3>
+  <p>The fundamental unit of AI video production for Jay Trainer is a <strong>3–5 second approved shot</strong>. Each shot belongs to exactly one Creative Territory. Each shot passes the Quality Rubric. A complete visual packet for one song = 12–30 approved shots.</p>
+
+  <h3>Shot Language Reference</h3>
+  <div class="cards">
+    <div class="card"><div class="card-label">Shot Type 01</div><div class="card-title">Static Hold</div><p>Camera locked. Subject still or barely moving — amp power light on, steam from coffee, rain falling. Hold 3–4 seconds. Used for atmospheric transitions.</p></div>
+    <div class="card"><div class="card-label">Shot Type 02</div><div class="card-title">Slow Push</div><p>Camera moves toward subject at glacial speed over 4–5 seconds. Creates presence and weight. Not a zoom — a physical movement through space.</p></div>
+    <div class="card"><div class="card-label">Shot Type 03</div><div class="card-title">Overhead Float</div><p>Looking straight down at a surface — lyric sheet, pedal board, record sleeves. Camera drifts slightly. Never rotates.</p></div>
+    <div class="card"><div class="card-label">Shot Type 04</div><div class="card-title">Raking Pull</div><p>Camera moves slowly along a surface — across a wall, along a bridge, across a floor. Reveals texture. Creates rhythm.</p></div>
+    <div class="card"><div class="card-label">Shot Type 05</div><div class="card-title">Light Event</div><p>Pure atmosphere. A door opening and light entering a dark room. A lamp switching on. A car headlight crossing a wet surface. 3 seconds maximum.</p></div>
+  </div>
+
+  <h3>Technical Parameters</h3>
+  <ul>
+    <li><strong>Grain:</strong> Film grain overlay required on all video — minimum 18% opacity, variable slightly to avoid uniform pattern</li>
+    <li><strong>Color:</strong> Warm grade — shadows pushed deep, highlights slightly amber, not crushed into black (retain shadow detail)</li>
+    <li><strong>Frame rate:</strong> 24fps. Never 60fps. Never slow-motion unless real — AI-generated slow motion creates unnatural motion blur</li>
+    <li><strong>Transitions:</strong> Hard cut or slow dissolve (0.5–1s) only. No wipes, no slide, no zoom-transition effects</li>
+    <li><strong>Aspect ratio:</strong> 16:9 for YouTube primary. 9:16 variants cut from approved 16:9 shots — subject must be center-weighted to survive the crop</li>
+  </ul>
+
+  <h3>Title and Lyric Treatment in Video</h3>
+  <ul>
+    <li><strong>Song title:</strong> Fraunces, weight 700, center or lower-third. Fade in over 0.5s, hold for full read, fade out 0.5s. Never animated beyond opacity.</li>
+    <li><strong>Lyric lines:</strong> Fraunces italic, white on dark sections. Space Mono for metadata. One line at a time — never paragraph blocks.</li>
+    <li><strong>Artist name:</strong> Jeff Dungan script or the logo SVG. Lower-left or lower-center. Always present in the final card.</li>
+    <li><strong>No lower-third bar graphics.</strong> No social media handle overlays mid-video. Credit card at end only.</li>
+  </ul>
+
+  <h3>Assembling a Music Video from 12–30 Shots</h3>
+  <ol>
+    <li><strong>Map shots to song structure:</strong> Intro (2–3 shots), verse 1 (3–4 shots), chorus 1 (2–3 shots), verse 2 (3–4 shots), chorus 2 (2–3 shots), bridge (2 shots), outro (2–3 shots)</li>
+    <li><strong>Territory assignment:</strong> Intro and outro = same territory. Verse = one territory. Chorus = different territory for contrast. Bridge = most abstract territory.</li>
+    <li><strong>Pacing:</strong> Cuts on musical phrases, not on every beat. The edits should feel late — resist the urge to cut on every bar</li>
+    <li><strong>End card:</strong> 5-second hold on logo + song title + "Stream now" + link. Black background. No animation.</li>
+  </ol>
+
+  <h3>What Must Never Be Implied in Video</h3>
+  <div class="callout callout-warn">
+    <strong>Hard video prohibitions:</strong> No fake live performance footage (not AI-generated crowd shots with music) · No AI-generated likeness of Jay Trainer in video · No implied documentary footage when it is AI-generated · No fake backstage, fake tour, fake press appearance footage · No music video that implies a real event that did not occur · No crowd singing along to a song
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="s" id="s8">
+  <div class="s-num">Section 08</div>
+  <h2 class="s-title">Brand Examples</h2>
+  <p class="s-sub">Specific, actionable analysis of what works and what doesn't — and why.</p>
+
+  <h3>On-Brand Examples</h3>
+
+  <div class="callout callout-ok">
+    <strong>Day 03 — Record Sleeve — Not My Cross To Bear (from the 2-Week Campaign):</strong> On-brand because it uses a real instrument photograph (no person), aged cardboard texture, polaroid framing with authentic decay, coffee ring overlay, and handwriting in Jeff Dungan treatment. The "@jaytrainerband / jaytrainermusic.com" footer is present but understated. The logo appears as a faded press stamp above the social links. No chart claims. No crowd. Specific and earned.
+  </div>
+  <div class="callout callout-ok">
+    <strong>A Pittsburgh bridge at night with sodium-vapor orange on steel:</strong> On-brand because it is geographically specific (not "a bridge"), uses the approved color palette (amber/coal/steel-blue), carries industrial weight, implies no person, no event, no claim. The image earns its place through material honesty.
+  </div>
+  <div class="callout callout-ok">
+    <strong>Close-up of handwritten lyrics, one pen resting across the page, afternoon light, coffee ring:</strong> On-brand because it tells a true story (someone sat here and wrote this) without performance. The imperfections are the brand. If the paper were pristine and the lighting studio-perfect, it would fail.
+  </div>
+
+  <h3>Off-Brand Examples</h3>
+
+  <div class="callout callout-warn">
+    <strong>"Guitarist standing in a wheat field at golden hour, flannel shirt, acoustic guitar":</strong> Off-brand because it is the median Americana image — nothing about it is specific to Jay Trainer, Pittsburgh, psychedelic blues rock, or the emotional weight of this catalog. It could belong to anyone.
+  </div>
+  <div class="callout callout-warn">
+    <strong>AI-generated image of a guitarist on a large stage with crowd in background:</strong> Off-brand AND a fake claim violation. The crowd implies a scale of success not documented. The AI-generated likeness may imply this is Jay. Both are disqualifying. Immediate reject.
+  </div>
+  <div class="callout callout-warn">
+    <strong>Spotify-canvas style loop with a gradient background and floating song title:</strong> Off-brand because it belongs to the streaming platform's visual language, not Jay Trainer's. Clean, digital, smooth. Zero grain, zero weight, zero specificity.
+  </div>
+
+  <h3>Territory Prompt Examples</h3>
+
+  <div class="prompt"><div class="prompt-label">Album cover concept — "Of The Sun"</div><code>Overhead close-up of handwritten lyric sheet with title "Of The Sun" visible at top, amber afternoon light raking across paper, pen resting at angle, small guitar string coiled near corner, warm shadow in lower quadrant, 35mm grain, analog, real paper — NOT stock, NOT digital, NOT clean</code></div>
+
+  <div class="prompt"><div class="prompt-label">YouTube visualizer concept — "Lifeline"</div><code>4-second loop: static overhead shot of Pittsburgh river surface at night, amber bridge light reflections moving slowly on water, no text, 35mm film grain overlay, coal-to-amber color grade — for looping background behind static title card</code></div>
+
+  <div class="prompt"><div class="prompt-label">Vertical short concept — "Not My Cross To Bear"</div><code>9:16 vertical, slow push from back of small empty venue toward lit stage, set list visible on floor monitor, no people, warm tungsten stage lights, deep shadow in room, 24fps, 35mm grain, 4-second shot, no music — for audio layer added in post</code></div>
+
+  <div class="prompt"><div class="prompt-label">Caption + CTA voice example</div><code>Not My Cross To Bear. From the catalogue, with everything I had.
+
+#jaytrainer #notmycrosstobear #bluesrock #pittsburgh #psychedelicrock #catalogue</code></div>
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="s" id="s9">
+  <div class="s-num">Section 09</div>
+  <h2 class="s-title">Governance</h2>
+  <p class="s-sub">How creative assets move from generation to approval to publication. Clear ownership, clear file structure, no ambiguity.</p>
+
+  <h3>Approval Workflow</h3>
+  <table>
+    <thead><tr><th>Status</th><th>Definition</th><th>Who can move it forward</th></tr></thead>
+    <tbody>
+      <tr><td><span class="tag tag-ref">Generated</span></td><td>Raw AI output. Not scored. Not reviewed. Held in generation folder.</td><td>Any agent can generate. No publishing rights.</td></tr>
+      <tr><td><span class="tag tag-ref">Draft</span></td><td>Scored against rubric. Meets minimum threshold (Brand Fit ≥ 4, all Pass/Fail passed). Caption written.</td><td>Campaign manager or AI agent with rubric access.</td></tr>
+      <tr><td><span class="tag tag-ok">Approved</span></td><td>Jay reviewed and signed off. File moved to C-approved-outputs/. Ready for scheduling.</td><td>Jay only.</td></tr>
+      <tr><td><span class="tag tag-no">Rejected</span></td><td>Failed rubric or Jay review. Moved to X-rejected/ with rejection note.</td><td>Any reviewer. Rejection note required.</td></tr>
+      <tr><td><span class="tag tag-ok">Published</span></td><td>Posted. Logged with platform, date, performance notes.</td><td>Campaign manager after Approved status confirmed.</td></tr>
+    </tbody>
+  </table>
+
+  <h3>What Requires Jay Approval</h3>
+  <ul>
+    <li>Any asset featuring a person — even silhouette or from behind</li>
+    <li>Any asset that references a specific venue, event, or date</li>
+    <li>Any asset used in paid promotion or advertising</li>
+    <li>Album art and single cover finals</li>
+    <li>Any caption containing first-person statements (Jay's voice)</li>
+    <li>Music video assemblies — final cut before upload</li>
+    <li>Any asset that references another artist, label, or publication</li>
+  </ul>
+
+  <h3>What Can Move Forward Without Jay Approval</h3>
+  <ul>
+    <li>Abstract environment shots (no people, no location claims)</li>
+    <li>Texture and gear-object photography (amp, pedal, lyric sheet without words)</li>
+    <li>Standard pillar posts from the 2-Week Campaign template where all assets were pre-approved</li>
+    <li>Reposting of previously approved assets in new format sizes</li>
+  </ul>
+
+  <h3>File / Folder Naming Convention</h3>
+  <div class="prompt"><div class="prompt-label">Standard file name format</div><code>[YYYYMMDD]_[TERRITORY-CODE]_[SONG-SLUG]_[PLATFORM]_[STATUS].[ext]
+
+Examples:
+20260527_SP_lifeline_IG-FEED_APPROVED.jpg
+20260528_RS_notmycrosstobear_9x16_DRAFT.jpg
+20260529_TM_ofthesun_YT-COMMUNITY_APPROVED.jpg
+20260530_PC_lifeline_ALBUM-ART_REJECTED.jpg
+
+Territory codes: SP=Screen Print, RS=Record Sleeve, TM=Type Monument, PC=Psychedelic Collage
+WT=Weathered Lyric Sheet, SS=Small Stage, PR=Pittsburgh River, RH=Rehearsal Room, RA=Road After Rain, AC=Album Collage</code></div>
+
+  <h3>Manifest Requirements</h3>
+  <p>Every approved asset must have a manifest entry containing: file path, territory code, song associated, platform, dimensions, rubric scores, approval date, approver, and any usage restrictions. The manifest is the authoritative record of what exists and where it is cleared for use.</p>
+
+  <h3>How AI Agents Should Use These Guidelines</h3>
+  <ol>
+    <li>Before generating any visual, identify the Creative Territory from Section 03</li>
+    <li>Build the prompt using the structure from Section 05</li>
+    <li>Include all relevant items from the Master Negative Prompt Library</li>
+    <li>Generate a batch — never use the first output</li>
+    <li>Score each output against the rubric in Section 06</li>
+    <li>Present only Draft-status items for Jay's review</li>
+    <li>Store all generated items in the correct folder per the naming convention</li>
+    <li>Never publish without explicit Approved status in the manifest</li>
+  </ol>
+
+  <h3>How Agents Should Store References, Drafts, and Approvals</h3>
+  <div class="prompt"><div class="prompt-label">Storage principle</div><code>references/    ← read-only input library. Never modified.
+drafts/         ← working folder. Anything in progress. May be deleted.
+approved/       ← immutable once moved here. Only Jay can modify.
+rejected/       ← kept for learning. Must include rejection note.
+published/      ← archive of what ran, where, when.
+manifest.json   ← authoritative record of all approved assets.</code></div>
+
+  <div class="callout callout-note" style="margin-top:28px">
+    <strong>The single rule that governs everything:</strong> If an image could have been made by a stock photographer for a different artist, it is not good enough. Every piece of creative work for Jay Trainer must be so specific to this music, this city, this catalog, this voice — that it would be wrong anywhere else. That is the standard.
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════════════════════════════ -->
+<section class="s" id="s10">
+  <div class="s-num">Section 10</div>
+  <h2 class="s-title">2-Week Social Campaign Creative</h2>
+  <p class="s-sub">All 14 days rendered at every format — 1:1 Square, 4:5 Portrait, 9:16 Vertical, 16:9 Landscape — with caption, platform distribution, and AI generation prompt for each day's pillar and song.</p>
+  <div class="c-wk-hd">Week 1 &middot; Days 01&ndash;07</div>
+  <div class="c-ov-grid" id="c-ov1"></div>
+  <div class="c-wk-hd">Week 2 &middot; Days 08&ndash;14</div>
+  <div class="c-ov-grid" id="c-ov2"></div>
+  <div class="c-ov-legend">
+    <div class="c-ovl"><div class="c-ovl-dot" style="background:#2a1a08"></div>Screen Print</div>
+    <div class="c-ovl"><div class="c-ovl-dot" style="background:#e8dcc8;border:1px solid #b8852a"></div>Type Monument</div>
+    <div class="c-ovl"><div class="c-ovl-dot" style="background:#d8ccaa"></div>Record Sleeve</div>
+    <div class="c-ovl"><div class="c-ovl-dot" style="background:#1a1208"></div>Psychedelic Collage</div>
+  </div>
+  <div class="divider"></div>
+  <h3>Week 1 &mdash; Days 01&ndash;07</h3>
+  <div id="c-week1"></div>
+  <div class="divider" style="margin:48px 0"></div>
+  <h3>Week 2 &mdash; Days 08&ndash;14</h3>
+  <div id="c-week2"></div>
+</section>
+
+</main>
+
+<script>
+// ── CAMPAIGN RENDERING FOR GUIDELINES SECTION 10 ──────────────────────
+const CFH = "'Fraunces',Georgia,serif";
+const CFS = "'Jeff Dungan',cursive";
+const CFM = "'Space Mono','Courier New',monospace";
+const C_NOISE = `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")`;
+const C_TX = { steel:'assets/textures/steel-texture.png', tanning:'assets/textures/page-tanning.png', grunge:'assets/textures/grunge-hero-overlay.jpg', ring:'assets/textures/moisture-ring.png', disco:'assets/textures/discoloration.png', stain:'assets/textures/water-stain.png' };
+
+function cScreenPrint(w,h,cfg){
+  const{photo,titleLines,script,year,shadow,highlight}=cfg;
+  const isLS=w>h*1.3,isVT=h>w*1.3,s=Math.min(w,h);
+  const pad=Math.round(isLS?h*0.07:s*0.065),tsz=Math.round(isLS?h*0.17:isVT?w*0.29:s*0.215);
+  const ssz=Math.round(s*0.038),msz=Math.round(s*0.016);
+  const lines=titleLines.map(l=>`<div>${l}</div>`).join('');
+  const spLW=Math.round(w*0.33),spLH=Math.round(spLW*790/2771);
+  return `<div style="width:${w}px;height:${h}px;position:relative;overflow:hidden;background:${shadow};font-family:${CFM}">
+    <img src="${photo}" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.12);mix-blend-mode:multiply;opacity:.92;z-index:1">
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:${highlight};mix-blend-mode:screen;opacity:.52;z-index:2"></div>
+    <img src="${C_TX.steel}" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.11;mix-blend-mode:overlay;z-index:3">
+    <img src="${C_TX.tanning}" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.15;mix-blend-mode:multiply;z-index:4">
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:5;display:flex;flex-direction:column;justify-content:space-between;padding:${pad}px">
+      <div style="display:flex;justify-content:space-between;align-items:center"><img src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="width:${spLW}px;height:${spLH}px;display:block;filter:brightness(0) invert(1);opacity:.78"><span style="font-size:${msz}px;letter-spacing:.26em;text-transform:uppercase;color:rgba(232,220,190,.55)">${year||'2023'}</span></div>
+      <div style="font-family:${CFH};font-weight:900;font-size:${tsz}px;line-height:.86;letter-spacing:-.03em;color:#e8dcbe;text-transform:uppercase;font-variation-settings:'opsz' 144">${lines}</div>
+      <div style="display:flex;justify-content:space-between;align-items:flex-end">
+        <div style="font-family:${CFS};font-size:${ssz}px;color:#e8dcbe;line-height:1">${script}</div>
+        <div style="font-size:${Math.round(msz*.8)}px;letter-spacing:.22em;text-transform:uppercase;color:rgba(232,220,190,.45)">Stream now</div>
+      </div>
+    </div>
+  </div>`;
+}
+
+function cTypeMonument(w,h,cfg){
+  const{titleLines,script,bg,textColor,accentColor,variant}=cfg;
+  const isLS=w>h*1.3,isVT=h>w*1.3,s=Math.min(w,h);
+  const pad=Math.round(isLS?h*0.07:s*0.065),tsz=Math.round(isLS?h*0.28:isVT?w*0.33:s*0.23);
+  const ssz=Math.round(s*0.038),msz=Math.round(s*0.016),rW=Math.round(s*.06);
+  const isA=bg==='#b8852a',cCol=isA?'rgba(26,25,23,.18)':'rgba(184,133,42,.09)',rCol=isA?'rgba(26,25,23,.3)':'rgba(184,133,42,.4)';
+  const cpTop=Math.round(-s*.42),topLeft=variant==='top-left';
+  const cpCSS=topLeft?`top:${cpTop}px;left:${cpTop}px`:`bottom:${cpTop}px;right:${cpTop}px`;
+  const circles=[1.15,.9,.68,.48,.3,.16].map(f=>{const d=Math.round(s*1.05*f);return `<div style="position:absolute;${cpCSS};width:${d}px;height:${d}px;border-radius:50%;border:1px solid ${cCol};pointer-events:none;z-index:1"></div>`;}).join('');
+  const lines=titleLines.map(l=>`<div>${l}</div>`).join('');
+  const tmLW=Math.round(w*0.34),tmLH=Math.round(tmLW*790/2771);
+  const tmLF=bg==='#1a1917'?'brightness(0) invert(1) opacity(0.7)':bg==='#b8852a'?'brightness(0) opacity(0.55)':'opacity(0.5)';
+  return `<div style="width:${w}px;height:${h}px;position:relative;overflow:hidden;background:${bg}">
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;background-image:${C_NOISE};background-size:200px 200px;opacity:.055;z-index:1"></div>
+    ${circles}
+    <div style="position:absolute;top:${pad}px;left:${pad}px;right:${pad}px;height:1px;background:${rCol};z-index:2"></div>
+    <div style="position:absolute;bottom:${pad}px;left:${pad}px;right:${pad}px;height:1px;background:${rCol};z-index:2"></div>
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:3;display:flex;flex-direction:column;justify-content:center;padding:${Math.round(pad*2.4)}px ${Math.round(pad*1.4)}px">
+      <img src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="width:${tmLW}px;height:${tmLH}px;display:block;filter:${tmLF};margin-bottom:${Math.round(s*.038)}px">
+      <div style="font-family:${CFH};font-weight:700;font-size:${tsz}px;line-height:.86;letter-spacing:-.03em;color:${textColor};text-transform:uppercase;font-variation-settings:'opsz' 144">${lines}</div>
+      <div style="width:${rW}px;height:1.5px;background:${accentColor};margin:${Math.round(s*.05)}px 0 ${Math.round(s*.03)}px"></div>
+      <div style="font-family:${CFS};font-size:${ssz}px;color:${accentColor};line-height:1">${script}</div>
+    </div>
+  </div>`;
+}
+
+function cRecordSleeve(w,h,cfg){
+  const{photo,titleScript,titleFraunces,label,meta,location}=cfg;
+  const isLS=w>h*1.3,isVT=h>w*1.3,s=Math.min(w,h);
+  const pad=Math.round(isLS?h*0.07:s*0.065),tsz=Math.round(isLS?h*0.13:isVT?w*0.17:s*0.105);
+  const ssz=Math.round(isLS?h*0.055:s*0.048),msz=Math.round(s*0.015);
+  const metaHtml=(meta||[]).map(m=>`<div>${m}</div>`).join('');
+  const rsLW=Math.round(w*0.3),rsLH=Math.round(rsLW*790/2771);
+  const rsLogo=`<img src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="width:${rsLW}px;height:${rsLH}px;display:block;filter:opacity(0.4);margin-bottom:5px">`;
+  const footerHtml=`<div>${rsLogo}<div style="font-family:${CFM};font-size:${Math.round(msz*.85)}px;letter-spacing:.14em;text-transform:uppercase;color:rgba(50,40,30,.3);display:flex;justify-content:space-between"><span>@jaytrainerband</span><span>jaytrainermusic.com</span></div></div>`;
+  const cardboard=`<img src="${C_TX.tanning}" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.55;mix-blend-mode:multiply;z-index:1"><img src="${C_TX.disco}" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.28;mix-blend-mode:multiply;z-index:2">`;
+  function polar(pw,rot){const lh=location?`<div style="font-family:${CFS};font-size:${Math.round(pw*.056)}px;color:#7a6845;text-align:center;margin-top:6px;line-height:1">${location}</div>`:'';return `<div style="width:${pw}px;transform:rotate(${rot}deg);box-shadow:3px 6px 28px rgba(20,12,6,.38)"><div style="background:linear-gradient(145deg,#f2ead8,#ede3cc);padding:6px 6px 22px"><img src="${photo}" alt="" style="width:100%;aspect-ratio:1/1;object-fit:cover;display:block;filter:grayscale(1) contrast(1.08) brightness(0.9) sepia(0.1)">${lh}</div></div>`;}
+  function tb(){return `${label?`<div style="font-family:${CFM};font-size:${msz}px;letter-spacing:.2em;text-transform:uppercase;color:rgba(50,40,30,.42);margin-bottom:7px">${label}</div>`:''}
+      ${titleScript?`<div style="font-family:${CFS};font-size:${ssz}px;color:#4a3820;line-height:1.1;margin-bottom:6px">${titleScript}</div>`:''}
+      <div style="font-family:${CFH};font-weight:700;font-size:${tsz}px;color:#2a1e10;line-height:.92;letter-spacing:-.02em;margin-bottom:11px;word-wrap:break-word">${titleFraunces}</div>
+      <div style="width:22px;height:1px;background:rgba(50,40,30,.22);margin-bottom:8px"></div>
+      <div style="font-family:${CFM};font-size:${Math.round(msz*.9)}px;letter-spacing:.1em;color:rgba(50,40,30,.38);line-height:1.9">${metaHtml}</div>`;}
+  if(isLS){const pw=Math.round(w*.38);return `<div style="width:${w}px;height:${h}px;position:relative;overflow:hidden;background:#ddd0b0">${cardboard}<img src="${C_TX.ring}" alt="" style="position:absolute;top:-20px;left:${Math.round(w*.28)}px;width:${Math.round(h*.65)}px;opacity:.32;z-index:3"><div style="position:absolute;top:${pad}px;right:${pad}px;z-index:4">${polar(pw,1.5)}</div><div style="position:absolute;top:${pad}px;left:${pad}px;bottom:${pad}px;right:${pw+pad*2}px;z-index:5;display:flex;flex-direction:column;justify-content:space-between"><div>${tb()}</div>${footerHtml}</div></div>`;}
+  if(isVT){const pw=Math.round(w*.62),pTop=Math.round(h*.07);return `<div style="width:${w}px;height:${h}px;position:relative;overflow:hidden;background:#ddd0b0">${cardboard}<img src="${C_TX.ring}" alt="" style="position:absolute;top:-15px;right:-15px;width:${Math.round(w*.52)}px;opacity:.38;z-index:3"><div style="position:absolute;top:${pTop}px;left:50%;transform:translateX(-50%) rotate(-1.5deg);z-index:4">${polar(pw,0)}</div><div style="position:absolute;bottom:0;left:0;right:0;z-index:5;background:linear-gradient(to top,rgba(198,182,148,.97) 80%,transparent);padding:${Math.round(h*.16)}px ${pad}px ${pad}px">${tb()}<div style="margin-top:10px">${footerHtml}</div></div></div>`;}
+  const pw=Math.round(w*.43);return `<div style="width:${w}px;height:${h}px;position:relative;overflow:hidden;background:#ddd0b0">${cardboard}<img src="${C_TX.ring}" alt="" style="position:absolute;top:-28px;right:-14px;width:${Math.round(w*.52)}px;opacity:.44;z-index:3"><img src="${C_TX.stain}" alt="" style="position:absolute;bottom:10px;left:-10px;width:${Math.round(w*.36)}px;opacity:.26;z-index:3"><div style="position:absolute;top:${Math.round(h*.056)}px;right:${Math.round(w*.038)}px;z-index:4">${polar(pw,1.8)}</div><div style="position:absolute;left:${pad}px;top:${Math.round(h*.062)}px;right:${pw+Math.round(w*.07)}px;z-index:5">${tb()}</div><div style="position:absolute;bottom:${Math.round(h*.042)}px;left:${pad}px;right:${pad}px;z-index:5">${footerHtml}</div></div>`;
+}
+
+function cPsychCollage(w,h,cfg){
+  const{photo,photo2,titleLines,script,sub,tintColor}=cfg;
+  const isLS=w>h*1.3,isVT=h>w*1.3,s=Math.min(w,h);
+  const tsz=isLS?Math.round(h*.22):isVT?Math.round(w*.26):Math.round(s*.185);
+  const ssz=Math.round(s*.042),msz=Math.round(s*.016),hPad=Math.round(s*.09);
+  const ph2=photo2?`<img src="${photo2}" alt="" style="position:absolute;top:-8%;right:-12%;width:72%;height:72%;object-fit:cover;opacity:.2;mix-blend-mode:screen;z-index:2;transform:rotate(4deg)">`:'';
+  const lines=titleLines.map(l=>`<div>${l}</div>`).join('');
+  const sH=script?`<div style="font-family:${CFS};font-size:${ssz}px;color:#b8852a;margin:${Math.round(s*.032)}px 0 ${Math.round(s*.02)}px;line-height:1">${script}</div>`:'';
+  const suH=sub?`<div style="font-family:${CFM};font-size:${Math.round(msz*.82)}px;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,232,213,.28)">${sub}</div>`:'';
+  return `<div style="width:${w}px;height:${h}px;position:relative;overflow:hidden;background:#0d0d0c">
+    <img src="${photo}" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.52;mix-blend-mode:luminosity;z-index:1">${ph2}
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:${tintColor||'rgba(130,80,20,.36)'};mix-blend-mode:overlay;z-index:3"></div>
+    <img src="${C_TX.grunge}" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.26;mix-blend-mode:overlay;z-index:4">
+    <img src="${C_TX.steel}" alt="" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;opacity:.07;mix-blend-mode:screen;z-index:5">
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at center,transparent 18%,rgba(13,13,12,.82) 100%);z-index:6"></div>
+    <div style="position:absolute;top:0;left:0;right:0;bottom:0;z-index:7;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 ${hPad}px">
+      <img src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="width:${Math.round(w*.36)}px;height:auto;display:block;filter:brightness(0) invert(1);opacity:.72;margin-bottom:${Math.round(s*.028)}px">
+      <div style="font-family:${CFH};font-weight:700;font-size:${tsz}px;line-height:.88;letter-spacing:-.02em;color:#f0e8d5;text-transform:uppercase;font-variation-settings:'opsz' 144">${lines}</div>
+      ${sH}${suH}
+    </div>
+  </div>`;
+}
+
+function cRenderPost(w,h,day){
+  if(day.pillar==='Screen Print')        return cScreenPrint(w,h,day);
+  if(day.pillar==='Type Monument')       return cTypeMonument(w,h,day);
+  if(day.pillar==='Record Sleeve')       return cRecordSleeve(w,h,day);
+  if(day.pillar==='Psychedelic Collage') return cPsychCollage(w,h,day);
+  return '';
+}
+function cScaled(html,rW,rH,DH){
+  const sc=DH/rH,dW=Math.round(rW*sc);
+  return `<div class="c-thumb-wrap" style="width:${dW}px;height:${DH}px"><div style="transform:scale(${sc.toFixed(5)});transform-origin:top left;position:absolute;top:0;left:0;width:${rW}px;height:${rH}px">${html}</div></div>`;
+}
+
+const C_DAYS=[
+  {pillar:'Screen Print',song:'Lifeline',photo:'assets/photos/recording.jpg',titleLines:['LIFE','LINE'],script:'New single',year:'2023',shadow:'#c07030',highlight:'#7ab8d0',caption:'Lifeline — out now. Link in bio.',hashtags:'#jaytrainer #lifeline #newmusic #bluesrock #pittsburgh #psychedelicrock',aiPrompt:'Screen print duotone poster, rust-orange background with teal screen print overlay, abstract recording studio interior without people, aged newsprint paper substrate, heavy halftone grain, silkscreen registration offset visible, gig poster energy — NOT digital gradient, NOT person, NOT stock photography'},
+  {pillar:'Type Monument',song:'Of The Sun',titleLines:['OF','THE','SUN'],script:'From the catalogue',bg:'#1a1917',textColor:'#f0e8d5',accentColor:'#b8852a',variant:'bottom-right',caption:'Of The Sun. Still the one I play loudest.',hashtags:'#jaytrainer #ofthesun #bluesrock #pittsburgh #psychedelicrock #guitar #catalogue',aiPrompt:'Type-dominant composition, deep coal background, giant uppercase display text filling frame, concentric geometric circles radiating from corner, horizontal rule lines top and bottom, amber accent stroke, analog noise grain overlay, Blue Note Records 1960s aesthetic — NOT photo-based, NOT colorful, NOT busy'},
+  {pillar:'Record Sleeve',song:'Not My Cross To Bear',photo:'assets/photos/blog/americana-guitar.jpg',titleScript:'From the catalogue —',titleFraunces:'Not My Cross To Bear',label:'Jay Trainer',meta:['Briar Patch Records','Pittsburgh, PA'],location:'Pittsburgh, PA',caption:'Not My Cross To Bear. Been sitting with it long enough.',hashtags:'#jaytrainer #notmycrosstobear #bluesrock #pittsburgh #catalogue #guitar',aiPrompt:'Aged cardboard vinyl sleeve surface, acoustic guitar resting on worn wood table, raking warm afternoon light from left, coffee ring stain on surface, film grain heavy, polaroid framing, no person, analog photography, worn paper edges — NOT stock, NOT person, NOT pristine'},
+  {pillar:'Psychedelic Collage',song:'Lifeline',photo:'assets/photos/lifeline.jpg',photo2:'assets/photos/full-discography-covers.jpg',titleLines:['LIFE','LINE'],script:'Out now',sub:'Stream everywhere',tintColor:'rgba(130,80,20,.38)',caption:'Lifeline. On every platform. Link in bio.',hashtags:'#jaytrainer #lifeline #newmusic #pittsburgh #bluesrock #psychedelicrock',aiPrompt:'Dark atmospheric layered photograph, fog over still water at dusk, deep amber tint color grade, radial vignette fading to near-black at all edges, 35mm film grain heavy, psychedelic album art energy, ghosted secondary layer barely visible, no person — NOT bright, NOT clean, NOT stock'},
+  {pillar:'Type Monument',song:'Of The Sun',titleLines:['OF THE','SUN'],script:'Stream now',bg:'#f0e8d5',textColor:'#1a1917',accentColor:'#b8852a',variant:'top-left',caption:'Every note on Of The Sun was earned.',hashtags:'#jaytrainer #ofthesun #bluesrock #pittsburgh #guitar #psychedelicrock #songwriting',aiPrompt:'Type-dominant composition, warm parchment background, bold coal-black uppercase text filling frame, concentric circles from top-left corner, subtle noise grain, amber rule line below title, typographic weight and negative space — NOT photo-based, NOT busy, NOT digital smooth'},
+  {pillar:'Screen Print',song:'Not My Cross To Bear',photo:'assets/photos/blog/night-forest.jpg',titleLines:['NOT MY','CROSS','TO BEAR'],script:'From the catalogue',year:'\u2117 JT',shadow:'#1a0e28',highlight:'#c89850',caption:'Not My Cross To Bear. That\u2019s the title, and that\u2019s the whole story.',hashtags:'#jaytrainer #notmycrosstobear #bluesrock #pittsburgh #fuzz #guitar #psychedelicrock',aiPrompt:'Screen print duotone poster, deep purple-black background with amber ember overprint, night forest tree silhouettes as base texture, no person, three-line bold title treatment, gig poster format, heavy grain, aged paper substrate, screen registration marks — NOT digital, NOT person, NOT colorful'},
+  {pillar:'Record Sleeve',song:'Lifeline',photo:'assets/photos/jay-recording.jpg',titleScript:'New single \u2014',titleFraunces:'Lifeline',label:'Briar Patch Records',meta:['Rec. Pittsburgh, PA','\u2117 2023 Jay Trainer','Citizen Cope cover'],location:'Pittsburgh, 2023',caption:'Cut this one in Pittsburgh. Citizen Cope wrote it \u2014 I tried to do it justice.',hashtags:'#jaytrainer #lifeline #bluesrock #cover #pittsburgh #studio #citizencope',aiPrompt:'Physical vinyl record sleeve on aged cardboard, studio photograph polaroid framing, warm incandescent recording room light, worn paper texture, coffee ring, no face visible, tipped slightly, analog film grain, handwritten session notes partially visible — NOT stock, NOT person, NOT clean'},
+  {pillar:'Psychedelic Collage',song:'Of The Sun',photo:'assets/photos/figure-misty-field.jpg',photo2:'assets/photos/recording.jpg',titleLines:['OF','THE SUN'],script:'Jay Trainer',sub:'Stream everywhere',tintColor:'rgba(20,60,30,.42)',caption:'Of The Sun has been everywhere with me. Stream it wherever you are.',hashtags:'#jaytrainer #ofthesun #psychedelicrock #bluesrock #pittsburgh #guitar',aiPrompt:'Dark atmospheric landscape, misty open field at dusk, deep forest green tint color overlay, radial vignette to near-black, 35mm grain heavy, ghosted studio image fading at corner, psychedelic and still, figure silhouette only if any person — NOT bright, NOT stock, NOT identifiable face'},
+  {pillar:'Screen Print',song:'Not My Cross To Bear',photo:'assets/photos/blog/foggy-landscape.jpg',titleLines:['NOT MY','CROSS','TO BEAR'],script:'Stream now',year:'\u2117 JT',shadow:'#2a3a3a',highlight:'#5ab4b8',caption:'Not My Cross To Bear. Still holds.',hashtags:'#jaytrainer #notmycrosstobear #pittsburgh #bluesrock #psychedelicrock #guitar',aiPrompt:'Screen print duotone poster, steel grey-teal palette, foggy winter landscape as base photograph, no person, bold three-line title treatment, two-color silkscreen aesthetic, aged paper grain, registration offset, gig poster format — NOT digital, NOT person, NOT clean'},
+  {pillar:'Type Monument',song:'Lifeline',titleLines:['LIFE','LINE'],script:'New single',bg:'#b8852a',textColor:'#1a1917',accentColor:'#1a1917',variant:'top-left',caption:'Lifeline. Out now. Everything else is secondary.',hashtags:'#jaytrainer #lifeline #newmusic #bluesrock #pittsburgh #guitar #singleout',aiPrompt:'Type-dominant composition, warm amber gold background, bold coal-black uppercase text, concentric circles from top-left corner, dark rule lines, noise grain, high contrast inversion of standard palette, urgent and direct — NOT photo-based, NOT digital smooth'},
+  {pillar:'Record Sleeve',song:'Of The Sun',photo:'assets/photos/blog/foggy-landscape.jpg',titleScript:'From the album \u2014',titleFraunces:'Of The Sun',label:'Jay Trainer',meta:['Briar Patch Records','\u2117 Jay Trainer','Pittsburgh, PA'],location:'Long winter',caption:'Recorded this in the middle of a long winter. Of The Sun.',hashtags:'#jaytrainer #ofthesun #bluesrock #pittsburgh #studio #psychedelicrock #catalogue',aiPrompt:'Physical record sleeve, foggy winter landscape as polaroid photograph, aged cardboard texture, ring stains, coffee marks, warm side light, no person, analog film, tipped composition, worn paper edges, handwriting visible below photo — NOT digital, NOT stock, NOT person'},
+  {pillar:'Psychedelic Collage',song:'Not My Cross To Bear',photo:'assets/photos/blog/night-forest.jpg',photo2:'assets/photos/poster-blackout-asylum.jpg',titleLines:['NOT MY','CROSS','TO BEAR'],script:'From the catalogue',sub:'\u2117 Jay Trainer',tintColor:'rgba(90,40,10,.42)',caption:'Not My Cross To Bear. From the catalogue, with everything I had.',hashtags:'#jaytrainer #notmycrosstobear #bluesrock #pittsburgh #psychedelicrock #catalogue',aiPrompt:'Dark night forest photograph, deep amber-brown tint overlay, radial vignette to near-black at all edges, heavy 35mm grain, ghosted poster image fading at corner, heavy and psychedelic, no identifiable person, catalog depth suggested through layering — NOT bright, NOT stock, NOT clean'},
+  {pillar:'Screen Print',song:'Lifeline',photo:'assets/photos/lifeline.jpg',titleLines:['LIFE','LINE'],script:'Stream now',year:'2023',shadow:'#1a3050',highlight:'#a0c8e8',caption:'Lifeline. This one keeps finding me.',hashtags:'#jaytrainer #lifeline #bluesrock #pittsburgh #guitar #newmusic',aiPrompt:'Screen print duotone poster, deep navy blue shadow with cool pale blue highlight, misty water surface as base photograph, no person, bold two-line title treatment, gig poster format, aged paper grain, two-color silkscreen, registration offset — NOT digital, NOT person, NOT warm'},
+  {pillar:'Type Monument',song:'Of The Sun',titleLines:['OF','THE','SUN'],script:'Stream everywhere',bg:'#1a1917',textColor:'#f0e8d5',accentColor:'#b8852a',variant:'top-left',caption:'Of The Sun. Two words. Full meaning.',hashtags:'#jaytrainer #ofthesun #bluesrock #pittsburgh #guitar #psychedelicrock #songwriting',aiPrompt:'Type-dominant composition, deep coal background, giant three-line uppercase title, concentric circles from top-left corner, horizontal rule lines, amber accent, analog noise grain, Blue Note Records 1960s typographic energy — NOT photo-based, NOT person, NOT digital'}
+];
+
+const C_OV_CLS={'Screen Print':'c-sp','Type Monument':'c-tm','Record Sleeve':'c-rs','Psychedelic Collage':'c-pc'};
+const C_DOTS={'Screen Print':'#c07030','Type Monument':'#b8852a','Record Sleeve':'#b8a878','Psychedelic Collage':'#5a2c10'};
+const C_PLATS=[['IG Feed','1:1 + 4:5'],['IG Story / Reels','9:16'],['TikTok','9:16'],['YouTube','16:9 + 9:16'],['Facebook','1:1 + 16:9']];
+const CDH=148;
+
+function cRenderDay(day,d){
+  const ds=String(d).padStart(2,'0');
+  const dot=C_DOTS[day.pillar]||'#b8852a';
+  const sq=cScaled(cRenderPost(480,480,day),480,480,CDH);
+  const pt=cScaled(cRenderPost(480,600,day),480,600,CDH);
+  const vt=cScaled(cRenderPost(300,533,day),300,533,CDH);
+  const ls=cScaled(cRenderPost(640,360,day),640,360,CDH);
+  const platRows=C_PLATS.map(([n,f])=>`<div class="c-plat-row"><span class="c-plat-name">${n}</span><span class="c-plat-fmt">${f}</span></div>`).join('');
+  return `<div class="c-day-block">
+    <div class="c-day-hd">
+      <span class="c-day-n">Day ${ds}</span>
+      <div class="c-day-dot" style="background:${dot}"></div>
+      <span class="c-day-pil">${day.pillar}</span>
+      <span style="color:var(--cinder)">&middot;</span>
+      <span class="c-day-song">${day.song}</span>
+    </div>
+    <div class="c-thumb-row">
+      <div class="c-thumb-col">${sq}<div class="c-thumb-lbl">1:1 Square<br>IG &middot; FB Feed</div></div>
+      <div class="c-thumb-col">${pt}<div class="c-thumb-lbl">4:5 Portrait<br>IG Feed</div></div>
+      <div class="c-thumb-col">${vt}<div class="c-thumb-lbl">9:16 Vertical<br>Story &middot; TikTok</div></div>
+      <div class="c-thumb-col">${ls}<div class="c-thumb-lbl">16:9 Landscape<br>YT &middot; FB Cover</div></div>
+    </div>
+    <div class="c-cap-row">
+      <div class="c-cap-box">
+        <div class="c-cap-lbl">Caption &mdash; all platforms</div>
+        <div class="c-cap-txt">${day.caption}</div>
+        <div class="c-cap-tags">${day.hashtags}</div>
+      </div>
+      <div class="c-side-col">
+        <div class="c-plat-box"><div class="c-plat-hd">Platform distribution</div>${platRows}</div>
+        <div class="prompt"><div class="prompt-label">AI generation prompt &mdash; ${day.pillar}</div><code>${day.aiPrompt}</code></div>
+      </div>
+    </div>
+  </div>`;
+}
+
+// Render overview grids
+document.getElementById('c-ov1').innerHTML=C_DAYS.slice(0,7).map((d,i)=>`<div class="c-ov-cell ${C_OV_CLS[d.pillar]}"><div class="c-ov-d">Day ${String(i+1).padStart(2,'0')}</div><div class="c-ov-s">${d.song}</div><div class="c-ov-p">${d.pillar.replace('Psychedelic Collage','Collage')}</div></div>`).join('');
+document.getElementById('c-ov2').innerHTML=C_DAYS.slice(7).map((d,i)=>`<div class="c-ov-cell ${C_OV_CLS[d.pillar]}"><div class="c-ov-d">Day ${String(i+8).padStart(2,'0')}</div><div class="c-ov-s">${d.song}</div><div class="c-ov-p">${d.pillar.replace('Psychedelic Collage','Collage')}</div></div>`).join('');
+// Render day blocks
+document.getElementById('c-week1').innerHTML=C_DAYS.slice(0,7).map((d,i)=>cRenderDay(d,i+1)).join('');
+document.getElementById('c-week2').innerHTML=C_DAYS.slice(7).map((d,i)=>cRenderDay(d,i+8)).join('');
+</script>
+</body>
+</html>
