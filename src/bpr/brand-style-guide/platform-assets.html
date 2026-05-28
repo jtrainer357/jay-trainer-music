@@ -16,23 +16,25 @@ permalink: /bpr/brand-style-guide/platform-assets.html
 @font-face{font-family:'Fraunces';src:url('fonts/Fraunces_SOFT_WONK_opsz_wght_.ttf') format('truetype');font-weight:100 900;font-style:normal;}
 @font-face{font-family:'Fraunces';src:url('fonts/Fraunces-Italic_SOFT_WONK_opsz_wght_.ttf') format('truetype');font-weight:100 900;font-style:italic;}
 *{margin:0;padding:0;box-sizing:border-box;}
+html,body{min-width:100%;min-height:100%;}
 body{background:#0a0a09;font-family:'Space Mono',monospace;color:#5a5650;-webkit-font-smoothing:antialiased;}
+body.export-mode{width:var(--export-w);height:var(--export-h);min-width:var(--export-w);min-height:var(--export-h);overflow:hidden;background:#080808;}
 /* Review page */
 .page{max-width:1060px;margin:0 auto;padding:72px 48px 120px;}
 .page-hd{margin-bottom:80px;}
-.page-eyebrow{font-size:9px;text-transform:uppercase;letter-spacing:.2em;color:#5a5650;margin-bottom:8px;}
+.page-eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.18em;color:#8d8578;margin-bottom:10px;}
 .page-title{font-family:'Fraunces',serif;font-weight:700;font-size:42px;color:#faf8f4;letter-spacing:-.02em;line-height:1;}
 .page-title em{font-style:italic;color:#c47a2a;}
 .asset-wrap{margin-bottom:72px;}
-.asset-meta{display:flex;gap:20px;align-items:baseline;margin-bottom:14px;}
-.asset-name{font-size:8px;text-transform:uppercase;letter-spacing:.18em;color:#c47a2a;}
-.asset-dims{font-size:8px;text-transform:uppercase;letter-spacing:.14em;color:#2e2c28;}
-.asset-note{font-size:8px;text-transform:uppercase;letter-spacing:.14em;color:#2e2c28;}
+.asset-meta{display:flex;gap:18px;align-items:baseline;flex-wrap:wrap;margin-bottom:18px;}
+.asset-name{font-size:13px;text-transform:uppercase;letter-spacing:.12em;color:#c47a2a;}
+.asset-dims{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#8d8578;}
+.asset-note{font-size:12px;text-transform:uppercase;letter-spacing:.08em;color:#8d8578;}
 .circle-preview{margin-top:10px;display:flex;gap:12px;align-items:center;}
 .circle-swatch{border-radius:50%;overflow:hidden;flex-shrink:0;}
-.circle-note{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:#2e2c28;}
+.circle-note{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:#8d8578;}
 /* Export containers — hidden in review mode */
-#ex-av,#ex-yt,#ex-fb{display:none;position:fixed;top:0;left:0;z-index:9999;}
+#ex-av,#ex-yt,#ex-fb{display:none;position:fixed;top:0;left:0;z-index:9999;overflow:hidden;background:#080808;}
 </style>
 </head>
 <body>
@@ -89,6 +91,11 @@ const AMBER = '#c47a2a';
 const COAL  = '#080808';
 const BONE  = '#d4cdc0';
 const PARCH = '#f0e8d5';
+const EXPORT_SPECS = {
+  av: { w: 1600, h: 1600 },
+  yt: { w: 1920, h: 1080 },
+  fb: { w: 1640, h: 624 }
+};
 
 const SVG_LOGO = "<svg viewBox=\"0 0 2771 790\" xmlns=\"http://www.w3.org/2000/svg\" style=\"fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2;\">\n    <g id=\"Background\" transform=\"matrix(3.054688,0,0,3.054688,-204.983495,-298.262076)\">\n        <path d=\"M152.528,302.048C149.75,301.469 133.238,300.298 128.805,284.414C126.421,275.872 131.364,270.487 133.408,269.352C139.274,266.097 141.474,272.51 141.928,273.182C147.505,281.432 161.663,279.558 167.023,272.106C184.617,247.646 145.204,222.074 111.9,254.908C82.586,283.808 94.143,329.913 130.474,336.637C157.912,341.715 187.514,331.897 215.825,273.665C254.901,193.29 262.61,138.065 286.883,118.758C289.543,116.641 281.826,116.191 280.429,115.989C215.094,106.537 192.512,172.796 216.474,179.598C228.095,182.896 224.832,170.269 232.534,171.21C246.086,172.865 231.025,202.124 204.455,197.796C163.208,191.076 170.915,127.351 227.455,111.357C265.471,100.603 285.149,115.397 325.531,105.634C329.34,104.714 334.156,108.968 325.711,112.985C282.242,133.661 286.477,201.944 234.935,289.769C174.013,393.577 81.265,354.99 69.591,310.473C50.977,239.491 141.638,201.571 182.92,236.027C206.056,255.337 193.954,301.971 152.528,302.048Z\" style=\"fill:rgb(8,8,8);\"></path>\n        <path d=\"M762.453,285.102C764.071,284.779 777.857,282.027 782.169,279.05C784.812,277.225 779.703,273.339 785.384,271.217C797.859,266.556 804.622,286.032 788.181,298.081C745.693,329.22 669.164,297.686 620.634,281.096C553.692,258.211 533.228,284.959 531.226,290.399C527.808,299.687 539.064,302.005 532.347,306.223C518.152,315.135 487.801,278.195 545.395,264.024C575.17,256.697 589.091,266.428 583.965,259.199C575.386,247.1 572.171,229.889 570.394,223.533C570.03,222.229 565.328,205.411 559.545,210.543C558.796,211.207 553.44,228.791 552.854,232.557C551.398,241.897 558.702,239.704 558.426,244.495C558.27,247.22 557.203,248.651 524.513,248.221C517.951,248.134 520.128,243.424 520.78,242.754C523.246,240.224 527.64,242.833 535.406,217.472C544.606,187.425 553.945,166.656 550.055,162.916C542.615,155.759 550.081,154.344 563.473,153.184C622.983,148.028 613.219,185.134 605.138,194.189C594.175,206.475 583.654,205.673 582.819,206.857C581.72,208.413 583.061,208.193 585.046,209.952C594.91,218.691 597.12,244.984 614.756,258.155C618.376,260.859 628.13,268.143 668.476,275.622C707.736,282.899 725.637,288.91 762.453,285.102ZM565.56,200.993C566.21,200.83 566.889,200.801 567.539,200.638C587.138,195.728 594.39,169.046 584.488,164.523C574.089,159.773 572.483,169.983 565.657,190.553C563.061,198.376 560.796,201.449 565.56,200.993Z\" style=\"fill:rgb(8,8,8);\"></path>\n        <path d=\"M477.444,167.052C473.007,167.051 464.626,168.479 453.731,161.172C432.284,146.79 439.001,105.653 486.461,99.221C558.286,89.486 596.543,128.461 621.257,115.04C626.289,112.307 627.508,107.862 626.516,105.494C621.885,94.443 637.865,96.984 639.949,105.383C644.598,124.12 624.286,145.328 585.63,131.166C567.283,124.444 557.718,117.939 554.612,120.627C545.497,128.514 532.723,161.902 522.196,192.405C503.266,247.259 504.731,264.728 483.296,281.214C463.378,296.534 438.013,282.804 445.93,269.746C447.585,267.016 455.972,260.716 455.781,270.499C455.735,272.896 466.837,279.438 478.457,250.483C493.954,211.865 512.597,124.099 539.426,115.365C546.715,112.992 524.819,108.973 523.458,108.723C461.724,97.393 451.129,150.951 479.467,150.002C493.593,149.53 492.749,137.053 492.643,135.489C491.968,125.525 511.675,137.043 498.078,156.173C492.58,163.908 479.271,166.673 477.444,167.052Z\" style=\"fill:rgb(8,8,8);\"></path>\n        <path d=\"M621.513,246.072C620.209,245.943 608.575,244.799 605.551,242.427C604.361,241.493 601.55,239.415 604.652,236.683C612.21,230.028 613.744,224.383 637.873,185.73C650.455,165.575 653.455,164.568 648.788,159.26C642.908,152.573 666.619,151.339 668.495,151.287C683.81,150.868 683.884,155.92 682.722,162.542C681.821,167.678 677.459,192.54 677.317,227.503C677.265,240.26 683.351,242.136 687.137,238.168C692.823,232.208 710.368,166.342 710.438,165.498C710.853,160.543 703.3,159.421 707.54,155.546C710.78,152.585 751.075,149.069 737.913,160.973C727.952,169.982 712.267,231.706 713.45,236.511C714.187,239.505 722.167,244.217 714.588,246.745C712.099,247.575 648.552,247.365 647.522,247.29C641.472,246.852 641.943,242.959 647.239,240C648.544,239.271 654.14,236.145 653.793,222.501C653.647,216.769 628.106,211.656 623.995,233.583C622.747,240.243 631.07,240.498 628.364,244.404C626.605,246.941 625.94,245.69 621.513,246.072ZM656.821,174.933C638.212,205.118 636.568,207.468 639.506,207.356C646.599,207.085 646.559,207.118 653.53,208.337C656.292,208.82 655.714,203.085 655.98,200.549C657.134,189.545 656.678,189.597 657.96,178.523C658.202,176.442 658.89,175.934 656.821,174.933Z\" style=\"fill:rgb(8,8,8);\"></path>\n        <path d=\"M921.488,152.069C926.06,152.025 925.978,152.004 930.522,152.147C964,153.202 970.454,196.285 928.449,208.375C925.942,209.097 927.205,210.14 929.057,211.949C938.199,220.876 942.05,238.508 945.729,246.394C953.739,263.563 964.506,259.076 962.492,253.503C959.776,245.987 970.007,248.051 972.658,253.415C981.907,272.133 942.282,294.478 922.812,247.382C919.825,240.156 909.469,201.217 905.828,214.592C900.471,234.264 899.518,236.166 905.426,240.604C906.096,241.108 911.22,247.238 897.499,247.462C872.811,247.867 871.268,247.902 869.708,246.316C865.238,241.775 874.34,243.339 880.057,228.327C881.175,225.391 895.986,175.149 897.163,170.413C899.497,161.017 894.472,162.155 892.777,159.352C888.117,151.645 920.352,152.109 921.488,152.069ZM926.514,162.953C922.135,163.896 921.345,164.44 912.601,192.533C911.176,197.112 906.757,204.783 916.376,201.172C933.231,194.845 945.056,165.607 926.514,162.953Z\" style=\"fill:rgb(7,8,7);\"></path>\n        <path d=\"M758.422,185.938C758.226,186.046 757.961,185.693 757.765,185.801C757.408,185.997 746.845,220.384 745.234,230.459C743.998,238.19 751.081,240.467 751.563,241.461C754.485,247.488 744.072,247.345 726.513,247.147C720.629,247.081 719.76,243.369 723.612,240.664C729.609,236.452 729.769,234.421 732.493,227.497C733.311,225.418 748.003,175.76 749.733,168.54C751.163,162.569 745.316,159.976 744.855,159.284C744.06,158.092 742.368,152.652 761.499,152.705C773.603,152.738 779.823,154.024 784.792,207.413C785.05,207.721 785.307,208.028 785.564,208.336C785.809,208.181 786.275,208.936 786.669,207.637C787.634,204.459 796.969,173.693 797.193,167.481C797.472,159.721 788.067,160.324 792.729,155.741C794.146,154.348 794.626,153.877 817.513,154.109C823.486,154.17 822.881,158.614 820.387,160.331C815.729,163.536 810.923,161.605 795.158,217.41C790.684,233.246 790.365,234.801 797.199,239.91C804.008,244.999 774.774,257.371 767.513,234.496C761.972,217.035 759.585,190.468 759.237,186.595C758.965,186.376 758.694,186.157 758.422,185.938Z\" style=\"fill:rgb(7,8,7);\"></path>\n        <path d=\"M279.515,251.907C278.604,251.941 262.035,254.122 265.443,247.463C266.636,245.131 270.231,247.821 285.079,221.261C302.549,190.012 321.56,165.568 318.314,161.646C318.258,161.579 312.837,157.871 316.79,154.933C319.489,152.927 350.029,147.529 349.002,160.477C345.569,203.773 340.599,213.362 349.376,208.28C354.03,205.587 356.855,203.177 356.865,208.499C356.879,215.52 346.723,219.137 345.529,219.562C344.094,220.073 340.797,237.551 348.233,242.891C351.26,245.064 352.625,250.656 340.502,250.39C328.447,250.125 328.513,251.141 316.497,250.664C308.321,250.339 309.044,245.811 312.598,243.673C318.195,240.305 318.46,239.904 320.79,227.556C321.967,221.317 321.909,219.272 315.514,219.153C309.272,219.036 295.86,217.737 291.352,233.457C288.048,244.978 296.851,242.872 296.813,247.503C296.77,252.821 285.071,251.844 279.515,251.907ZM323.911,193.528C324.039,192.331 325.181,181.617 325.275,178.552C325.304,177.627 323.96,177.063 323.355,178.34C323.104,178.868 308.398,202.361 305.635,207.556C303.949,210.728 309.553,208.068 315.508,208.17C318.547,208.223 318.427,208.633 321.526,208.747C323.662,208.825 323.478,200.646 323.911,193.528Z\" style=\"fill:rgb(8,8,8);\"></path>\n        <path d=\"M827.498,247.072C812.682,247.228 798.876,248.482 801.942,242.726C803.567,239.676 808.376,241.405 812.272,229.43C813.942,224.298 831.46,170.453 830.541,164.496C830.064,161.405 822.694,154.195 834.547,152.883C849.963,151.177 849.932,153.547 865.519,152.861C868.578,152.726 895.922,149.583 883.222,171.334C882.144,173.18 874.397,184.009 873.004,172.555C871.974,164.089 857.996,159.403 852.8,170.634C851.753,172.898 843.972,193.291 845.359,194.638C845.94,195.202 850.296,195.619 853.403,193.366C857.149,190.649 863.195,178.574 865.67,185.431C866.622,188.07 866.135,189.659 859.53,210.511C857.472,217.011 852.415,217.849 851.421,212.515C850.937,209.912 851.976,205.229 844.496,204.576C842.606,204.411 840.104,204.193 835.412,226.481C835.268,227.167 833.896,233.684 835.729,235.238C839.513,238.445 855.089,234.05 865.127,221.203C869.275,215.893 868.43,213.679 872.458,214.641C879.186,216.246 870.935,231.396 867.958,237.706C862.685,248.882 859.755,247.058 827.498,247.072Z\" style=\"fill:rgb(8,8,7);\"></path>\n        <path d=\"M391.055,169.539C392.486,184.264 392.638,193.742 395.212,189.294C405.534,171.455 415.544,163.065 408.572,156.417C399.056,147.344 435.075,148.437 436.756,152.366C439.277,158.257 431.381,154.697 416.991,174.845C414.041,178.977 390.943,210.024 389.394,235.497C388.921,243.279 399.272,243.287 394.165,248.139C391.216,250.94 357.671,250.803 355.58,249.364C351.39,246.479 357.225,243.125 357.7,242.852C360.014,241.521 367.382,237.285 371.586,212.515C371.938,210.442 370.266,167.55 363.133,161.939C352.974,153.949 364.906,152.983 378.479,151.287C398.31,148.81 398.103,153.021 397.837,154.569C397.542,156.286 393.129,158.793 391.865,160.72C390.732,162.446 391.023,168.832 391.055,169.539Z\" style=\"fill:rgb(8,8,8);\"></path>\n        <path d=\"M765.494,289.474C765.486,289.944 765.088,289.72 765.08,290.162C765.049,292.025 766.422,291.347 766.537,291.448C764.91,292.951 765.08,293.659 763.527,293.218C763.16,293.113 762.845,292.86 762.476,292.761C753.855,290.452 765.138,289.504 765.494,289.474Z\" style=\"fill:rgb(41,40,39);\"></path>\n        <path d=\"M767.516,289.571C769.34,289.541 769.333,289.501 769.486,289.539C769.759,289.606 771.537,292.672 766.537,291.448C766.634,291.148 765.82,290.816 767.516,289.571Z\" style=\"fill:rgb(66,66,67);\"></path>\n        <path d=\"M291.291,126.466C291.565,126.203 291.124,125.594 291.398,125.331C292.528,124.247 293.173,125.505 293.241,125.638C293.918,126.957 292.938,126.721 290.265,128.267C290.607,127.667 290.949,127.067 291.291,126.466Z\" style=\"fill:rgb(21,20,21);\"></path>\n        <path d=\"M291.291,126.466C290.949,127.067 290.607,127.667 290.265,128.267C286.139,128.514 289.345,126.499 289.499,126.487C289.642,126.477 289.632,126.486 291.291,126.466Z\" style=\"fill:rgb(38,37,42);\"></path>\n        <path d=\"M778.268,286.409C778.39,286.318 782.911,284.048 779.576,287.792C779.14,287.331 778.704,286.87 778.268,286.409Z\" style=\"fill:rgb(55,56,55);\"></path>\n        <path d=\"M258.443,217.592C258.465,217.188 257.85,216.925 257.871,216.521C257.896,216.05 259.075,215.355 259.489,215.556C259.654,215.636 262.119,216.934 258.443,217.592Z\" style=\"fill:rgb(44,42,46);\"></path>\n        <path d=\"M203.214,193.092C199.474,193.827 201.346,191.613 201.51,191.527C202.83,190.835 202.578,191.767 203.214,193.092Z\" style=\"fill:rgb(38,38,40);\"></path>\n        <path d=\"M765.494,289.474C766.168,289.506 766.842,289.538 767.516,289.571C765.82,290.816 766.634,291.148 766.537,291.448C766.422,291.347 765.049,292.025 765.08,290.162C765.088,289.72 765.486,289.944 765.494,289.474Z\" style=\"fill:rgb(41,40,40);\"></path>\n    </g>\n</svg>";
 
@@ -122,8 +129,8 @@ function buildAvatar(w, h, showSafeZone) {
     <!-- content -->
     <div style="position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:${Math.round(h*.022)}px">
       <div>${makeLogo(logoW,'brightness(0) invert(1)','.88')}</div>
-      <div style="font-family:${FM};font-size:${Math.round(w*.0115)}px;letter-spacing:.2em;text-transform:uppercase;color:${AMBER};opacity:.72;margin-top:${Math.round(h*.014)}px">@jaytrainerband</div>
-      <div style="font-family:${FM};font-size:${Math.round(w*.0095)}px;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,232,213,.22)">Pittsburgh &nbsp;&middot;&nbsp; Briar Patch Records</div>
+      <div style="font-family:${FM};font-size:${Math.round(w*.018)}px;letter-spacing:.16em;text-transform:uppercase;color:${AMBER};opacity:.78;margin-top:${Math.round(h*.014)}px">@jaytrainerband</div>
+      <div style="font-family:${FM};font-size:${Math.round(w*.014)}px;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,232,213,.38)">Pittsburgh &nbsp;&middot;&nbsp; Briar Patch Records</div>
     </div>
   </div>`;
 }
@@ -156,12 +163,12 @@ function buildYT(w, h, showSafeZone) {
     <!-- content in safe zone -->
     <div style="position:absolute;top:${szTop}px;left:${szLeft}px;width:${szW}px;height:${szH}px;z-index:8;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:${Math.round(h*.018)}px">
       <div>${makeLogo(logoW,'brightness(0) invert(1)','.85')}</div>
-      <div style="font-family:${FM};font-size:${Math.round(w*.011)}px;letter-spacing:.2em;text-transform:uppercase;color:${AMBER};opacity:.65">jaytrainermusic.com</div>
+      <div style="font-family:${FM};font-size:${Math.round(w*.014)}px;letter-spacing:.16em;text-transform:uppercase;color:${AMBER};opacity:.75">jaytrainermusic.com</div>
     </div>
     <!-- genre text L edge -->
-    <div style="position:absolute;left:${Math.round(w*.028)}px;bottom:${Math.round(h*.1)}px;z-index:9;font-family:${FM};font-size:${Math.round(w*.009)}px;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,232,213,.2);writing-mode:vertical-lr;transform:rotate(180deg)">Psychedelic Rock &nbsp;&middot;&nbsp; Blues</div>
+    <div style="position:absolute;left:${Math.round(w*.028)}px;bottom:${Math.round(h*.1)}px;z-index:9;font-family:${FM};font-size:${Math.round(w*.011)}px;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,232,213,.32);writing-mode:vertical-lr;transform:rotate(180deg)">Psychedelic Rock &nbsp;&middot;&nbsp; Blues</div>
     <!-- R edge -->
-    <div style="position:absolute;right:${Math.round(w*.028)}px;bottom:${Math.round(h*.1)}px;z-index:9;font-family:${FM};font-size:${Math.round(w*.009)}px;letter-spacing:.14em;text-transform:uppercase;color:rgba(240,232,213,.2);writing-mode:vertical-rl">Briar Patch Records &nbsp;&middot;&nbsp; Pittsburgh</div>
+    <div style="position:absolute;right:${Math.round(w*.028)}px;bottom:${Math.round(h*.1)}px;z-index:9;font-family:${FM};font-size:${Math.round(w*.011)}px;letter-spacing:.1em;text-transform:uppercase;color:rgba(240,232,213,.32);writing-mode:vertical-rl">Briar Patch Records &nbsp;&middot;&nbsp; Pittsburgh</div>
   </div>`;
 }
 
@@ -185,8 +192,8 @@ function buildFB(w, h) {
     <div style="position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:${Math.round(h*.06)}px">
       <div>${makeLogo(logoW,'brightness(0) invert(1)','.86')}</div>
       <div style="display:flex;flex-direction:column;align-items:center;gap:${Math.round(h*.038)}px">
-        <div style="font-family:${FS};font-size:${Math.round(h*.09)}px;color:${AMBER};line-height:1;opacity:.85">Raw. Rooted. Electric.</div>
-        <div style="font-family:${FM};font-size:${Math.round(w*.0088)}px;letter-spacing:.18em;text-transform:uppercase;color:rgba(240,232,213,.32)">@jaytrainerband &nbsp;&middot;&nbsp; Pittsburgh, PA</div>
+        <div style="font-family:${FS};font-size:${Math.round(h*.09)}px;color:${AMBER};line-height:1;opacity:.85">Raw. Rooted. Eclectic.</div>
+        <div style="font-family:${FM};font-size:${Math.round(w*.013)}px;letter-spacing:.12em;text-transform:uppercase;color:rgba(240,232,213,.5)">@jaytrainerband &nbsp;&middot;&nbsp; Pittsburgh, PA</div>
       </div>
     </div>
     <!-- amber bottom rule -->
@@ -210,32 +217,63 @@ function renderAll() {
   document.getElementById('rv-fb').innerHTML = buildFB(820, 312);
 
   // Export containers (full size, hidden)
-  document.getElementById('ex-av').style.cssText = 'display:none;position:fixed;top:0;left:0;z-index:9999;';
-  document.getElementById('ex-av').innerHTML = buildAvatar(800, 800, false);
-  document.getElementById('ex-yt').style.cssText = 'display:none;position:fixed;top:0;left:0;z-index:9999;';
-  document.getElementById('ex-yt').innerHTML = buildYT(960, 540, false);
-  document.getElementById('ex-fb').style.cssText = 'display:none;position:fixed;top:0;left:0;z-index:9999;';
-  document.getElementById('ex-fb').innerHTML = buildFB(820, 312);
+  document.getElementById('ex-av').style.cssText = 'display:none;position:fixed;top:0;left:0;z-index:9999;overflow:hidden;background:#080808;';
+  document.getElementById('ex-av').innerHTML = buildAvatar(EXPORT_SPECS.av.w, EXPORT_SPECS.av.h, false);
+  document.getElementById('ex-yt').style.cssText = 'display:none;position:fixed;top:0;left:0;z-index:9999;overflow:hidden;background:#080808;';
+  document.getElementById('ex-yt').innerHTML = buildYT(EXPORT_SPECS.yt.w, EXPORT_SPECS.yt.h, false);
+  document.getElementById('ex-fb').style.cssText = 'display:none;position:fixed;top:0;left:0;z-index:9999;overflow:hidden;background:#080808;';
+  document.getElementById('ex-fb').innerHTML = buildFB(EXPORT_SPECS.fb.w, EXPORT_SPECS.fb.h);
 }
 
 // Export functions for screenshot tool
 window.showExport = function(id) {
+  const spec = EXPORT_SPECS[id];
+  if (!spec) return;
+  document.documentElement.style.setProperty('--export-w', `${spec.w}px`);
+  document.documentElement.style.setProperty('--export-h', `${spec.h}px`);
+  document.documentElement.style.width = `${spec.w}px`;
+  document.documentElement.style.height = `${spec.h}px`;
+  document.body.classList.add('export-mode');
   document.getElementById('review').style.display = 'none';
-  ['av','yt','fb'].forEach(k => document.getElementById('ex-'+k).style.display = 'none');
-  document.getElementById('ex-'+id).style.display = 'block';
+  ['av','yt','fb'].forEach(k => {
+    const node = document.getElementById('ex-'+k);
+    node.style.display = 'none';
+    node.style.width = `${EXPORT_SPECS[k].w}px`;
+    node.style.height = `${EXPORT_SPECS[k].h}px`;
+  });
+  const active = document.getElementById('ex-'+id);
+  active.style.display = 'block';
+  active.style.width = `${spec.w}px`;
+  active.style.height = `${spec.h}px`;
 };
 window.showReview = function() {
+  document.documentElement.style.removeProperty('--export-w');
+  document.documentElement.style.removeProperty('--export-h');
+  document.documentElement.style.width = '';
+  document.documentElement.style.height = '';
+  document.body.classList.remove('export-mode');
   document.getElementById('review').style.display = 'block';
   ['av','yt','fb'].forEach(k => document.getElementById('ex-'+k).style.display = 'none');
 };
+
+function applyExportParam() {
+  const exportId = new URLSearchParams(window.location.search).get('export');
+  if (['av','yt','fb'].includes(exportId)) window.showExport(exportId);
+}
 
 document.fonts.ready.then(() => {
   const imgs = Array.from(document.images);
   Promise.all([...imgs.map(i => new Promise(r => {
     if (i.complete) r(); else { i.onload = r; i.onerror = r; }
-  }))]).then(renderAll);
+  }))]).then(() => {
+    renderAll();
+    applyExportParam();
+  });
   // fallback in case no imgs yet
-  setTimeout(renderAll, 800);
+  setTimeout(() => {
+    renderAll();
+    applyExportParam();
+  }, 800);
 });
 </script>
 </body>
