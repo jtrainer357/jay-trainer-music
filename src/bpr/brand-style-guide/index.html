@@ -987,12 +987,14 @@ const C_NOISE = `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='htt
 const C_TX = { steel:'assets/textures/steel-texture.png', tanning:'assets/textures/page-tanning.png', grunge:'assets/textures/grunge-hero-overlay.jpg', ring:'assets/textures/moisture-ring.png', disco:'assets/textures/discoloration.png', stain:'assets/textures/water-stain.png' };
 const C_TEXT_SCALE = 1.12;
 const cText = n => Math.max(1, Math.round(n * C_TEXT_SCALE));
+const C_MICRO_TEXT_SCALE = 1.42;
+const cMicro = n => Math.max(1, Math.round(n * C_MICRO_TEXT_SCALE));
 
 function cScreenPrint(w,h,cfg){
   const{photo,titleLines,script,year,shadow,highlight}=cfg;
   const isLS=w>h*1.3,isVT=h>w*1.3,s=Math.min(w,h);
   const pad=Math.round(isLS?h*0.07:s*0.065),tsz=cText(isLS?h*0.17:isVT?w*0.29:s*0.215);
-  const ssz=cText(s*0.038),msz=cText(s*0.016);
+  const ssz=cText(s*0.038),msz=cMicro(s*0.016);
   const lines=titleLines.map(l=>`<div>${l}</div>`).join('');
   const spLW=Math.round(w*0.33),spLH=Math.round(spLW*790/2771);
   return `<div style="width:${w}px;height:${h}px;position:relative;overflow:hidden;background:${shadow};font-family:${CFM}">
@@ -1015,7 +1017,7 @@ function cTypeMonument(w,h,cfg){
   const{titleLines,script,bg,textColor,accentColor,variant}=cfg;
   const isLS=w>h*1.3,isVT=h>w*1.3,s=Math.min(w,h);
   const pad=Math.round(isLS?h*0.07:s*0.065),tsz=cText(isLS?h*0.28:isVT?w*0.33:s*0.23);
-  const ssz=cText(s*0.038),msz=cText(s*0.016),rW=Math.round(s*.06);
+  const ssz=cText(s*0.038),msz=cMicro(s*0.016),rW=Math.round(s*.06);
   const isA=bg==='#b8852a',cCol=isA?'rgba(26,25,23,.18)':'rgba(184,133,42,.09)',rCol=isA?'rgba(26,25,23,.3)':'rgba(184,133,42,.4)';
   const cpTop=Math.round(-s*.42),topLeft=variant==='top-left';
   const cpCSS=topLeft?`top:${cpTop}px;left:${cpTop}px`:`bottom:${cpTop}px;right:${cpTop}px`;
@@ -1041,7 +1043,7 @@ function cRecordSleeve(w,h,cfg){
   const{photo,titleScript,titleFraunces,label,meta,location}=cfg;
   const isLS=w>h*1.3,isVT=h>w*1.3,s=Math.min(w,h);
   const pad=Math.round(isLS?h*0.07:s*0.065),tsz=cText(isLS?h*0.13:isVT?w*0.17:s*0.105);
-  const ssz=cText(isLS?h*0.055:s*0.048),msz=cText(s*0.015);
+  const ssz=cText(isLS?h*0.055:s*0.048),msz=cMicro(s*0.015);
   const metaHtml=(meta||[]).map(m=>`<div>${m}</div>`).join('');
   const rsLW=Math.round(w*0.3),rsLH=Math.round(rsLW*790/2771);
   const rsLogo=`<img src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer" style="width:${rsLW}px;height:${rsLH}px;display:block;filter:opacity(0.4);margin-bottom:5px">`;
@@ -1062,7 +1064,7 @@ function cPsychCollage(w,h,cfg){
   const{photo,photo2,titleLines,script,sub,tintColor}=cfg;
   const isLS=w>h*1.3,isVT=h>w*1.3,s=Math.min(w,h);
   const tsz=cText(isLS?h*.22:isVT?w*.26:s*.185);
-  const ssz=cText(s*.042),msz=cText(s*.016),hPad=Math.round(s*.09);
+  const ssz=cText(s*.042),msz=cMicro(s*.016),hPad=Math.round(s*.09);
   const ph2=photo2?`<img src="${photo2}" alt="" style="position:absolute;top:-8%;right:-12%;width:72%;height:72%;object-fit:cover;opacity:.2;mix-blend-mode:screen;z-index:2;transform:rotate(4deg)">`:'';
   const lines=titleLines.map(l=>`<div>${l}</div>`).join('');
   const sH=script?`<div style="font-family:${CFS};font-size:${ssz}px;color:#b8852a;margin:${Math.round(s*.032)}px 0 ${Math.round(s*.02)}px;line-height:1">${script}</div>`:'';
