@@ -157,6 +157,16 @@ tr:last-child td { border-bottom:none; }
 .c-plat-row:last-child{margin-bottom:0}
 .c-plat-name{font-family:'Space Mono',monospace;font-size:7px;text-transform:uppercase;letter-spacing:.08em;color:var(--dust);white-space:nowrap;flex-shrink:0;min-width:66px}
 .c-plat-fmt{font-size:10px;color:var(--bone);line-height:1.4}
+.platform-assets{display:flex;flex-direction:column;gap:28px;margin:22px 0 40px}
+.platform-asset{background:var(--smoke);border:1px solid var(--cinder);border-radius:2px;padding:18px;overflow-x:auto}
+.platform-meta{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.platform-name{font-family:'Fraunces',serif;font-weight:700;font-size:20px;color:var(--white);letter-spacing:-.01em}
+.platform-spec{font-family:'Space Mono',monospace;font-size:9px;text-transform:uppercase;letter-spacing:.12em;color:var(--ember)}
+.platform-note{font-size:12px;color:var(--dust);line-height:1.55;margin-bottom:14px}
+.platform-preview{display:block;height:auto;max-width:none;border-radius:2px;box-shadow:0 2px 18px rgba(0,0,0,.55)}
+.platform-avatar{width:800px}
+.platform-facebook{width:820px}
+.platform-youtube{width:960px}
 /* ── LOGO SECTION ── */
 .logo-hero{background:#080808;border-radius:2px;padding:72px 48px 56px;display:flex;flex-direction:column;align-items:center;gap:14px;margin:20px 0 32px;position:relative;overflow:hidden}
 .logo-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.88' numOctaves='4'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:180px;opacity:.04;pointer-events:none}
@@ -961,6 +971,37 @@ manifest.json   ← authoritative record of all approved assets.</code></div>
   <div class="s-num">Section 11</div>
   <h2 class="s-title">2-Week Social Campaign Creative</h2>
   <p class="s-sub">All 14 days rendered at every format — 1:1 Square, 4:5 Portrait, 9:16 Vertical, 16:9 Landscape — with caption, platform distribution, and AI generation prompt for each day's pillar and song.</p>
+  <h3>Platform Brand Assets</h3>
+  <p class="s-sub">Approved profile and channel graphics for consistent Jay Trainer branding across major platforms.</p>
+  <div class="platform-assets">
+    <div class="platform-asset">
+      <div class="platform-meta">
+        <div class="platform-name">All-Platforms Avatar</div>
+        <div class="platform-spec">Target 800×800 · Source PNG 1000×1000</div>
+      </div>
+      <p class="platform-note">Use for square profile/avatar placement where the full Jay Trainer wordmark lockup should read inside a centered crop.</p>
+      <img class="platform-preview platform-avatar" src="assets/platform/JayTrainer_Avatar_All-Platforms_800x800.png" width="800" height="800" alt="Jay Trainer all-platforms avatar, target 800 by 800">
+    </div>
+
+    <div class="platform-asset">
+      <div class="platform-meta">
+        <div class="platform-name">Facebook Cover</div>
+        <div class="platform-spec">Target 820×312 · Source PNG 1025×390</div>
+      </div>
+      <p class="platform-note">Use for the Jay Trainer Facebook cover/header image. Keep the central wordmark and tagline inside the visible safe area.</p>
+      <img class="platform-preview platform-facebook" src="assets/platform/JayTrainer_Facebook-Cover_820x312.png" width="820" height="312" alt="Jay Trainer Facebook cover, target 820 by 312">
+    </div>
+
+    <div class="platform-asset">
+      <div class="platform-meta">
+        <div class="platform-name">YouTube Channel Art</div>
+        <div class="platform-spec">Target 960×540 · Source PNG 1200×675</div>
+      </div>
+      <p class="platform-note">Use for YouTube channel art and 16:9 channel-header contexts where the centered wordmark and atmospheric background need room to breathe.</p>
+      <img class="platform-preview platform-youtube" src="assets/platform/JayTrainer_YouTube-Channel-Art_960x540.png" width="960" height="540" alt="Jay Trainer YouTube channel art, target 960 by 540">
+    </div>
+  </div>
+  <div class="divider"></div>
   <div class="c-wk-hd">Week 1 &middot; Days 01&ndash;07</div>
   <div class="c-ov-grid" id="c-ov1"></div>
   <div class="c-wk-hd">Week 2 &middot; Days 08&ndash;14</div>
