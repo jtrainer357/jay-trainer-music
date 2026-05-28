@@ -170,7 +170,6 @@ tr:last-child td { border-bottom:none; }
 .platform-avatar{width:800px}
 .platform-facebook{width:820px}
 .platform-youtube{width:960px}
-.platform-frame{width:100%;height:2220px;border:1px solid var(--cinder);border-radius:2px;background:#0a0a09;box-shadow:0 2px 18px rgba(0,0,0,.55)}
 .platform-open{display:inline-block;margin:10px 0 0;font-family:'Space Mono',monospace;font-size:8px;text-transform:uppercase;letter-spacing:.14em;color:var(--ember);text-decoration:none}
 .platform-open:hover{color:var(--white)}
 /* ── LOGO SECTION ── */
@@ -978,9 +977,34 @@ manifest.json   ← authoritative record of all approved assets.</code></div>
   <h2 class="s-title">2-Week Social Campaign Creative</h2>
   <p class="s-sub">All 14 days rendered at every format — 1:1 Square, 4:5 Portrait, 9:16 Vertical, 16:9 Landscape — with caption, platform distribution, and AI generation prompt for each day's pillar and song.</p>
   <h3>Platform Brand Assets</h3>
-  <p class="s-sub">Approved profile and channel graphics for consistent Jay Trainer branding across major platforms. This embedded review renders from the source HTML creative so the avatar crop previews, YouTube safe zone, and exact Facebook cover proportions match the export system.</p>
-  <iframe class="platform-frame" src="platform-assets.html" title="Jay Trainer platform brand assets"></iframe>
-  <a class="platform-open" href="platform-assets.html">Open platform assets full page</a>
+  <p class="s-sub">Approved profile and channel graphics for consistent Jay Trainer branding across major platforms. These previews render from the approved exported PNG assets so the live guide does not depend on an embedded page.</p>
+  <div class="platform-assets">
+    <article class="platform-asset">
+      <div class="platform-meta">
+        <h4 class="platform-name">All-Platforms Avatar</h4>
+        <span class="platform-spec">Target 800×800 · Source PNG 1000×1000</span>
+      </div>
+      <p class="platform-note">Use for square profile/avatar placement where the full Jay Trainer wordmark lockup should read inside a centered crop.</p>
+      <img class="platform-preview platform-avatar" src="assets/platform/JayTrainer_Avatar_All-Platforms_800x800.png" alt="Jay Trainer all-platform square avatar">
+    </article>
+    <article class="platform-asset">
+      <div class="platform-meta">
+        <h4 class="platform-name">Facebook Cover</h4>
+        <span class="platform-spec">Target 820×312 · Source PNG 1025×390</span>
+      </div>
+      <p class="platform-note">Use for the Jay Trainer Facebook cover/header image. Keep the central wordmark and tagline inside the visible safe area.</p>
+      <img class="platform-preview platform-facebook" src="assets/platform/JayTrainer_Facebook-Cover_820x312.png" alt="Jay Trainer Facebook cover">
+    </article>
+    <article class="platform-asset">
+      <div class="platform-meta">
+        <h4 class="platform-name">YouTube Channel Art</h4>
+        <span class="platform-spec">Target 960×540 · Source PNG 1920×1080</span>
+      </div>
+      <p class="platform-note">Use for YouTube channel art and 16:9 social headers. The wordmark is centered so it remains legible in platform crops.</p>
+      <img class="platform-preview platform-youtube" src="assets/platform/JayTrainer_YouTube-Channel-Art_960x540.png" alt="Jay Trainer YouTube channel art">
+    </article>
+  </div>
+  <a class="platform-open" href="platform-assets">Open platform assets full page</a>
   <div class="divider"></div>
   <div class="c-wk-hd">Week 1 &middot; Days 01&ndash;07</div>
   <div class="c-ov-grid" id="c-ov1"></div>
