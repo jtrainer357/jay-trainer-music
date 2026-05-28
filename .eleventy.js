@@ -5,6 +5,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/assets/fonts");
   eleventyConfig.addPassthroughCopy("src/llms.txt");
+  eleventyConfig.addPassthroughCopy({
+    "src/bpr/brand-style-guide/assets": "bpr/brand-style-guide/assets",
+    "src/bpr/brand-style-guide/fonts": "bpr/brand-style-guide/fonts",
+  });
 
   // Date filters
   eleventyConfig.addFilter("readableDate", (dateObj) => {
