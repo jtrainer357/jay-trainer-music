@@ -71,11 +71,24 @@ The brand style guide remains:
 - Excluded from the sitemap.
 - Marked with `X-Robots-Tag: noindex, nofollow, noarchive`.
 
-## Known Follow-Up
+## Cloudflare Pages Functions
 
-The current store checkout and newsletter submit paths still target Netlify Functions:
+The production deploy includes Cloudflare Pages Functions for:
 
-- `/.netlify/functions/create-checkout-session`
-- Newsletter forms now read their endpoint from `data-action`, currently `/api/newsletter-subscribe`.
+- `/api/create-checkout-session`
+- `/api/newsletter-subscribe`
+- `/api/stripe-webhook`
 
-Before Cloudflare becomes the only production host, migrate those to Cloudflare Pages Functions or replace them with external $0-compatible links/forms.
+Configure these Cloudflare Pages environment variables before treating checkout, webhooks, or newsletter signup as production-ready:
+
+- `STRIPE_SECRET_KEY`
+- `STRIPE_WEBHOOK_SECRET`
+- `CONVERTKIT_API_KEY`
+- `CONVERTKIT_FORM_ID`
+- `RESEND_API_KEY`
+- `ORDER_NOTIFICATION_TO`
+- `ORDER_NOTIFICATION_FROM`
+
+The Stripe webhook endpoint should be updated in Stripe to:
+
+`https://jaytrainermusic.com/api/stripe-webhook`

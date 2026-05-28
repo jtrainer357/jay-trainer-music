@@ -19,7 +19,7 @@
       statusEl.className = 'newsletter-status';
 
       try {
-        const endpoint = form.dataset.action || '/.netlify/functions/newsletter-subscribe';
+        const endpoint = form.dataset.action || '/api/newsletter-subscribe';
         const res = await fetch(endpoint, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
