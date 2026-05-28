@@ -28,12 +28,13 @@ nav {
   display:flex; flex-direction:column; padding:32px 0;
 }
 .nav-logo { padding:0 28px 30px; border-bottom:1px solid var(--cinder); margin-bottom:22px; }
+.nav-logo a { display:inline-block; text-decoration:none; }
 .nav-logo img { width:168px; height:auto; display:block; filter:brightness(0) invert(0.85); }
 .nav-section { padding:0 28px; }
 .nav-label { font-family:'Space Mono',monospace; font-size:11px; text-transform:uppercase; letter-spacing:.14em; color:var(--ash); margin-bottom:14px; line-height:1.45; }
 .nav-item { display:block; padding:8px 0; font-family:'Space Mono',monospace; font-size:12px; text-transform:uppercase; letter-spacing:.08em; color:var(--dust); text-decoration:none; transition:color 180ms; line-height:1.45; }
 .nav-item:hover { color:var(--ember); }
-.nav-item span { color:var(--cinder); margin-right:10px; }
+.nav-item span { color:var(--bone); margin-right:10px; font-weight:700; opacity:.9; }
 
 /* ── MAIN CONTENT ── */
 main { flex:1; min-width:0; }
@@ -199,7 +200,9 @@ tr:last-child td { border-bottom:none; }
 
 <nav>
   <div class="nav-logo">
-    <img src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer">
+    <a href="#top" aria-label="Back to top">
+      <img src="assets/jaytrainer-logo-v1.svg" alt="Jay Trainer">
+    </a>
   </div>
   <div class="nav-section">
     <div class="nav-label">Visual Brand Guidelines</div>
@@ -219,7 +222,7 @@ tr:last-child td { border-bottom:none; }
 
 <main>
 
-<div class="doc-header">
+<div class="doc-header" id="top">
   <div class="doc-eyebrow">Jay Trainer Music</div>
   <h1 class="doc-title">Visual Brand <em>Guidelines</em></h1>
   <p class="doc-sub">A complete visual canon for agents, designers, and AI tools producing creative for Jay Trainer Music. Specific enough to be an operating manual. Built to prevent generic output and protect creative integrity.</p>
