@@ -2,9 +2,13 @@ module.exports = function (eleventyConfig) {
   // Passthrough copy
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
-  eleventyConfig.addPassthroughCopy("src/assets");
-  eleventyConfig.addPassthroughCopy("src/assets/fonts");
+  eleventyConfig.addPassthroughCopy({
+    "src/assets/images": "assets/images",
+    "src/assets/fonts": "assets/fonts",
+    "src/assets/audio/previews": "assets/audio/previews",
+  });
   eleventyConfig.addPassthroughCopy("src/llms.txt");
+  eleventyConfig.addPassthroughCopy("src/_headers");
   eleventyConfig.addPassthroughCopy({
     "src/bpr/brand-style-guide/assets": "bpr/brand-style-guide/assets",
     "src/bpr/brand-style-guide/fonts": "bpr/brand-style-guide/fonts",
