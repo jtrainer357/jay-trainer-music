@@ -7,6 +7,11 @@ module.exports = function (eleventyConfig) {
     "src/assets/fonts": "assets/fonts",
     "src/assets/audio/previews": "assets/audio/previews",
   });
+  eleventyConfig.addPassthroughCopy({
+    "src/assets/images/favicon.svg": "favicon.svg",
+    "src/assets/images/favicon.ico": "favicon.ico",
+    "src/assets/images/apple-touch-icon.png": "apple-touch-icon.png",
+  });
   eleventyConfig.addPassthroughCopy("src/llms.txt");
   eleventyConfig.addPassthroughCopy("src/_headers");
   eleventyConfig.addPassthroughCopy({
